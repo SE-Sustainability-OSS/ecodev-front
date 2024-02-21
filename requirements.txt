@@ -1,0 +1,6 @@
+ecodev-core==0.*
+dash==2.*
+dash-ag-grid==2.*
+dash-iconify==0.*
+dash-mantine-components==0.*
+plotly==5.*
