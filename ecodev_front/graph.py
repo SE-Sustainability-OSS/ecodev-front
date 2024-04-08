@@ -14,5 +14,5 @@ def graph_box(fig: go.Figure) -> html.Div:
         margin={'t': 10, 'l': 10, 'b': 10, 'r': 10},
     )
     return html.Div(
-        children=dcc.Graph(figure=fig, style={'width': '90%', 'height': '90%'}, responsive=True),
+        children=dcc.Graph(figure=fig, responsive=True),
         style={'height': '100%', 'width': '100%'})
