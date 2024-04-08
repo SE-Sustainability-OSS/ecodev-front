@@ -10,6 +10,15 @@ import dash_ag_grid as dag
 from pydantic_settings import BaseSettings
 from pydantic_settings import SettingsConfigDict
 
+locale_fr_FR = """d3.formatLocale({
+  "decimal": ",",
+  "thousands": "\u00a0",
+  "grouping": [3],
+  "currency": ["", "\u00a0€"],
+  "percent": "\u202f%",
+  "nan": ""
+})"""
+
 
 class DashAgGridEnterprise(BaseSettings):
     """
@@ -30,7 +39,7 @@ def data_table(id: str,
                style: Union[Dict, None] = None,
                row_alternating_color='#f5f5f5',
                row_style: Union[Dict, None] = None,
-               dash_grid_options:  Union[Dict, None] = None
+               dash_grid_options: Union[Dict, None] = None
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
@@ -79,5 +88,6 @@ def data_table(id: str,
         style=style,
         getRowStyle=row_style,
         columnSize='responsiveSizeToFit',
-        dashGridOptions=dash_grid_options
+        dashGridOptions=dash_grid_options,
+        className='ag-theme-material',
     )
