@@ -18,13 +18,13 @@ DEFAULT_STYLE = {'padding': '2%',
 
 def background_card(children: List,
                     style: Optional[Dict[str, str]] = None,
-                    height: Optional[int] = None, className: str = '', card_id: Optional[str] = ''
+                    className: str = '', card_id: Optional[str] = ''
                     ) -> dmc.Card:
     """
     Returns a formatted dmc.Card
     """
     return dmc.Card(children, radius='md', shadow='sm', p=0, style=style or DEFAULT_STYLE,
-                    h=height, className=className, id=card_id)
+                    className=className, id=card_id)
 
 
 def overview_card(title: Union[str, dmc.Group, dmc.Tooltip],
