@@ -8,7 +8,7 @@ from dash import html
 from dash_iconify import DashIconify
 
 
-def navbar_action_item(nav_id: str,
+def navbar_action_item(id: str,
                        label: str,
                        icon: str,
                        href: str,
@@ -35,7 +35,7 @@ def navbar_action_item(nav_id: str,
                                    DashIconify(icon=icon,
                                                color=icon_color,
                                                width=35),
-                                   id=nav_id,
+                                   id=id,
                                    size='xl',
                                    variant='transparent',
                                    n_clicks=0,
