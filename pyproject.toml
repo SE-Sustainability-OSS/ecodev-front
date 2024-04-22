@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ecodev-front"
-version = "0.0.11"
+version = "0.0.19"
 description = "Dash component helpers"
 authors = ["Amaury Salles <amaury.salles@gmail.com>",
 					 "Yoann Diep <yoann.diep@hotmail.fr>",

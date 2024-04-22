@@ -87,7 +87,7 @@ def navbar_menu_item(label: str,
         label,
         href=href,
         target='_self',
-        icon=DashIconify(icon=icon, color=icon_color, width=20),
+        leftSection=DashIconify(icon=icon, color=icon_color, width=20),
     )
 
 

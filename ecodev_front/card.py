@@ -23,7 +23,7 @@ def background_card(children: List,
     """
     Returns a formatted dmc.Card
     """
-    return dmc.Card(children, radius='md', shadow='sm', p=0, style=style or DEFAULT_STYLE,
+    return dmc.Card(children, radius='md', shadow='sm', style=style or DEFAULT_STYLE,
                     className=className, id=card_id)
 
 
@@ -31,7 +31,7 @@ def overview_card(title: Union[str, dmc.Group, dmc.Tooltip],
                   text: Union[str, float],
                   title_font_size: int = 24,
                   color: str = '#0066A1',
-                  text_font_size: int = 24,
+                  text_font_size: int = 16,
                   text_id: Optional[str] = '',
                   title_id: Optional[str] = '',
                   ) -> dmc.Card:
@@ -51,15 +51,15 @@ def overview_card(title: Union[str, dmc.Group, dmc.Tooltip],
 
 def card_title(title: str,
                size: int = 24,
+               title_id: Optional[str] = '',
                color: str = '#0066A1',
                font: str = 'Averta',
-               align: str = 'center',
-               title_id: Optional[str] = ''
+               align: str = 'center'
                ) -> dmc.Text:
     """
     Returns a standardised format of dmc.Text
     """
-    return dmc.Text(title, size=size, weight=700, color=color, ff=font, align=align, id=title_id)
+    return dmc.Text(title, fz=size, fw=700, c=color, ff=font, ta=align, id=title_id)
 
 
 def card_section(children: html.Div,
@@ -71,9 +71,9 @@ def card_section(children: html.Div,
                            withBorder=True, inheritPadding=True, py='xs', pl=10)
 
 
-def macro_info(text: Union[str, float], color: str = '#A0AEC0', size: int = 40,
+def macro_info(text: Union[str, float], color: str = '#A0AEC0', size: int = 32,
                text_id: Optional[str] = '') -> dmc.Text:
     """
     Returns a formatted dmc.Text element from a string
     """
-    return dmc.Text(text, color=color, fz=size, weight=700, id=text_id)
+    return dmc.Text(text, c=color, fz=size, fw=700, id=text_id)

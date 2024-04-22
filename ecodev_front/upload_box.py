@@ -24,7 +24,7 @@ def upload_box(id: str,
                style: Union[Dict[str, str], None] = None
                ) -> dcc.Upload:
     """
-    BLA
+    Returns an upload box
     """
     return dcc.Upload(id=id, multiple=multiple, style=style or DEFAULT_STYLE,
                       children=html.H5(label, style={'display': 'flex',

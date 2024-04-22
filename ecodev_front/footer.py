@@ -1,5 +1,5 @@
 """
-BLA
+Module containing the app footer component style
 """
 from typing import Dict
 from typing import Union

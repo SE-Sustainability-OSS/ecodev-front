@@ -21,9 +21,9 @@ def report_value(title: str, value: str | int, unit: Optional[str] = None) -> ht
     return html.Div(
         dmc.Group(
             [
-                dmc.Text(title, weight=700, size='16px', color='grey'),
-                dmc.Text(value, weight=700, size='16px'),
-                dmc.Text(unit, size='14px', italic=True),
+                dmc.Text(title, fw=700, fz='16px', c='grey'),
+                dmc.Text(value, fw=700, fz='16px'),
+                dmc.Text(unit, fz='14px', fs='italic'),
             ]
         )
     )

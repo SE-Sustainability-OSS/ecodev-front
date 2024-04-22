@@ -10,6 +10,7 @@ from dash import html
 
 
 def app_logo(logo_path: str = '/assets/logo.png',
+             ratio: float = 32/9,
              maw: int = 160,
              style: Optional[Dict[str, str]] = None):
     """
@@ -18,7 +19,9 @@ def app_logo(logo_path: str = '/assets/logo.png',
     style = style or {'margin-left': '10px',
                       'margin-top': '7px',
                       'margin-bottom': '7px'}
-    return dmc.Image(src=logo_path, maw=maw, style=style)
+    return dmc.AspectRatio(dmc.Image(src=logo_path),
+                           ratio=ratio, maw=maw,
+                           style=style)
 
 
 def app_title(app_name: Optional[str] = None, color='white'):
@@ -26,7 +29,7 @@ def app_title(app_name: Optional[str] = None, color='white'):
     Application title component.
     """
     app_name = app_name or os.getenv('app_name')
-    return html.Div(dmc.Title(os.getenv('app_name'), color=color))
+    return html.Div(dmc.Title(os.getenv('app_name'), c=color, fz='3vw'))
 
 
 logo = app_logo()
@@ -39,10 +42,10 @@ def navbar_header(app_logo: html.Div = logo,
     """
     Application header, composed of an app logo and title components.
     """
-    return dmc.Col(span=4,
-                   children=[
-                       dmc.Group([app_logo,
-                                  dmc.Space(w=spacing),
-                                  app_title
-                                  ])
-                   ])
+    return dmc.GridCol(span=4,
+                       children=[
+                           dmc.Group([app_logo,
+                                      dmc.Space(w=spacing),
+                                      app_title
+                                      ])
+                       ])
