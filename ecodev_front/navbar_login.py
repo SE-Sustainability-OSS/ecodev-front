@@ -16,7 +16,7 @@ def navbar_login(username_placeholder: str = 'Username',
     """
     Login bar component, shown when no user-tokens have been set.
     """
-    return dmc.Col(span=8, children=[
+    return dmc.GridCol(span=8, children=[
         dmc.Group([
             dmc.TextInput(id=LOGIN_USERNAME_INPUT_ID,
                           placeholder=username_placeholder,
