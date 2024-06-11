@@ -16,7 +16,7 @@ DEFAULT_STYLE = {'padding': '2%',
                  'textAlign': 'center'}
 
 
-def background_card(children: List,
+def background_card(children: List[Union[dmc.CardSection, html.Div]],
                     style: Optional[Dict[str, str]] = None,
                     className: str = '', card_id: Optional[str] = ''
                     ) -> dmc.Card:
@@ -50,25 +50,27 @@ def overview_card(title: Union[str, dmc.Group, dmc.Tooltip],
 
 
 def card_title(title: str,
-               size: int = 24,
+               size: int = 16,
                title_id: Optional[str] = '',
-               color: str = '#0066A1',
+               color: str = 'white',
                font: str = 'Averta',
-               align: str = 'center'
-               ) -> dmc.Text:
+               align: str = 'left',
+               background_color: str = '#97BDD3'
+               ) -> dmc.CardSection:
     """
     Returns a standardised format of dmc.Text
     """
-    return dmc.Text(title, fz=size, fw=700, c=color, ff=font, ta=align, id=title_id)
+    return card_section(dmc.Text(title, fz=size, fw=900, c=color, ff=font, ta=align, id=title_id,
+                                 bg=background_color, p=10))
 
 
-def card_section(children: html.Div,
-                 graph: bool = False) -> dmc.CardSection:
+def card_section(children: Union[html.Div, dmc.Text], graph: bool = False) -> dmc.CardSection:
     """
     Returns a formatted dmc.CardSection from passed dmc.Text
     """
-    return dmc.CardSection(dmc.LoadingOverlay(children=children) if graph else children,
-                           withBorder=True, inheritPadding=True, py='xs', pl=10)
+    return dmc.CardSection(children,
+                           withBorder=True,
+                           style={'height': '100%', 'width': '100%'} if graph else {})
 
 
 def macro_info(text: Union[str, float], color: str = '#A0AEC0', size: int = 32,

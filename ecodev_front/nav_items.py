@@ -1,8 +1,6 @@
 """
 Module containing navbar item component generators.
 """
-from typing import List
-
 import dash_mantine_components as dmc
 from dash import html
 from dash_iconify import DashIconify
@@ -50,7 +48,7 @@ def navbar_action_item(id: str,
 
 def navbar_menu(label: str,
                 icon: str,
-                menu_items: List[dmc.MenuItem],
+                # menu_items: List[dmc.MenuItem],
                 icon_color: str = 'white') -> html.Div:
     """
     Component to create a navbar menu.
@@ -66,9 +64,9 @@ def navbar_menu(label: str,
                 id='action-icon',
                 n_clicks=0,
             )),
-            dmc.MenuDropdown([dmc.MenuLabel(label.upper()),
-                              html.Div([item for item in menu_items])
-                              ])
+            # dmc.MenuDropdown([dmc.MenuLabel(label.upper()),
+            #                   html.Div([item for item in menu_items])
+            #                   ])
         ], offset=9, trigger='hover')
     ], style={'display': 'flex',
               'justifyContent': 'center',
