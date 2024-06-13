@@ -5,10 +5,8 @@ import dash
 import dash_mantine_components as dmc
 from dash import dcc
 
-from ecodev_front.components.footer import app_footer
-from ecodev_front.ids import LEFT_ASIDE_ID
+from ecodev_front.ids import FOOTER_ID
 from ecodev_front.ids import NAVBAR_ID
-from ecodev_front.ids import RIGHT_ASIDE_ID
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 
@@ -28,10 +26,8 @@ def dash_base_layout(stores: list[tuple[str, str]],
                 *[dcc.Store(id=store_id, storage_type=storage_type)
                   for store_id, storage_type in stores],
                 dmc.AppShellHeader(id=NAVBAR_ID, style={'background-color': '#0066A1'}, zIndex=100),
-                dmc.AppShellAside(id=RIGHT_ASIDE_ID, zIndex=100),
-                dmc.AppShellNavbar(id=LEFT_ASIDE_ID, zIndex=100),
                 dmc.AppShellMain(dash.page_container, style={'margin-top': '2%'}),
-                dmc.AppShellFooter(app_footer(), zIndex=100),
+                dmc.AppShellFooter(id=FOOTER_ID, zIndex=100),
             ],
             style={'padding-inline': '0px', 'background-color': '#f2f2f2'},
             header={'height': 55},
