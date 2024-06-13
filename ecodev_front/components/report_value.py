@@ -6,7 +6,7 @@ from typing import Optional
 import dash_mantine_components as dmc
 from dash import html
 
-from ecodev_front.display_utils import number_formatting
+from ecodev_front.components.display_utils import number_formatting
 
 
 def report_value(title: str, value: str | int, unit: Optional[str] = None) -> html.Div:

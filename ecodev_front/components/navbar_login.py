@@ -4,9 +4,9 @@ Module implementing the navbar login / logout components
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-LOGIN_USERNAME_INPUT_ID = 'login-username-id'
-LOGIN_PASSWORD_INPUT_ID = 'login-password-id'
-LOGIN_BTN_ID = 'login-button-id'
+from ecodev_front.ids import LOGIN_BTN_ID
+from ecodev_front.ids import LOGIN_PASSWORD_INPUT_ID
+from ecodev_front.ids import LOGIN_USERNAME_INPUT_ID
 
 
 def navbar_login(username_placeholder: str = 'Username',
