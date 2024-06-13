@@ -25,3 +25,4 @@ venv/
 data/
 #ignoring environment file
 .env
+.dist

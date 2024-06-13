@@ -28,11 +28,11 @@ def search_bar(id: str,
         dmc.Stack([
             dmc.TextInput(id=id,
                           placeholder=label,
-                          icon=DashIconify(icon=icon, width=20),
+                          leftSection=DashIconify(icon=icon, width=20),
                           radius='xl', size='lg',
                           debounce=debounce,
                           style=style),
-            dmc.Text(helper, size='sm', italic=True, color=helper_text_color)
+            dmc.Text(helper, size='sm', fs='italic', c=helper_text_color)
         ])
     ], style={'display': 'flex',
               'justifyContent': 'center',

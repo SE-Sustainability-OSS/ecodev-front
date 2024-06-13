@@ -4,9 +4,9 @@ Module implementing the navbar login / logout components
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-LOGIN_USERNAME_INPUT_ID = 'login-username-id'
-LOGIN_PASSWORD_INPUT_ID = 'login-password-id'
-LOGIN_BTN_ID = 'login-button-id'
+from ecodev_front.ids import LOGIN_BTN_ID
+from ecodev_front.ids import LOGIN_PASSWORD_INPUT_ID
+from ecodev_front.ids import LOGIN_USERNAME_INPUT_ID
 
 
 def navbar_login(username_placeholder: str = 'Username',
@@ -16,18 +16,18 @@ def navbar_login(username_placeholder: str = 'Username',
     """
     Login bar component, shown when no user-tokens have been set.
     """
-    return dmc.Col(span=8, children=[
+    return dmc.GridCol(span=8, children=[
         dmc.Group([
             dmc.TextInput(id=LOGIN_USERNAME_INPUT_ID,
                           placeholder=username_placeholder,
                           radius='xl',
                           style={'width': '15vw'},
-                          icon=DashIconify(icon='material-symbols:supervised-user-circle')),
+                          leftSection=DashIconify(icon='material-symbols:supervised-user-circle')),
             dmc.PasswordInput(id=LOGIN_PASSWORD_INPUT_ID,
                               placeholder=password_placeholder,
                               radius='xl',
                               style={'width': '15vw'},
-                              icon=DashIconify(icon='bi:shield-lock')),
+                              leftSection=DashIconify(icon='bi:shield-lock')),
             dmc.Button(button_label,
                        id=LOGIN_BTN_ID,
                        radius='xl',

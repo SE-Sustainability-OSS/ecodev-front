@@ -1,8 +1,8 @@
 **Type of change**
-- [ ] Feature
-- [ ] Bugfix
-- [ ] Refactoring
-- [ ] Documentation
+- [] Feature
+- [] Bugfix
+- [] Refactoring
+- [] Documentation
 
 -----------------------
 
