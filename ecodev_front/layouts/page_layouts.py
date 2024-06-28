@@ -1,6 +1,9 @@
 """
 Module containing various page layouts
 """
+from typing import Any
+from typing import Optional
+
 import dash_mantine_components as dmc
 from dash import html
 
@@ -9,7 +12,7 @@ from ecodev_front.ids import MAIN_CONTENT_ID
 from ecodev_front.ids import RIGHT_ASIDE_ID
 
 
-def simple_layout(main_content: html.Div) -> html.Div:
+def simple_layout(main_content: html.Div) -> dmc.Stack:
     """
     Generates a simple page layout
     """
@@ -61,9 +64,9 @@ def page_right_aside(aside_content: html.Div, main_content: html.Div) -> html.Di
     return html.Div([right_aside, main_content])
 
 
-def page_left_right_asides(left_aside: html.Div,
-                           main_content: html.Div,
-                           right_aside: html.Div) -> html.Div:
+def page_left_right_asides(left_aside: Optional[dmc.Stack] = None,
+                           main_content: Optional[Any] = None,
+                           right_aside: Optional[Any] = None) -> html.Div:
     """
     Generates a page layout with both a left and right aside.
     """
@@ -83,10 +86,11 @@ def page_left_right_asides(left_aside: html.Div,
 
     main_content = dmc.Stack([
         dmc.Group([
-            dmc.Space(visibleFrom='md', style={'margin-left': '15vw'}),
+            dmc.Space(visibleFrom='md', style={'margin-left': '16vw'}),
             html.Div(id=MAIN_CONTENT_ID, children=main_content,
-                     style={'width': '65w', 'height': '82vh'}),
-            dmc.Space(visibleFrom='md', style={'margin-right': '15vw'}),
+                     style={'width': '65vw', 'height': '82vh', 'justifyContent': 'center',
+                            'display': 'flex'}),
+            dmc.Space(visibleFrom='md', style={'margin-right': '16vw'}),
         ]), dmc.Space(h=50)], style={'backgroundColor': '#f2f2f2'})
 
     return html.Div([left_aside, main_content, right_aside])

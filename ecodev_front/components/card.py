@@ -8,12 +8,11 @@ from typing import Union
 
 import dash_mantine_components as dmc
 from dash import html
+from dash_iconify import DashIconify
 
-DEFAULT_STYLE = {'padding': '2%',
-                 'position': 'flex',
-                 'justifyContent': 'center',
-                 'alignItems': 'center',
-                 'textAlign': 'center'}
+DEFAULT_STYLE = {
+    'position': 'flex',
+    'justifyContent': 'center'}
 
 
 def background_card(children: List[Union[dmc.CardSection, html.Div]],
@@ -25,28 +24,6 @@ def background_card(children: List[Union[dmc.CardSection, html.Div]],
     """
     return dmc.Card(children, radius='md', shadow='sm', style=style or DEFAULT_STYLE,
                     className=className, id=card_id)
-
-
-def overview_card(title: Union[str, dmc.Group, dmc.Tooltip],
-                  text: Union[str, float],
-                  title_font_size: int = 24,
-                  color: str = '#0066A1',
-                  text_font_size: int = 16,
-                  text_id: Optional[str] = '',
-                  title_id: Optional[str] = '',
-                  ) -> dmc.Card:
-    """
-    Renders an overview card
-    """
-
-    return dmc.Card([
-        card_section(card_title(title, title_font_size, title_id)),
-        card_section(
-            dmc.Center(
-                macro_info(text, color=color, size=text_font_size, text_id=text_id)
-            )
-        ),
-    ], radius='md', shadow='sm')
 
 
 def card_title(title: str,
@@ -79,3 +56,18 @@ def macro_info(text: Union[str, float], color: str = '#A0AEC0', size: int = 32,
     Returns a formatted dmc.Text element from a string
     """
     return dmc.Text(text, c=color, fz=size, fw=700, id=text_id)
+
+
+def kpi(icon: str, text: str,
+        tooltip: Optional[str] = None,
+        c: str = '#A0AEC0', fz: int = 24,
+        fw: int = 700) -> dmc.Card:
+    """
+    Render a KPI card
+    """
+    return dmc.Card([dmc.Group([
+        DashIconify(icon=icon, width=25),
+        dmc.Tooltip(dmc.Text(text, c=c, fz=fz, fw=fw), label=tooltip)
+
+    ])
+    ], bg='rgb(247, 248, 249)')
