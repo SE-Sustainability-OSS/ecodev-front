@@ -15,4 +15,4 @@ def group(children: List,
     Renders a dmc.Group component with the correct formatting
     """
     return dmc.Group(children=children, grow=grow, pos='center',
-                     justify='center', className=className, id=group_id)
+                     justify='space-around', className=className, id=group_id)
