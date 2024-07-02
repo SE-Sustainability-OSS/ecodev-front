@@ -15,13 +15,13 @@ from ecodev_front.ids import URL
 
 
 def dash_base_layout(stores: list[tuple[str, str]],
+                     main_color: str = '#0066A1',
                      colors: dict[str, list[str]] | None = None,
                      header_height: int = 55,
                      footer_height: int = 40) -> dmc.MantineProvider:
     """
     Returns a base layout for any Dash application
     """
-
     return dmc.MantineProvider(
         forceColorScheme='light',
         theme={'colors': colors} if colors else None,
@@ -31,7 +31,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
                 dcc.Store(id=TOKEN, data={TOKEN: None}, storage_type='local'),
                 *[dcc.Store(id=store_id, storage_type=storage_type)
                   for store_id, storage_type in stores],
-                dmc.AppShellHeader(id=NAVBAR_ID, style={'background-color': '#0066A1'},
+                dmc.AppShellHeader(id=NAVBAR_ID, style={'background-color': main_color},
                                    zIndex=100, children=[]),
                 dmc.AppShellNavbar(
                     id=LEFT_ASIDE_ID,
@@ -48,7 +48,14 @@ def dash_base_layout(stores: list[tuple[str, str]],
                     zIndex=90,
                     withBorder=True, visibleFrom='md'),
 
-                dmc.AppShellFooter(id=FOOTER_ID, zIndex=100, children=[]),
+                dmc.AppShellFooter(id=FOOTER_ID, zIndex=100, children=[],
+                                   style={'paddingBottom': '10px',
+                                          'backgroundColor': main_color,
+                                          'color': 'white',
+                                          'textAlign': 'center',
+                                          'alignContent': 'center',
+                                          'justifyContent': 'center'}
+                                   )
             ],
             style={'padding-inline': '0px', 'background-color': '#f2f2f2'},
             header={'height': header_height},

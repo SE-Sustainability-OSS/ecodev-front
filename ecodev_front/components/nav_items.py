@@ -32,7 +32,7 @@ def action_item(id: str,
                                dmc.ActionIcon(
                                    DashIconify(icon=icon,
                                                color=icon_color,
-                                               width=35),
+                                               width=30),
                                    id=id,
                                    size='xl',
                                    variant='transparent',
@@ -59,13 +59,13 @@ def menu(label: str,
         dmc.Menu([
             dmc.MenuTarget(dmc.ActionIcon(
                 DashIconify(icon=icon,
-                            color=icon_color, width=35),
+                            color=icon_color, width=30),
                 size='xl',
                 variant='transparent',
                 id='action-icon',
                 n_clicks=0,
             )),
-            dmc.MenuDropdown([dmc.MenuLabel(label.upper()),
+            dmc.MenuDropdown([dmc.MenuLabel(label.upper(), style={'textAlign': 'center'}),
                               html.Div([item for item in menu_items])
                               ])
         ], offset=9, trigger='hover')
@@ -88,13 +88,3 @@ def menu_item(label: str,
         target='_self',
         leftSection=DashIconify(icon=icon, color=icon_color, width=20),
     )
-
-
-def navbar_divider() -> dmc.Divider:
-    """
-    Generates the vertical navbar dividers between sections
-    """
-    return dmc.Divider(orientation='vertical',
-                       style={'color': '#f2f2f2',
-                              'marginTop': '10px',
-                              'marginBottom': '10px'})

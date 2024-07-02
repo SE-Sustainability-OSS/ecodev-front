@@ -40,3 +40,13 @@ def app_header(logo: html.Div,
                                          justify='space-around'),
                            ])
                        ])
+
+
+def header_divider() -> dmc.Divider:
+    """
+    Generates the vertical navbar dividers between sections
+    """
+    return dmc.Divider(orientation='vertical',
+                       style={'color': '#f2f2f2',
+                              'marginTop': '10px',
+                              'marginBottom': '10px'})
