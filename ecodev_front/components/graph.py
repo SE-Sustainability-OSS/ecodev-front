@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 from dash import dcc
 
 
-def graph_box(fig: go.Figure, id=id) -> dcc.Graph:
+def graph_box(fig: go.Figure, id: str = '') -> dcc.Graph:
     """
     Helper component to format a plotly figure with correct sizing & padding.
     """

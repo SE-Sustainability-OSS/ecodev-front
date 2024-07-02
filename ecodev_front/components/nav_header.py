@@ -27,8 +27,8 @@ def app_title(app_name: str | None = None, color='white'):
     return html.Div(dmc.Title(app_name, c=color, fz=32))
 
 
-def header(logo: html.Div,
-           title: html.Div):
+def app_header(logo: html.Div,
+               title: html.Div):
     """
     Application header, composed of an app logo and title components.
     """

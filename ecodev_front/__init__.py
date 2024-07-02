@@ -13,6 +13,7 @@ from ecodev_front.ids import LOGIN_BTN_ID
 from ecodev_front.ids import LOGIN_PASSWORD_INPUT_ID
 from ecodev_front.ids import LOGIN_USERNAME_INPUT_ID
 from ecodev_front.ids import MAIN_CONTENT_ID
+from ecodev_front.ids import NAVBAR
 from ecodev_front.ids import NAVBAR_ID
 from ecodev_front.ids import PAGE
 from ecodev_front.ids import RIGHT_ASIDE_ID
@@ -24,5 +25,5 @@ __all__ = [
     'CHILDREN', 'DATA', 'PATHNAME', 'N_CLICKS', 'VALUE',
     'URL', 'TOKEN', 'NAVBAR_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID',
     'LOGIN_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'LEFT_ASIDE_ID', 'RIGHT_ASIDE_ID',
-    'DISABLED', 'STYLE', 'PAGE', 'APPSHELL', 'ASIDE'
+    'DISABLED', 'STYLE', 'PAGE', 'APPSHELL', 'ASIDE', 'NAVBAR'
 ]

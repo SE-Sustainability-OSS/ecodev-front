@@ -16,9 +16,9 @@ from ecodev_front.components.footer import footer_style
 from ecodev_front.components.graph import graph_box
 from ecodev_front.components.group import group
 from ecodev_front.components.login import login
+from ecodev_front.components.nav_header import app_header
 from ecodev_front.components.nav_header import app_logo
 from ecodev_front.components.nav_header import app_title
-from ecodev_front.components.nav_header import header
 from ecodev_front.components.nav_items import action_item
 from ecodev_front.components.nav_items import menu
 from ecodev_front.components.nav_items import menu_item
@@ -38,7 +38,7 @@ from ecodev_front.components.text import sub_text
 from ecodev_front.components.text import text_header
 from ecodev_front.components.upload_box import upload_box
 
-__all__ = ['app_logo', 'app_title', 'header', 'menu', 'data_table', 'navbar_divider',
+__all__ = ['app_logo', 'app_title', 'app_header', 'menu', 'data_table', 'navbar_divider',
            'action_item', 'login', 'menu_item', 'upload_box', 'card_section',
            'card_title', 'macro_info', 'number_formatting', 'background_card', 'search_bar',
            'graph_box', 'footer_style', 'report_value', 'centered_div', 'pie_chart',

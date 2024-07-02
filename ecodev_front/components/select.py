@@ -31,7 +31,7 @@ def select(select_id: str,
     )
 
 
-def select_label(select_id: str,
+def select_label(id: str,
                  label: str,
                  value: Optional[str] = None,
                  data: Optional[List[str]] = None,
@@ -49,7 +49,7 @@ def select_label(select_id: str,
     return dmc.Stack([
         dmc.Text(label, c=c, id=label_id),
         dmc.Select(
-            id=select_id,
+            id=id,
             value=value,
             data=data,
             persistence=persistence,
