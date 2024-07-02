@@ -9,10 +9,10 @@ from ecodev_front.ids import LOGIN_PASSWORD_INPUT_ID
 from ecodev_front.ids import LOGIN_USERNAME_INPUT_ID
 
 
-def navbar_login(username_placeholder: str = 'Username',
-                 password_placeholder: str = 'Password',
-                 button_label: str = 'Login',
-                 button_color: str = 'white'):
+def login(username_placeholder: str = 'Username',
+          password_placeholder: str = 'Password',
+          button_label: str = 'Login',
+          button_color: str = 'white'):
     """
     Login bar component, shown when no user-tokens have been set.
     """

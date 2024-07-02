@@ -8,7 +8,7 @@ from dash import html
 
 
 def app_logo(logo_path: str = '/assets/logo.png',
-             ratio: float = 570/128,
+             ratio: float = 570 / 128,
              width: str = '120px',
              style: dict[str, str] | None = None):
     """
@@ -24,15 +24,11 @@ def app_title(app_name: str | None = None, color='white'):
     Application title component.
     """
     app_name = app_name or os.getenv('app_name')
-    return html.Div(dmc.Title(os.getenv('app_name'), c=color, fz=32))
+    return html.Div(dmc.Title(app_name, c=color, fz=32))
 
 
-logo = app_logo()
-title = app_title()
-
-
-def navbar_header(app_logo: html.Div = logo,
-                  app_title: html.Div = title):
+def app_header(logo: html.Div,
+               title: html.Div):
     """
     Application header, composed of an app logo and title components.
     """
@@ -40,7 +36,7 @@ def navbar_header(app_logo: html.Div = logo,
                        visibleFrom='md',
                        children=[
                            dmc.Anchor(href='/', children=[
-                               dmc.Group([app_logo, app_title],
+                               dmc.Group([logo, title],
                                          justify='space-around'),
                            ])
                        ])

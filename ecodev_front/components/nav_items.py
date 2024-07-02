@@ -6,12 +6,12 @@ from dash import html
 from dash_iconify import DashIconify
 
 
-def navbar_action_item(id: str,
-                       label: str,
-                       icon: str,
-                       href: str,
-                       icon_color: str = 'white',
-                       in_new_tab: bool = False) -> html.Div:
+def action_item(id: str,
+                label: str,
+                icon: str,
+                href: str,
+                icon_color: str = 'white',
+                in_new_tab: bool = False) -> html.Div:
     """
     A navbar action item (i.e. icon button without a menu).
     These can be opened in a new tab & can have callbacks associated with the id provided.
@@ -40,16 +40,17 @@ def navbar_action_item(id: str,
                                ),
                            ])
             ])
-    ], style={'display': 'flex',
+    ], style={'disp'
+              'lay': 'flex',
               'justifyContent': 'center',
               'alignItems': 'center',
               'textAlign': 'center'})
 
 
-def navbar_menu(label: str,
-                icon: str,
-                menu_items: list[dmc.MenuItem],
-                icon_color: str = 'white') -> html.Div:
+def menu(label: str,
+         icon: str,
+         menu_items: list[dmc.MenuItem],
+         icon_color: str = 'white') -> html.Div:
     """
     Component to create a navbar menu.
     The menu items must be created beforehand & passed to this component.
@@ -74,10 +75,10 @@ def navbar_menu(label: str,
               'textAlign': 'center'})
 
 
-def navbar_menu_item(label: str,
-                     href: str,
-                     icon: str,
-                     icon_color: str = '#0066A1') -> dmc.MenuItem:
+def menu_item(label: str,
+              href: str,
+              icon: str,
+              icon_color: str = '#0066A1') -> dmc.MenuItem:
     """
     Component to create a navbar menu item.
     """

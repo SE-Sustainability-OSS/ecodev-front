@@ -2,6 +2,7 @@
 Module implementing select
 """
 from typing import Any
+from typing import List
 from typing import Optional
 from typing import Union
 
@@ -30,14 +31,17 @@ def select(select_id: str,
     )
 
 
-def select_label(select_id: str,
+def select_label(id: str,
                  label: str,
-                 value: Optional[Any] = None,
+                 value: Optional[str] = None,
+                 data: Optional[List[str]] = None,
                  persistence: bool = True,
                  searchable: bool = True,
                  allow_deselect: bool = True,
+                 disabled: bool = False,
                  c: str = '#A0AEC0',
-                 label_id: Optional[str] = ''
+                 label_id: Optional[str] = '',
+                 stack_id: Optional[str] = '',
                  ) -> dmc.Stack:
     """
     Renders a select with a stylized label
@@ -45,10 +49,12 @@ def select_label(select_id: str,
     return dmc.Stack([
         dmc.Text(label, c=c, id=label_id),
         dmc.Select(
-            id=select_id,
+            id=id,
             value=value,
+            data=data,
             persistence=persistence,
             searchable=searchable,
-            allowDeselect=allow_deselect
+            allowDeselect=allow_deselect,
+            disabled=disabled
         ),
-    ], gap='xs', w='100%')
+    ], gap='xs', w='100%', id=stack_id)
