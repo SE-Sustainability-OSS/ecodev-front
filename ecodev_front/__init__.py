@@ -20,9 +20,11 @@ from ecodev_front.ids import PAGE
 from ecodev_front.ids import RIGHT_ASIDE_ID
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
+from ecodev_front.layouts import dash_base_layout
 
 
 __all__ = [
+    'dash_base_layout',
     'CHILDREN', 'DATA', 'PATHNAME', 'N_CLICKS', 'VALUE', 'URL', 'TOKEN',
     'NAVBAR_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID', 'LOGOUT_BTN_ID',
     'LOGIN_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'LEFT_ASIDE_ID', 'RIGHT_ASIDE_ID',
