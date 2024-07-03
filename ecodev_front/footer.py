@@ -1,29 +1,26 @@
 """
 Module containing the app footer component style
 """
-from typing import Dict
-from typing import Union
-
 from dash import html
 
 from ecodev_front.ids import FOOTER_ID
 
 
-def app_footer(
-    children: html.Div,
-    color: str = '#0066A1',
-    height: str = '4vh',
-    display: str = 'flex',
-) -> html.Div:
+def app_footer(children: html.Div,
+               color: str = '#0066A1',
+               height: str = '4vh',
+               display: str = 'flex',
+               ) -> html.Div:
     """
     Main app footer
     """
     return html.Div(children, id=FOOTER_ID, style=footer_style(color, height, display))
 
 
-def footer_style(
-    color: str = '#0066A1', height: str = '5vh', display: str = 'flex'
-) -> Dict[str, Union[str, int]]:
+def footer_style(color: str = '#0066A1',
+                 height: str = '5vh',
+                 display: str = 'flex'
+                 ) -> dict[str, str | int]:
     """
     Main app footer style
     """

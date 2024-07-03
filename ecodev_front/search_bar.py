@@ -3,9 +3,6 @@ Component to search something in databases.
 
 Note: Typically only used as the main search bar on a page.
 """
-from typing import Dict
-from typing import Union
-
 import dash_mantine_components as dmc
 from dash import html
 from dash_iconify import DashIconify
@@ -15,7 +12,7 @@ def search_bar(id: str,
                label: str,
                helper: str,
                helper_text_color: str = 'gray',
-               style: Union[Dict[str, str], None] = None,
+               style: dict[str, str] | None = None,
                icon: str = 'quill:search',
                debounce: int = 750) -> html.Div:
     """

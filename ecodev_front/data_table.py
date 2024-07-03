@@ -2,9 +2,6 @@
 Module implementing a generic Dash AG Grid table
 """
 from typing import Any
-from typing import Dict
-from typing import List
-from typing import Union
 
 import dash_ag_grid as dag
 from pydantic_settings import BaseSettings
@@ -34,12 +31,12 @@ DAG_ENTERPRISE_AUTH = DashAgGridEnterprise()
 
 def data_table(id: str,
                df,
-               column_defs: Union[List[Dict[Any, Any]], None] = None,
-               default_col_def: Union[Dict, None] = None,
-               style: Union[Dict, None] = None,
+               column_defs: list[dict[Any, Any]] | None = None,
+               default_col_def: dict | None = None,
+               style: dict | None = None,
                row_alternating_color='#f5f5f5',
-               row_style: Union[Dict, None] = None,
-               dash_grid_options: Union[Dict, None] = None
+               row_style: dict | None = None,
+               dash_grid_options: dict | None = None
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table

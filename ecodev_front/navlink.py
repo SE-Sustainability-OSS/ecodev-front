@@ -1,12 +1,13 @@
-from typing import Optional
-
+"""
+File containg a navigation link component
+"""
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
 
 def navlink(label: str,
             href: str,
-            icon: Optional[str] = None) -> dmc.NavLink:
+            icon: str | None = None) -> dmc.NavLink:
     """
     A simple navigation link component.
     """

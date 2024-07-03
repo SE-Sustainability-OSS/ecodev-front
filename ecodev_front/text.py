@@ -1,3 +1,6 @@
+"""
+File containing formatted text components
+"""
 import dash_mantine_components as dmc
 
 

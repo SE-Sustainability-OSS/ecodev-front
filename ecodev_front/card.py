@@ -1,10 +1,7 @@
 """
 Components to create standardised card across apps.
 """
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Union
+from typing import Any
 
 import dash_mantine_components as dmc
 from dash import html
@@ -15,9 +12,10 @@ DEFAULT_STYLE = {
     'justifyContent': 'center'}
 
 
-def background_card(children: List[Union[dmc.CardSection, html.Div]],
-                    style: Optional[Dict[str, str]] = None,
-                    className: str = '', card_id: Optional[str] = ''
+def background_card(children: list[dmc.CardSection | html.Div],
+                    style: dict[str, str] | None = None,
+                    className: str = '',
+                    card_id: str = ''
                     ) -> dmc.Card:
     """
     Returns a formatted dmc.Card
@@ -28,7 +26,7 @@ def background_card(children: List[Union[dmc.CardSection, html.Div]],
 
 def card_title(title: str,
                size: int = 16,
-               title_id: Optional[str] = '',
+               title_id: str = '',
                color: str = 'white',
                font: str = 'Averta',
                align: str = 'left',
@@ -41,7 +39,7 @@ def card_title(title: str,
                                  bg=background_color, p=10))
 
 
-def card_section(children: Union[html.Div, dmc.Text], graph: bool = False) -> dmc.CardSection:
+def card_section(children: Any, graph: bool = False) -> dmc.CardSection:
     """
     Returns a formatted dmc.CardSection from passed dmc.Text
     """
@@ -50,8 +48,8 @@ def card_section(children: Union[html.Div, dmc.Text], graph: bool = False) -> dm
                            style={'height': '100%', 'width': '100%'} if graph else {})
 
 
-def macro_info(text: Union[str, float], color: str = '#A0AEC0', size: int = 32,
-               text_id: Optional[str] = '') -> dmc.Text:
+def macro_info(text: str | float, color: str = '#A0AEC0', size: int = 32,
+               text_id: str = '') -> dmc.Text:
     """
     Returns a formatted dmc.Text element from a string
     """
@@ -59,7 +57,7 @@ def macro_info(text: Union[str, float], color: str = '#A0AEC0', size: int = 32,
 
 
 def kpi(icon: str, text: str,
-        tooltip: Optional[str] = None,
+        tooltip: str | None = None,
         c: str = '#A0AEC0', fz: int = 24,
         fw: int = 700) -> dmc.Card:
     """

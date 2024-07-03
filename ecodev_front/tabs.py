@@ -1,12 +1,10 @@
 """
 Module to render the tabs element (composed of different individual dmc.Tab element)
 """
-from typing import List
-
 import dash_mantine_components as dmc
 
 
-def tabs(tabs_list: List[dmc.Tab], tabs_id: str, value: str) -> dmc.Tabs:
+def tabs(tabs_list: list[dmc.Tab], tabs_id: str, value: str) -> dmc.Tabs:
     """
     Renders a dmc.Tabs components
     """

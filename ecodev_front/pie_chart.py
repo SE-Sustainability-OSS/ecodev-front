@@ -1,17 +1,13 @@
-from typing import List
-from typing import Optional
-from typing import Union
-
 import plotly.graph_objects as go
 
 
-def pie_chart(labels: List[str],
-              values: List[Union[int, float]],
-              customdata: Optional[List[str]] = None,
-              hovertemplate: Optional[str] = None,
-              colors: Optional[List[str]] = None,
+def pie_chart(labels: list[str],
+              values: list[int | float],
+              customdata: list[str] | None = None,
+              hovertemplate: str | None = None,
+              colors: list[str] | None = None,
               text_threshold: float = 0.1,
-              annotation_text: Optional[str] = None
+              annotation_text: str | None = None
               ):
     """
     Function to render a pie chart
