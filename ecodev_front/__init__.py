@@ -1,3 +1,6 @@
+from ecodev_front.app_header import app_header
+from ecodev_front.app_header import app_logo
+from ecodev_front.app_header import app_title
 from ecodev_front.app_layout import dash_base_layout
 from ecodev_front.card import background_card
 from ecodev_front.card import card_section
@@ -16,6 +19,7 @@ from ecodev_front.display_utils import get_magnitude
 from ecodev_front.display_utils import number_formatting
 from ecodev_front.div import centered_div
 from ecodev_front.divider import divider
+from ecodev_front.divider import header_divider
 from ecodev_front.footer import app_footer
 from ecodev_front.footer import footer_style
 from ecodev_front.graph import graph_box
@@ -23,23 +27,17 @@ from ecodev_front.group import group
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
 from ecodev_front.ids import FOOTER_ID
-from ecodev_front.ids import LEFT_ASIDE_ID
+from ecodev_front.ids import HEADER_ID
 from ecodev_front.ids import LOGIN_BTN_ID
 from ecodev_front.ids import LOGIN_PASSWORD_INPUT_ID
 from ecodev_front.ids import LOGIN_USERNAME_INPUT_ID
 from ecodev_front.ids import LOGOUT_BTN_ID
 from ecodev_front.ids import MAIN_CONTENT_ID
 from ecodev_front.ids import NAVBAR
-from ecodev_front.ids import NAVBAR_ID
 from ecodev_front.ids import PAGE
-from ecodev_front.ids import RIGHT_ASIDE_ID
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 from ecodev_front.login import login
-from ecodev_front.nav_header import app_header
-from ecodev_front.nav_header import app_logo
-from ecodev_front.nav_header import app_title
-from ecodev_front.nav_header import header_divider
 from ecodev_front.nav_items import action_item
 from ecodev_front.nav_items import menu
 from ecodev_front.nav_items import menu_item
@@ -60,8 +58,8 @@ from ecodev_front.upload_box import upload_box
 
 __all__ = [
     'CHILDREN', 'DATA', 'PATHNAME', 'N_CLICKS', 'VALUE', 'URL', 'TOKEN',
-    'NAVBAR_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID', 'LOGOUT_BTN_ID',
-    'LOGIN_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'LEFT_ASIDE_ID', 'RIGHT_ASIDE_ID',
+    'HEADER_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID', 'LOGOUT_BTN_ID',
+    'LOGIN_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'NAVBAR', 'ASIDE',
     'DISABLED', 'STYLE', 'PAGE', 'APPSHELL', 'ASIDE', 'NAVBAR', 'dash_base_layout',
     'app_logo', 'app_title', 'app_header', 'menu', 'data_table', 'header_divider',
     'action_item', 'login', 'menu_item', 'upload_box', 'card_section',

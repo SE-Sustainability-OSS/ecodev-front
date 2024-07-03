@@ -14,7 +14,7 @@ def app_logo(logo_path: str = '/assets/logo.png',
     """
     Application logo component.
     """
-    style = style or {'margin-left': '10px', 'margin-top': '10px', 'width': width}
+    style = style or {'margin-left': '10px', 'width': width}
     return dmc.AspectRatio(dmc.Image(src=logo_path),
                            ratio=ratio, style=style)
 
@@ -37,16 +37,7 @@ def app_header(logo: html.Div,
                        children=[
                            dmc.Anchor(href='/', children=[
                                dmc.Group([logo, title],
-                                         justify='space-around'),
+                                         justify='space-around',
+                                         style={'margin-top': '5px'}),
                            ])
                        ])
-
-
-def header_divider() -> dmc.Divider:
-    """
-    Generates the vertical navbar dividers between sections
-    """
-    return dmc.Divider(orientation='vertical',
-                       style={'color': '#f2f2f2',
-                              'marginTop': '10px',
-                              'marginBottom': '10px'})

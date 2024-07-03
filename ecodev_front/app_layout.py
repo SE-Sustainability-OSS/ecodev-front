@@ -6,11 +6,11 @@ import dash_mantine_components as dmc
 from dash import dcc
 
 from ecodev_front.ids import APPSHELL
+from ecodev_front.ids import ASIDE
 from ecodev_front.ids import FOOTER_ID
-from ecodev_front.ids import LEFT_ASIDE_ID
+from ecodev_front.ids import HEADER_ID
 from ecodev_front.ids import MAIN_CONTENT_ID
-from ecodev_front.ids import NAVBAR_ID
-from ecodev_front.ids import RIGHT_ASIDE_ID
+from ecodev_front.ids import NAVBAR
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 
@@ -31,7 +31,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
             dcc.Store(id=TOKEN, data={TOKEN: None}, storage_type='local'),
             *[dcc.Store(id=store_id, storage_type=storage_type)
                 for store_id, storage_type in stores],
-            dmc.AppShellHeader(id=NAVBAR_ID,
+            dmc.AppShellHeader(id=HEADER_ID,
                                style={'background-color': main_color},
                                zIndex=100,
                                children=[]
@@ -56,7 +56,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
                                ),
 
             dmc.AppShellNavbar(
-                id=LEFT_ASIDE_ID,
+                id=NAVBAR,
                 children=[],
                 zIndex=90,
                 withBorder=True,
@@ -64,7 +64,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
             ),
 
             dmc.AppShellAside(
-                id=RIGHT_ASIDE_ID,
+                id=ASIDE,
                 children=[],
                 zIndex=90,
                 withBorder=True,
