@@ -1,17 +1,17 @@
 """
-BLA
+File containing a report value component
 """
-from typing import Optional
-
 import dash_mantine_components as dmc
 from dash import html
 
-from ecodev_front.components.display_utils import number_formatting
+from ecodev_front.display_utils import number_formatting
 
 
-def report_value(title: str, value: str | int, unit: Optional[str] = None) -> html.Div:
+def report_value(title: str,
+                 value: str | int,
+                 unit: str | None = None) -> html.Div:
     """
-    BLA
+    Renders a human readable (reportable) value
     """
     if isinstance(value, (int, float)):
         value = number_formatting(value)

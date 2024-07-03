@@ -1,3 +1,7 @@
+"""
+File containing component IDs, to use in callbacks
+"""
+
 URL = 'url'
 TOKEN = 'token'
 NAVBAR_ID = 'navbar-id'

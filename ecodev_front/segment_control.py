@@ -1,16 +1,13 @@
 """
 Module implementing segmented control
 """
-from typing import List
-from typing import Optional
-
 import dash_mantine_components as dmc
 
 
 def segmented_control(id: str,
                       label: str,
-                      value: Optional[str] = None,
-                      data: Optional[List[str]] = []) -> dmc.SegmentedControl:
+                      value: str | None = None,
+                      data: list[str] | None = []) -> dmc.SegmentedControl:
     """
     Renders a dmc.SegmentedControl that allows to toggle between different values
     """
@@ -24,8 +21,8 @@ def segmented_control(id: str,
 
 def segmented_control_label(id: str,
                             label: str,
-                            value: Optional[str] = None,
-                            data: Optional[List[str]] = [],
+                            value: str | None = None,
+                            data: list[str] | None = [],
                             size: str = 'md',
                             c: str = '#A0AEC0') -> dmc.Stack:
     """

@@ -1,12 +1,12 @@
 """
 Module to render dmc.Group elements
 """
-from typing import List
+from typing import Any
 
 import dash_mantine_components as dmc
 
 
-def group(children: List,
+def group(children: list[Any],
           grow: bool = True,
           id: str = '',
           justify: str = 'space-around') -> dmc.Group:
