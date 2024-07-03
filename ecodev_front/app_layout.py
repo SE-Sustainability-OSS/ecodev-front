@@ -4,6 +4,7 @@ Base app component, utilising dmc.AppShell.
 import dash
 import dash_mantine_components as dmc
 from dash import dcc
+from dash import html
 
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
@@ -39,7 +40,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
 
             dmc.AppShellMain(
                 id=MAIN_CONTENT_ID,
-                children=dash.page_container,
+                children=html.Div(style={'width': '100%'}, children=dash.page_container),
                 style={'width': '100%',
                        'margin-top': '2%',
                        'justifyContent': 'center',
