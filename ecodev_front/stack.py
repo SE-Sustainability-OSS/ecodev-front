@@ -7,7 +7,7 @@ import dash_mantine_components as dmc
 
 
 def stack(children: Any,
-          id: str | None = None,
+          id: str = '',
           gap: str = 'md',
           align: str = 'stretch') -> dmc.Stack:
     """
