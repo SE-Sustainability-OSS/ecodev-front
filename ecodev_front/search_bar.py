@@ -14,7 +14,8 @@ def search_bar(id: str,
                helper_text_color: str = 'gray',
                style: dict[str, str] | None = None,
                icon: str = 'quill:search',
-               debounce: int = 750) -> html.Div:
+               debounce: int = 750
+               ) -> html.Div:
     """
     Component to create a centered big / main search bar.
 

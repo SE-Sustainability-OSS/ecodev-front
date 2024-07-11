@@ -11,7 +11,8 @@ def action_item(id: str,
                 icon: str,
                 href: str,
                 icon_color: str = 'white',
-                in_new_tab: bool = False) -> html.Div:
+                in_new_tab: bool = False
+                ) -> html.Div:
     """
     A navbar action item (i.e. icon button without a menu).
     These can be opened in a new tab & can have callbacks associated with the id provided.
@@ -50,7 +51,8 @@ def action_item(id: str,
 def menu(label: str,
          icon: str,
          menu_items: list[dmc.MenuItem],
-         icon_color: str = 'white') -> html.Div:
+         icon_color: str = 'white'
+         ) -> html.Div:
     """
     Component to create a navbar menu.
     The menu items must be created beforehand & passed to this component.
@@ -78,7 +80,8 @@ def menu(label: str,
 def menu_item(label: str,
               href: str,
               icon: str,
-              icon_color: str = '#0066A1') -> dmc.MenuItem:
+              icon_color: str = '#0066A1'
+              ) -> dmc.MenuItem:
     """
     Component to create a navbar menu item.
     """

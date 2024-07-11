@@ -10,7 +10,8 @@ from dash import html
 def app_logo(logo_path: str = '/assets/logo.png',
              ratio: float = 570 / 128,
              width: str = '120px',
-             style: dict[str, str] | None = None):
+             style: dict[str, str] | None = None
+             ) -> dmc.AspectRatio:
     """
     Application logo component.
     """
@@ -19,7 +20,7 @@ def app_logo(logo_path: str = '/assets/logo.png',
                            ratio=ratio, style=style)
 
 
-def app_title(app_name: str | None = None, color='white'):
+def app_title(app_name: str | None = None, color='white') -> html.Div:
     """
     Application title component.
     """
@@ -27,8 +28,7 @@ def app_title(app_name: str | None = None, color='white'):
     return html.Div(dmc.Title(app_name, c=color, fz=32))
 
 
-def app_header(logo: html.Div,
-               title: html.Div):
+def app_header(logo: html.Div, title: html.Div) -> dmc.GridCol:
     """
     Application header, composed of an app logo and title components.
     """

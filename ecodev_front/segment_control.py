@@ -7,7 +7,8 @@ import dash_mantine_components as dmc
 def segmented_control(id: str,
                       label: str,
                       value: str | None = None,
-                      data: list[str] | None = []) -> dmc.SegmentedControl:
+                      data: list[str] | None = None
+                      ) -> dmc.SegmentedControl:
     """
     Renders a dmc.SegmentedControl that allows to toggle between different values
     """
@@ -15,14 +16,14 @@ def segmented_control(id: str,
         id=id,
         label=label,
         value=value,
-        data=data
+        data=data or []
     )
 
 
 def segmented_control_label(id: str,
                             label: str,
                             value: str | None = None,
-                            data: list[str] | None = [],
+                            data: list[str] | None = None,
                             size: str = 'md',
                             c: str = '#A0AEC0') -> dmc.Stack:
     """
@@ -34,7 +35,7 @@ def segmented_control_label(id: str,
         dmc.SegmentedControl(
             id=id,
             value=value,
-            data=data,
+            data=data or [],
             size=size,
         )
     ], gap='xs', w='100%')

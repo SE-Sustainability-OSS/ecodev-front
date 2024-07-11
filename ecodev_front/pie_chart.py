@@ -8,7 +8,7 @@ def pie_chart(labels: list[str],
               colors: list[str] | None = None,
               text_threshold: float = 0.1,
               annotation_text: str | None = None
-              ):
+              ) -> go.Figure:
     """
     Function to render a pie chart
      - labels: column on which we want to perform an aggregation

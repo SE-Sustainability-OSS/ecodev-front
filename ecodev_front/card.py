@@ -48,17 +48,22 @@ def card_section(children: Any, graph: bool = False) -> dmc.CardSection:
                            style={'height': '100%', 'width': '100%'} if graph else {})
 
 
-def macro_info(text: str | float, color: str = '#A0AEC0', size: int = 32,
-               text_id: str = '') -> dmc.Text:
+def macro_info(text: str | float,
+               color: str = '#A0AEC0',
+               size: int = 32,
+               text_id: str = ''
+               ) -> dmc.Text:
     """
     Returns a formatted dmc.Text element from a string
     """
     return dmc.Text(text, c=color, fz=size, fw=700, id=text_id)
 
 
-def kpi(icon: str, text: str,
+def kpi(icon: str,
+        text: str,
         tooltip: str | None = None,
-        c: str = '#A0AEC0', fz: int = 24,
+        c: str = '#A0AEC0',
+        fz: int = 24,
         fw: int = 700) -> dmc.Card:
     """
     Render a KPI card
@@ -67,5 +72,4 @@ def kpi(icon: str, text: str,
         DashIconify(icon=icon, width=25),
         dmc.Tooltip(dmc.Text(text, c=c, fz=fz, fw=fw), label=tooltip)
 
-    ])
-    ], bg='rgb(247, 248, 249)')
+    ])], bg='rgb(247, 248, 249)')

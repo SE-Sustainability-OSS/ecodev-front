@@ -20,7 +20,8 @@ def dash_base_layout(stores: list[tuple[str, str]],
                      main_color: str = '#0066A1',
                      colors: dict[str, list[str]] | None = None,
                      header_height: int = 55,
-                     footer_height: int = 40) -> dmc.MantineProvider:
+                     footer_height: int = 40
+                     ) -> dmc.MantineProvider:
     """
     Returns a base layout for any Dash application
     """
