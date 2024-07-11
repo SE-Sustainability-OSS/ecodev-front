@@ -9,13 +9,12 @@ from ecodev_front.display_utils import number_formatting
 
 def report_value(title: str,
                  value: str | int,
-                 unit: str | None = None) -> html.Div:
+                 unit: str | None = None
+                 ) -> html.Div:
     """
     Renders a human readable (reportable) value
     """
-    if isinstance(value, (int, float)):
-        value = number_formatting(value)
-    elif value.isnumeric():
+    if isinstance(value, (int, float)) or value.isnumeric():
         value = number_formatting(float(value))
 
     return html.Div(

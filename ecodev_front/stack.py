@@ -9,7 +9,8 @@ import dash_mantine_components as dmc
 def stack(children: Any,
           id: str = '',
           gap: str = 'md',
-          align: str = 'stretch') -> dmc.Stack:
+          align: str = 'stretch'
+          ) -> dmc.Stack:
     """
     Renders a dmc.Stack component that encapsulates a page
     """

@@ -8,7 +8,8 @@ def divider(orientation: str = 'horizontal',
             label: str | None = None,
             position: str = 'center',
             margin: int = 10,
-            w: str | int = '') -> dmc.Divider:
+            w: str | int = ''
+            ) -> dmc.Divider:
     """
     Renders a divider
     """
