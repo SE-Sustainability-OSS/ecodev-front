@@ -1,5 +1,6 @@
 from ecodev_front.app_header import app_header
 from ecodev_front.app_header import app_logo
+from ecodev_front.app_header import APP_NAME
 from ecodev_front.app_header import app_title
 from ecodev_front.app_layout import dash_base_layout
 from ecodev_front.card import background_card
@@ -67,5 +68,5 @@ __all__ = [
     'graph_box', 'footer_style', 'report_value', 'centered_div', 'pie_chart',
     'app_footer', 'vertical_stepper', 'stepper_step', 'group', 'segmented_control',
     'select', 'stack', 'text_header', 'sub_text', 'divider', 'kpi',
-    'segmented_control_label', 'select_label', 'navlink', 'get_magnitude'
+    'segmented_control_label', 'select_label', 'navlink', 'get_magnitude', 'APP_NAME'
 ]

@@ -14,5 +14,4 @@ def stack(children: Any,
     """
     Renders a dmc.Stack component that encapsulates a page
     """
-    return dmc.Stack(children=children, align=align, justify='flex-end', gap=gap,
-                     id=id)
+    return dmc.Stack(children=children, align=align, justify='flex-end', gap=gap, id=id)
