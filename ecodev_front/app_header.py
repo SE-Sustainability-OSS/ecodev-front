@@ -1,10 +1,21 @@
 """
 Module implementing the navbar header components
 """
-import os
-
 import dash_mantine_components as dmc
 from dash import html
+from pydantic_settings import BaseSettings
+from pydantic_settings import SettingsConfigDict
+
+
+class AppNameConf(BaseSettings):
+    """
+    Simple authentication configuration class
+    """
+    app_name: str = ''
+    model_config = SettingsConfigDict(env_file='.env')
+
+
+APP_NAME = AppNameConf().app_name
 
 
 def app_logo(logo_path: str = '/assets/logo.png',
@@ -24,7 +35,7 @@ def app_title(app_name: str | None = None, color='white') -> html.Div:
     """
     Application title component.
     """
-    app_name = app_name or os.getenv('app_name')
+    app_name = app_name or APP_NAME
     return html.Div(dmc.Title(app_name, c=color, fz=32))
 
 

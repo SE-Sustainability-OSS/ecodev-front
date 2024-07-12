@@ -14,8 +14,7 @@ def select(id: str,
            w: str | int = '100%',
            ) -> dmc.Select:
     """
-    Renders a formatted html.Div with content at the center
-    Useful to center plotly graphs
+   Simple select with sensible default parameters
     """
     return dmc.Select(
         id=id,

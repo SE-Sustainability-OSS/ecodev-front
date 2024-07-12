@@ -22,7 +22,7 @@ def report_value(title: str,
             [
                 dmc.Text(title, fw=700, fz='16px', c='grey'),
                 dmc.Text(value, fw=700, fz='16px'),
-                dmc.Text(unit, fz='14px', fs='italic'),
+                dmc.Text(unit, fz='14px', fs='italic')
             ]
         )
     )
