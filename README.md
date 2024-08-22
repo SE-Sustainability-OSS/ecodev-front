@@ -1,7 +1,7 @@
 
 # EcoDev Front
 
-This app can serve as a template. It includes some basic functionalities such as user login,
-customisable components such as navbar menus, and customised component builders such as
+This library is a reduced and opinionated version of Dash Mantine Components [DMC](https://www.dash-mantine-components.com/), itself a simplified version of the React Mantine library. It includes some basic functionalities such as
+customisable components, navbar menus and customised component builders.
 
-TODO: redirect vers eco-dev doc & faire la bas.
+Full documentation of the library can be found [here](https://ecodev-doc.lcabox.com/libraries/front/)
