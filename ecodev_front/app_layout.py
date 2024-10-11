@@ -29,7 +29,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
         forceColorScheme='light',
         theme={'colors': colors} if colors else None,
         children=dmc.AppShell([
-            dcc.Location(id=URL, refresh=True),
+            dcc.Location(id=URL, refresh='callback-nav'),
             dcc.Store(id=TOKEN, data={TOKEN: None}, storage_type='local'),
             *[dcc.Store(id=store_id, storage_type=storage_type)
                 for store_id, storage_type in stores],
@@ -74,7 +74,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
             )],
 
             id=APPSHELL,
-            style={'padding-inline': '0px', 'background-color': '#f2f2f2'},
+            style={'padding': '0', 'background-color': '#f2f2f2'},
             header={'height': header_height},
             footer={'height': footer_height},
             navbar={
