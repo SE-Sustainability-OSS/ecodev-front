@@ -56,6 +56,8 @@ from ecodev_front.stepper import vertical_stepper
 from ecodev_front.text import sub_text
 from ecodev_front.text import text_header
 from ecodev_front.upload_box import upload_box
+from ecodev_front.shadow_box import shadow_box
+from ecodev_front.shadow_button import shadow_button
 
 __all__ = [
     'CHILDREN', 'DATA', 'PATHNAME', 'N_CLICKS', 'VALUE', 'URL', 'TOKEN',
@@ -68,5 +70,6 @@ __all__ = [
     'graph_box', 'footer_style', 'report_value', 'centered_div', 'pie_chart',
     'app_footer', 'vertical_stepper', 'stepper_step', 'group', 'segmented_control',
     'select', 'stack', 'text_header', 'sub_text', 'divider', 'kpi',
-    'segmented_control_label', 'select_label', 'navlink', 'get_magnitude', 'APP_NAME'
+    'segmented_control_label', 'select_label', 'navlink', 'get_magnitude', 'APP_NAME',
+    'shadow_box', 'shadow_button'
 ]
