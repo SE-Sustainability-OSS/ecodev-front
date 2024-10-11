@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ecodev-front"
+name = "ecode
 version = "0.0.59"
 description = "Dash component helpers"
 authors = ["Amaury Salles <amaury.salles@gmail.com>",
