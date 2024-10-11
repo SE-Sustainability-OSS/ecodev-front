@@ -11,7 +11,7 @@ def shadow_box(children: list[html.Div],
                style: dict = {}
                ) -> html.Div:
     """
-    Creates a colored shadow around a dmc.Paper component.
+    Renders a colored shadow around a dmc.Paper component.
     """
     return html.Div([
         dmc.Paper(children=children,

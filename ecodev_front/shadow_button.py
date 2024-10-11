@@ -11,6 +11,9 @@ def shadow_button(id: str,
                   shadow_thickness: int = 8,
                   style: dict = {}
                   )  -> dmc.Button:
+       """
+       Renders a button component with a colored shadow
+       """
        return html.Div([
                dmc.Paper(radius=radius,
                   style={'boxShadow': f"""{shadow_thickness}px 
