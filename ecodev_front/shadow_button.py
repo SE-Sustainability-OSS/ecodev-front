@@ -9,7 +9,8 @@ def shadow_button(id: str,
                   shadow_color: str,
                   radius: str = 'md',
                   shadow_thickness: int = 8,
-                  style: dict = {})  -> dmc.Button:
+                  style: dict = {}
+                  )  -> dmc.Button:
        return html.Div([
                dmc.Paper(radius=radius,
                   style={'boxShadow': f"""{shadow_thickness}px 

@@ -8,7 +8,8 @@ def shadow_box(children: list[html.Div],
                shadow_color: str, 
                radius: str = 'md',
                shadow_thickness: int = 8,
-               style: dict = {}) -> html.Div:
+               style: dict = {}
+               ) -> html.Div:
     """
     Creates a colored shadow around a dmc.Paper component.
     """
