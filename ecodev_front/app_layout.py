@@ -6,6 +6,7 @@ import dash_mantine_components as dmc
 from dash import dcc
 from dash import html
 
+from ecodev_front.constants import NOTIFICATION_ID
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
 from ecodev_front.ids import FOOTER_ID
@@ -20,7 +21,8 @@ def dash_base_layout(stores: list[tuple[str, str]],
                      main_color: str = '#0066A1',
                      colors: dict[str, list[str]] | None = None,
                      header_height: int = 55,
-                     footer_height: int = 40
+                     footer_height: int = 40,
+                     main_content_style: dict[str, str] | None = None
                      ) -> dmc.MantineProvider:
     """
     Returns a base layout for any Dash application
@@ -32,7 +34,10 @@ def dash_base_layout(stores: list[tuple[str, str]],
             dcc.Location(id=URL, refresh='callback-nav'),
             dcc.Store(id=TOKEN, data={TOKEN: None}, storage_type='local'),
             *[dcc.Store(id=store_id, storage_type=storage_type)
-                for store_id, storage_type in stores],
+              for store_id, storage_type in stores],
+
+            html.Div(id=NOTIFICATION_ID),
+            dmc.NotificationProvider(position='top-left'),
             dmc.AppShellHeader(id=HEADER_ID,
                                style={'background-color': main_color},
                                zIndex=100,
@@ -42,10 +47,10 @@ def dash_base_layout(stores: list[tuple[str, str]],
             dmc.AppShellMain(
                 id=MAIN_CONTENT_ID,
                 children=html.Div(style={'width': '100%'}, children=dash.page_container),
-                style={'width': '100%',
-                       'margin-top': '2%',
-                       'justifyContent': 'center',
-                       'display': 'flex'},
+                style=main_content_style or {'width': '100%',
+                                             'margin-top': '2%',
+                                             'justifyContent': 'center',
+                                             'display': 'flex'},
             ),
 
             dmc.AppShellFooter(id=FOOTER_ID, zIndex=100, children=[],

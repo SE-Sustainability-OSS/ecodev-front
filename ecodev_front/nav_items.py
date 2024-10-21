@@ -8,7 +8,7 @@ from dash_iconify import DashIconify
 
 def action_item(id: str,
                 label: str,
-                icon: str,
+                icon: DashIconify,
                 href: str,
                 icon_color: str = 'white',
                 in_new_tab: bool = False
