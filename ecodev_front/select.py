@@ -11,7 +11,10 @@ def select(id: str,
            value: Any | None = None,
            persistence: bool = True,
            searchable: bool = True,
+           clearable: bool = False,
+           allow_deselect: bool = False,
            w: str | int = '100%',
+           size: str = 'md'
            ) -> dmc.Select:
     """
    Simple select with sensible default parameters
@@ -23,7 +26,10 @@ def select(id: str,
         data=[],
         persistence=persistence,
         searchable=searchable,
-        w=w
+        clearable=clearable,
+        allowDeselect=allow_deselect,
+        w=w,
+        size=size
     )
 
 

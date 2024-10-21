@@ -8,6 +8,14 @@ N_CLICKS = 'n_clicks'
 VALUE = 'value'
 DISABLED = 'disabled'
 STYLE = 'style'
+ACTIVE = 'active'
+CLICKDATA = 'clickData'
+LOCAL = 'local'
+OPENED = 'opened'
+CONTENTS = 'contents'
+
+NOTIFICATION_ID = 'notification-id'
+MAIN_PAGE_URL = '/'
 
 """
 Unit Converters

@@ -14,10 +14,13 @@ def number_formatting(number: float, decimals: int = 0) -> str:
     """
     Returns numbers in a more readable format (scaled with suffix).
     """
+    if number == 0:
+        return '0'
+
     units = ['', 'K', 'M', 'G', 'T', 'P']
     k = 1000.0
     magnitude = int(floor(log(number, k)))
-    return f'%.{decimals}f %s' % (number / k ** magnitude, units[magnitude])
+    return f'%.{decimals}f%s' % (number / k ** magnitude, units[magnitude])
 
 
 def get_magnitude(number: int | float) -> tuple[object, str]:

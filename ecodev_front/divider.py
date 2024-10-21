@@ -5,7 +5,7 @@ import dash_mantine_components as dmc
 
 
 def divider(orientation: str = 'horizontal',
-            label: str | None = None,
+            label: str | dmc.Anchor | None = None,
             position: str = 'center',
             margin: int = 10,
             w: str | int = ''
