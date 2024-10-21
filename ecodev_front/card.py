@@ -2,10 +2,12 @@
 Components to create standardised card across apps.
 """
 from typing import Any
+from typing import Optional
 
 import dash_mantine_components as dmc
 from dash import html
 from dash_iconify import DashIconify
+
 
 DEFAULT_STYLE = {
     'position': 'flex',
@@ -30,13 +32,24 @@ def card_title(title: str,
                color: str = 'white',
                font: str = 'Averta',
                align: str = 'left',
-               background_color: str = '#97BDD3'
+               background_color: str = '#0066a1',
+               component: Optional[Any] = None,
+               justify: str = 'space-between'
                ) -> dmc.CardSection:
     """
-    Returns a standardised format of dmc.Text
+    Returns dmc.CardSection with a standardised dmc.Text and possible selection options and an
+    optional additional component (e.g. select, slider, etc.) on its right hand side.
     """
-    return card_section(dmc.Text(title, fz=size, fw=900, c=color, ff=font, ta=align, id=title_id,
-                                 bg=background_color, p=10))
+    return card_section(
+        dmc.Group([
+            dmc.Text(title, fz=size, fw=900, c=color, ff=font, ta=align, id=title_id,
+                     bg=background_color, p=10),
+            component
+        ],
+            style={'backgroundColor': background_color, 'padding-right': '10px'},
+            justify=justify
+        )
+    )
 
 
 def card_section(children: Any, graph: bool = False) -> dmc.CardSection:
@@ -59,17 +72,27 @@ def macro_info(text: str | float,
     return dmc.Text(text, c=color, fz=size, fw=700, id=text_id)
 
 
-def kpi(icon: str,
-        text: str,
+def kpi(icon: DashIconify,
+        value: int | float | str,
+        unit: Optional[str] = None,
+        title: str | None = None,
         tooltip: str | None = None,
-        c: str = '#A0AEC0',
+        c: str = '#0066a1',
         fz: int = 24,
-        fw: int = 700) -> dmc.Card:
+        fw: int = 700) -> dmc.Tooltip:
     """
     Render a KPI card
     """
-    return dmc.Card([dmc.Group([
-        DashIconify(icon=icon, width=25),
-        dmc.Tooltip(dmc.Text(text, c=c, fz=fz, fw=fw), label=tooltip)
-
-    ])], bg='rgb(247, 248, 249)')
+    return dmc.Tooltip([
+        dmc.Card([dmc.Stack([
+            dmc.Text(title, c='gray', fz=(fz - 6), fw=fw),
+            dmc.Group(
+                [
+                    icon,
+                    dmc.Text(value, c=c, fz=fz, fw=1000),
+                    dmc.Text(unit, c='gray', fz=(fz - 8), fw=1000),
+                ], gap='xs'
+            ),
+        ], bg='#f7f8f9', w=250)])
+    ],  label=tooltip, position='top', offset=3,
+        withArrow=True, closeDelay=300, color=c)

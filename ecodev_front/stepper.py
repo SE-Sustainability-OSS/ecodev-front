@@ -1,13 +1,16 @@
 """
-Module implmenting a stepper and stepper-step components
+Module implementing a stepper and stepper-step components
 """
+from typing import Dict
+
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
 
 def vertical_stepper(id: str,
                      steps: list[dmc.StepperStep],
-                     color: str = 'default-color'
+                     color: str = '#0066a1',
+                     style: Dict | None = None
                      ) -> dmc.Stepper:
     """
     Returns a vertical stepper.
@@ -17,7 +20,8 @@ def vertical_stepper(id: str,
         active=0,
         orientation='vertical',
         color=color,
-        children=steps
+        children=steps,
+        style=style
     )
 
 
