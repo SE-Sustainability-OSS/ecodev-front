@@ -2,7 +2,7 @@ from typing import Dict
 
 import plotly.graph_objs as go
 
-from ecodev_front import BOTTOM_LEGEND
+from ecodev_front.graphs.legend_position import BOTTOM_LEGEND
 
 
 def apply_fig_layout(fig: go.Figure,
