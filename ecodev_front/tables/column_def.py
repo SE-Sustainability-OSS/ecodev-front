@@ -42,7 +42,8 @@ def custom_column_def(field: str,
                       cell_renderer: Optional[str] = None,
                       cell_style: Optional[Dict] = None,
                       cell_editor: Optional[str] = None,
-                      cell_editor_params: Optional[Dict] = None) -> Dict[str, Any]:
+                      cell_editor_params: Optional[Dict] = None,
+                      other_params: Optional[dict] = None) -> Dict[str, Any]:
     """
     Creates a custom def dict
     """
@@ -63,7 +64,7 @@ def custom_column_def(field: str,
         'cellStyle': cell_style,
         'cellEditor': cell_editor,
         'cellEditorParams': cell_editor_params
-    }
+    } | other_params
 
 
 def _get_value_formatter(dag_type: DagColTypes | None,
