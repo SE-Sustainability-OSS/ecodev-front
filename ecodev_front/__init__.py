@@ -23,6 +23,9 @@ from ecodev_front.constants import OPENED
 from ecodev_front.constants import PATHNAME
 from ecodev_front.constants import STYLE
 from ecodev_front.constants import VALUE
+from ecodev_front.constants import TYPE
+from ecodev_front.constants import INDEX
+from ecodev_front.constants import ID
 from ecodev_front.container import container
 from ecodev_front.display_utils import get_magnitude
 from ecodev_front.display_utils import number_formatting
@@ -100,5 +103,5 @@ __all__ = [
     'hide_duplicate_legends', 'scatter', 'subplots', 'subplots_y_axis_labels',
     'HORIZONTAL_CENTERED_LEGEND', 'bar_chart', 'locale_fr_FR', 'apply_fig_layout',
     'get_formatted_data_sunburst', 'container', 'button', 'NOTIFICATION_ID', 'icon', 'ACTIVE',
-    'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS'
+    'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID'
 ]
