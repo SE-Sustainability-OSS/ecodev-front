@@ -39,10 +39,12 @@ def custom_column_def(field: str,
                       value_formatter: Optional[str] = None,
                       locale: str = locale_fr_FR,
                       value_getter: Optional[str] = None,
+                      cell_data_style: Optional[str] = None,
                       cell_renderer: Optional[str] = None,
                       cell_style: Optional[Dict] = None,
                       cell_editor: Optional[str] = None,
-                      cell_editor_params: Optional[Dict] = None) -> Dict[str, Any]:
+                      cell_editor_params: Optional[Dict] = None,
+                      other_params: Optional[dict] = None) -> Dict[str, Any]:
     """
     Creates a custom def dict
     """
@@ -58,12 +60,13 @@ def custom_column_def(field: str,
         'valueGetter': {'function': value_getter},
         'filterValueGetter': {'function': "d3.timeParse('%d/%m/%Y')(params.data.date)"} if
         dag_type == DagColTypes.DATE else None,
+        'cellDataStyle': cell_data_style,
         'cellRenderer': cell_renderer,
         'tooltipField': field,
         'cellStyle': cell_style,
         'cellEditor': cell_editor,
         'cellEditorParams': cell_editor_params
-    }
+    } | other_params
 
 
 def _get_value_formatter(dag_type: DagColTypes | None,
