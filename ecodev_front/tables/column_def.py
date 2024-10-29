@@ -44,7 +44,7 @@ def custom_column_def(field: str,
                       cell_style: Optional[Dict] = None,
                       cell_editor: Optional[str] = None,
                       cell_editor_params: Optional[Dict] = None,
-                      other_params: Optional[dict] = None) -> Dict[str, Any]:
+                      other_params: Optional[dict] = {}) -> Dict[str, Any]:
     """
     Creates a custom def dict
     """
