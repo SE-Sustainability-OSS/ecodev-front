@@ -38,8 +38,9 @@ def stepper_step(label: str,
     completed_step = dmc.Anchor(icon, href=href, c='white', inline=True) if href else icon
 
     return dmc.StepperStep(
-        label=label,
-        description=description,
+        label=dmc.NavLink(label=label, description=description, href=href,
+                          rightSection=None, active=False, style={'margin-top': '-10px'}),
         icon=active_step,
-        completedIcon=completed_step
+        completedIcon=completed_step,
+        fz=18
     )
