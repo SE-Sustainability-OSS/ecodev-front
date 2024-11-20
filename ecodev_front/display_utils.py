@@ -18,7 +18,7 @@ def number_formatting(number: float, decimals: int = 0) -> str:
         return '0'
 
     if number < THOUSAND:
-        return str(number)
+        return str(round(number, decimals))
 
     units = ['', 'k', 'M', 'B', 'T', 'P']
     k = 1000.0
