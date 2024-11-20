@@ -13,9 +13,26 @@ CLICKDATA = 'clickData'
 LOCAL = 'local'
 OPENED = 'opened'
 CONTENTS = 'contents'
+FILENAME = 'filename'
 TYPE = 'type'
 INDEX = 'index'
 ID = 'id'
+VISIBLE = 'visible'
+CHECKED = 'checked'
+
+"""
+Table constants
+"""
+CELL_RENDERER_DATA = 'cellRendererData'
+ROW_DATA = 'rowData'
+ROW_INDEX = 'rowIndex'
+CELL_CLICKED = 'cellClicked'
+
+"""
+Stores
+"""
+SESSION_STORE = 'session'
+LOCAL_STORE = 'local'
 
 NOTIFICATION_ID = 'notification-id'
 MAIN_PAGE_URL = '/'

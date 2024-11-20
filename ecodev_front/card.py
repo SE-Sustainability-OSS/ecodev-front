@@ -15,7 +15,7 @@ DEFAULT_STYLE = {
 
 
 def background_card(children: list[dmc.CardSection | html.Div],
-                    style: dict[str, str] | None = None,
+                    style: dict[str, str | int | float] | None = None,
                     className: str = '',
                     card_id: str = ''
                     ) -> dmc.Card:
@@ -40,15 +40,15 @@ def card_title(title: str,
     Returns dmc.CardSection with a standardised dmc.Text and possible selection options and an
     optional additional component (e.g. select, slider, etc.) on its right hand side.
     """
+    content = [dmc.Text(title, fz=size, fw=900, c=color, ff=font, ta=align, id=title_id,
+                        bg=background_color, p=10)]
+
+    content += component if isinstance(component, list) else [component]
     return card_section(
-        dmc.Group([
-            dmc.Text(title, fz=size, fw=900, c=color, ff=font, ta=align, id=title_id,
-                     bg=background_color, p=10),
-            component
-        ],
-            style={'backgroundColor': background_color, 'padding-right': '10px'},
-            justify=justify
-        )
+        dmc.Group(children=content,
+                  style={'backgroundColor': background_color, 'padding-right': '10px'},
+                  justify=justify
+                  )
     )
 
 
