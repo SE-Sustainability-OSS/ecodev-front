@@ -16,16 +16,16 @@ from ecodev_front.constants import CLICKDATA
 from ecodev_front.constants import CONTENTS
 from ecodev_front.constants import DATA
 from ecodev_front.constants import DISABLED
+from ecodev_front.constants import ID
+from ecodev_front.constants import INDEX
 from ecodev_front.constants import LOCAL
 from ecodev_front.constants import N_CLICKS
 from ecodev_front.constants import NOTIFICATION_ID
 from ecodev_front.constants import OPENED
 from ecodev_front.constants import PATHNAME
 from ecodev_front.constants import STYLE
-from ecodev_front.constants import VALUE
 from ecodev_front.constants import TYPE
-from ecodev_front.constants import INDEX
-from ecodev_front.constants import ID
+from ecodev_front.constants import VALUE
 from ecodev_front.container import container
 from ecodev_front.display_utils import get_magnitude
 from ecodev_front.display_utils import number_formatting
@@ -71,7 +71,6 @@ from ecodev_front.report_value import report_value
 from ecodev_front.search_bar import search_bar
 from ecodev_front.segment_control import segmented_control
 from ecodev_front.select import select
-from ecodev_front.select import select_label
 from ecodev_front.shadow_box import shadow_box
 from ecodev_front.shadow_button import shadow_button
 from ecodev_front.stack import stack
@@ -96,9 +95,7 @@ __all__ = [
     'graph_box', 'footer_style', 'report_value', 'centered_div', 'pie_chart',
     'app_footer', 'vertical_stepper', 'stepper_step', 'group', 'segmented_control',
     'select', 'stack', 'text_header', 'sub_text', 'divider', 'kpi',
-    'select_label', 'navlink', 'get_magnitude', 'APP_NAME',
-    'shadow_box', 'shadow_button',
-    'select_label', 'navlink', 'get_magnitude', 'APP_NAME',
+    'shadow_box', 'shadow_button', 'navlink', 'get_magnitude', 'APP_NAME',
     'custom_column_def', 'download_button', 'modal', 'BOTTOM_LEGEND', 'alert', 'DagColTypes',
     'hide_duplicate_legends', 'scatter', 'subplots', 'subplots_y_axis_labels',
     'HORIZONTAL_CENTERED_LEGEND', 'bar_chart', 'locale_fr_FR', 'apply_fig_layout',

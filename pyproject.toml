@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ecodev-front"
-version = "0.0.69"
+version = "0.0.71"
 description = "Dash component helpers"
 authors = ["Amaury Salles <amaury.salles@gmail.com>",
 			"Yoann Diep <yoann.diep@hotmail.fr>",
@@ -41,7 +41,7 @@ python = "^3.11"
 dash = "~2"
 dash-ag-grid = "~31.2"
 dash-iconify = "~0"
-dash-mantine-components = "~0.14.6"
+dash-mantine-components = "0.14.6"
 plotly = "~5"
 
 
