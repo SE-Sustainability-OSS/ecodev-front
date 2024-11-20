@@ -9,7 +9,7 @@ def pie_chart(labels: list[str],
               colors: list[str] | None = None,
               text_threshold: float = 0.1,
               text_info: str = 'label+percent',
-              texttemplate: str = '%{label} <br>%{percent:.0%}'
+              texttemplate: str = ''
               ) -> go.Pie:
     """
     Function to render a pie chart

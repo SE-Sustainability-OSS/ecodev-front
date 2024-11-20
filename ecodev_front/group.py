@@ -17,4 +17,4 @@ def group(children: list[Any],
     Renders a dmc.Group component with the correct formatting
     """
     return dmc.Group(children=children, grow=grow, justify=justify, id=id,
-                     style=style or {}, padding=padding)
+                     style=style or {}, p=padding)

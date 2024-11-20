@@ -17,7 +17,10 @@ def number_formatting(number: float, decimals: int = 0) -> str:
     if number == 0:
         return '0'
 
-    units = ['', 'K', 'M', 'G', 'T', 'P']
+    if number < THOUSAND:
+        return str(number)
+
+    units = ['', 'k', 'M', 'B', 'T', 'P']
     k = 1000.0
     magnitude = int(floor(log(number, k)))
     return f'%.{decimals}f%s' % (number / k ** magnitude, units[magnitude])

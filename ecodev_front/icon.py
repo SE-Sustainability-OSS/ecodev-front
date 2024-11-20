@@ -8,4 +8,4 @@ def icon(icon: str,
     """
     Renders a DashIconify icon
     """
-    return DashIconify(icon=icon, width=width, height=height, c=color)
+    return DashIconify(icon=icon, width=width, height=height, color=color)
