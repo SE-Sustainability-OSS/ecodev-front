@@ -83,6 +83,14 @@ from ecodev_front.tables import locale_fr_FR
 from ecodev_front.text import sub_text
 from ecodev_front.text import text_header
 from ecodev_front.upload_box import upload_box
+from ecodev_front.notifications import VALIDATION_NOTIF_ID
+from ecodev_front.notifications import LOADING_ERROR_NOTIF_ID
+from ecodev_front.notifications import LOADING_INFO_NOTIF_ID
+from ecodev_front.notifications import SAVE_NOTIF_ID
+from ecodev_front.notifications import get_launch_notif
+from ecodev_front.notifications import get_complete_notif
+from ecodev_front.notifications import get_error_notif
+from ecodev_front.notifications import get_info_notif
 
 __all__ = [
     'CHILDREN', 'DATA', 'PATHNAME', 'N_CLICKS', 'VALUE', 'URL', 'TOKEN',
@@ -100,5 +108,7 @@ __all__ = [
     'hide_duplicate_legends', 'scatter', 'subplots', 'subplots_y_axis_labels',
     'HORIZONTAL_CENTERED_LEGEND', 'bar_chart', 'locale_fr_FR', 'apply_fig_layout',
     'get_formatted_data_sunburst', 'container', 'button', 'NOTIFICATION_ID', 'icon', 'ACTIVE',
-    'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID'
+    'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID',
+    'VALIDATION_NOTIF_ID', 'LOADING_ERROR_NOTIF_ID', 'LOADING_INFO_NOTIF_ID', 'SAVE_NOTIF_ID',
+    'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif'
 ]
