@@ -1,3 +1,5 @@
+from ecodev_front.accordion import accordion
+from ecodev_front.accordion import accordion_item
 from ecodev_front.alert import alert
 from ecodev_front.app_header import app_logo
 from ecodev_front.app_header import APP_NAME
@@ -33,6 +35,7 @@ from ecodev_front.div import centered_div
 from ecodev_front.divider import divider
 from ecodev_front.divider import header_divider
 from ecodev_front.download_button import download_button
+from ecodev_front.drawer import drawer
 from ecodev_front.footer import app_footer
 from ecodev_front.footer import footer_style
 from ecodev_front.graphs import apply_fig_layout
@@ -47,7 +50,7 @@ from ecodev_front.graphs import scatter
 from ecodev_front.graphs import subplots
 from ecodev_front.graphs import subplots_y_axis_labels
 from ecodev_front.group import group
-from ecodev_front.icon import icon
+from ecodev_front.icon import dash_icon
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
 from ecodev_front.ids import FOOTER_ID
@@ -61,12 +64,21 @@ from ecodev_front.ids import NAVBAR
 from ecodev_front.ids import PAGE
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
+from ecodev_front.loading_overlay import loading_overlay
 from ecodev_front.login import login
 from ecodev_front.modal import modal
 from ecodev_front.nav_items import action_item
 from ecodev_front.nav_items import menu
 from ecodev_front.nav_items import menu_item
 from ecodev_front.navlink import navlink
+from ecodev_front.notifications import get_complete_notif
+from ecodev_front.notifications import get_error_notif
+from ecodev_front.notifications import get_info_notif
+from ecodev_front.notifications import get_launch_notif
+from ecodev_front.notifications import LOADING_ERROR_NOTIF_ID
+from ecodev_front.notifications import LOADING_INFO_NOTIF_ID
+from ecodev_front.notifications import SAVE_NOTIF_ID
+from ecodev_front.notifications import VALIDATION_NOTIF_ID
 from ecodev_front.report_value import report_value
 from ecodev_front.search_bar import search_bar
 from ecodev_front.segment_control import segmented_control
@@ -83,14 +95,6 @@ from ecodev_front.tables import locale_fr_FR
 from ecodev_front.text import sub_text
 from ecodev_front.text import text_header
 from ecodev_front.upload_box import upload_box
-from ecodev_front.notifications import VALIDATION_NOTIF_ID
-from ecodev_front.notifications import LOADING_ERROR_NOTIF_ID
-from ecodev_front.notifications import LOADING_INFO_NOTIF_ID
-from ecodev_front.notifications import SAVE_NOTIF_ID
-from ecodev_front.notifications import get_launch_notif
-from ecodev_front.notifications import get_complete_notif
-from ecodev_front.notifications import get_error_notif
-from ecodev_front.notifications import get_info_notif
 
 __all__ = [
     'CHILDREN', 'DATA', 'PATHNAME', 'N_CLICKS', 'VALUE', 'URL', 'TOKEN',
@@ -107,8 +111,9 @@ __all__ = [
     'custom_column_def', 'download_button', 'modal', 'BOTTOM_LEGEND', 'alert', 'DagColTypes',
     'hide_duplicate_legends', 'scatter', 'subplots', 'subplots_y_axis_labels',
     'HORIZONTAL_CENTERED_LEGEND', 'bar_chart', 'locale_fr_FR', 'apply_fig_layout',
-    'get_formatted_data_sunburst', 'container', 'button', 'NOTIFICATION_ID', 'icon', 'ACTIVE',
+    'get_formatted_data_sunburst', 'container', 'button', 'NOTIFICATION_ID', 'dash_icon', 'ACTIVE',
     'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID',
     'VALIDATION_NOTIF_ID', 'LOADING_ERROR_NOTIF_ID', 'LOADING_INFO_NOTIF_ID', 'SAVE_NOTIF_ID',
-    'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif'
+    'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif',
+    'loading_overlay', 'accordion', 'accordion_item', 'drawer'
 ]

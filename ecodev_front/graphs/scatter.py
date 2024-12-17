@@ -19,7 +19,8 @@ def scatter(x: List[str | int | float],
             customdata: list[str] | None = None,
             hovertemplate: str | None = None,
             name: str = '',
-            legendgroup: int = 1,
+            legendgroup: str = '1',
+            legend: str | None = None,
             stackgroup: str = '',
             show_legend: bool = True) -> go.Scatter:
     """
@@ -38,6 +39,7 @@ def scatter(x: List[str | int | float],
      - hovertemplate: str that must be formatted like html, that will show when you hover on the
      graph
      - name: str that will be displayed in the legend
+     - legend: str when you want to group legends together and display them individually
      - legendgroup: str when you want to group legend items
      - stackgroup: str to indicate which lines you want to stack together
      - show_legend: bool to show or hide the legend for this trace
@@ -54,6 +56,7 @@ def scatter(x: List[str | int | float],
                       customdata=customdata,
                       hovertemplate=hovertemplate,
                       name=name,
+                      legend=legend,
                       legendgroup=legendgroup,
                       stackgroup=stackgroup,
                       showlegend=show_legend)

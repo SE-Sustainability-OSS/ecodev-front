@@ -10,7 +10,8 @@ from dash_iconify import DashIconify
 def vertical_stepper(id: str,
                      steps: list[dmc.StepperStep],
                      color: str = '#0066a1',
-                     style: Dict | None = None
+                     style: Dict | None = None,
+                     allow_next_steps_select: bool = True
                      ) -> dmc.Stepper:
     """
     Returns a vertical stepper.
@@ -21,14 +22,16 @@ def vertical_stepper(id: str,
         orientation='vertical',
         color=color,
         children=steps,
-        style=style
+        style=style,
+        allowNextStepsSelect=allow_next_steps_select
     )
 
 
 def stepper_step(label: str,
                  icon: str,
                  description: str | None = None,
-                 href: str | None = None
+                 href: str | None = None,
+                 allow_step_click: bool = True
                  ) -> dmc.StepperStep:
     """
     Returns a stepper step with redirecting icons, if provided with an href.
@@ -42,5 +45,6 @@ def stepper_step(label: str,
                           rightSection=None, active=False, style={'margin-top': '-10px'}),
         icon=active_step,
         completedIcon=completed_step,
+        allowStepClick=allow_step_click,
         fz=18
     )

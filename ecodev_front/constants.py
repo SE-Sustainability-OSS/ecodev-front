@@ -19,6 +19,8 @@ INDEX = 'index'
 ID = 'id'
 VISIBLE = 'visible'
 CHECKED = 'checked'
+ROW_ID = 'rowId'
+COL_ID = 'colId'
 
 """
 Table constants

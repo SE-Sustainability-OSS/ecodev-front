@@ -6,8 +6,8 @@ from typing import Optional
 
 import dash_mantine_components as dmc
 from dash import html
-from dash_iconify import DashIconify
 
+from ecodev_front import dash_icon
 
 DEFAULT_STYLE = {
     'position': 'flex',
@@ -72,7 +72,7 @@ def macro_info(text: str | float,
     return dmc.Text(text, c=color, fz=size, fw=700, id=text_id)
 
 
-def kpi(icon: DashIconify,
+def kpi(icon: str,
         value: int | float | str,
         unit: Optional[str] = None,
         title: str | None = None,
@@ -88,7 +88,7 @@ def kpi(icon: DashIconify,
             dmc.Text(title, c='gray', fz=(fz - 6), fw=fw),
             dmc.Group(
                 [
-                    icon,
+                    dash_icon(icon, width=30, color=c),
                     dmc.Text(value, c=c, fz=fz, fw=1000),
                     dmc.Text(unit, c='gray', fz=(fz - 8), fw=1000),
                 ], gap='xs'
