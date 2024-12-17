@@ -9,6 +9,7 @@ import dash_mantine_components as dmc
 def alert(title: str,
           message: str | dmc.Text | List[dmc.Text],
           color: str,
+          width: int | str = '100%',
           style: dict[str, str] | None = None) -> dmc.Alert:
     """
     Returns an alert (text specifically formatted with a title, a message and a background color)
@@ -20,5 +21,6 @@ def alert(title: str,
         title=title,
         children=message,
         color=color,
+        width=width,
         style=style or {}
     )

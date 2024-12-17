@@ -8,14 +8,15 @@ def divider(orientation: str = 'horizontal',
             label: str | dmc.Anchor | None = None,
             position: str = 'center',
             margin: int = 10,
-            w: str | int = ''
+            w: str | int = '',
+            color: str = 'default-color'
             ) -> dmc.Divider:
     """
     Renders a divider
     """
     return dmc.Divider(orientation=orientation,
                        label=label, labelPosition=position,
-                       m=margin, w=w)
+                       m=margin, w=w, color=color)
 
 
 def header_divider() -> dmc.Divider:
