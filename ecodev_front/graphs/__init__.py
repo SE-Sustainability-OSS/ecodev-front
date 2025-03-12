@@ -10,7 +10,13 @@ from ecodev_front.graphs.scatter import scatter
 from ecodev_front.graphs.subplots import subplots
 from ecodev_front.graphs.subplots import subplots_y_axis_labels
 from ecodev_front.graphs.sunburst import get_formatted_data_sunburst
+from ecodev_front.graphs.sankey import create_graph_from_columns
+from ecodev_front.graphs.sankey import get_sankey_from_graph
+from ecodev_front.graphs.sankey import GraphConf
+
 
 __all__ = ['bar_chart', 'graph_box', 'hide_duplicate_legends', 'apply_fig_layout', 'BOTTOM_LEGEND',
            'HORIZONTAL_CENTERED_LEGEND', 'pie_chart', 'scatter', 'subplots',
-           'subplots_y_axis_labels', 'get_formatted_data_sunburst', 'VERTICAL_CENTERED_LEGEND']
+           'subplots_y_axis_labels', 'get_formatted_data_sunburst', 'VERTICAL_CENTERED_LEGEND',
+           'create_graph_from_columns', 'get_sankey_from_graph', 'GraphConf',
+           ]

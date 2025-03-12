@@ -1,5 +1,6 @@
 dash==2.*
 dash-ag-grid==2.*
 dash-iconify==0.*
+networkx==3.*
 dash-mantine-components==0.14.6
 plotly==5.*
