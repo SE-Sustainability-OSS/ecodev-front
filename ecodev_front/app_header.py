@@ -8,7 +8,9 @@ from dash import html
 from pydantic_settings import BaseSettings
 from pydantic_settings import SettingsConfigDict
 
+from ecodev_front.icon import dash_icon
 from ecodev_front.constants import MAIN_PAGE_URL
+from ecodev_front.ids import HOME_BUTTON
 from ecodev_front.login import login
 
 HEADER_DIVIDER = dmc.Divider(orientation='vertical', m=5)
@@ -72,19 +74,20 @@ def header_app_pages(action_items: List[html.Div]) -> dmc.Group:
 def header_logo(app_name: str | None = None,
                 logo_path: str = '/assets/logo.png',
                 ratio: float = 570 / 128,
-                width: str = '120px',
-                style: dict[str, str] | None = None) -> dmc.Anchor:
+                width: int | str = 60,
+                style: dict[str, str] | None = None) -> dmc.Group:
     """
     Application header, composed of an app logo and title components.
     """
-    return dmc.Anchor(href=MAIN_PAGE_URL,
-                      children=[dmc.Group([app_logo(logo_path, ratio, width, style),
-                                           app_title(app_name)])])
+    return
+
+
+
 
 
 def app_logo(logo_path: str = '/assets/logo.png',
              ratio: float = 570 / 128,
-             width: str = '120px',
+             width: int | str = 60,
              style: dict[str, str] | None = None
              ) -> dmc.AspectRatio:
     """
@@ -98,4 +101,4 @@ def app_title(app_name: str | None = None, color='white') -> dmc.Title:
     """
     Application title component.
     """
-    return dmc.Title(app_name or APP_NAME, c=color, fz=32)
+    return dmc.Text(app_name or APP_NAME, c=color, fz=25, fw=700, fs='normal')

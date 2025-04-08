@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-from ecodev_front import dash_icon
+from ecodev_front.icon import dash_icon
 
 
 def button(id: str | dict,

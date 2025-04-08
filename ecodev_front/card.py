@@ -7,7 +7,7 @@ from typing import Optional
 import dash_mantine_components as dmc
 from dash import html
 
-from ecodev_front import dash_icon
+from ecodev_front.icon import dash_icon
 
 DEFAULT_STYLE = {
     'position': 'flex',

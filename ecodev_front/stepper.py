@@ -23,7 +23,8 @@ def vertical_stepper(id: str,
         color=color,
         children=steps,
         style=style,
-        allowNextStepsSelect=allow_next_steps_select
+        allowNextStepsSelect=allow_next_steps_select,
+        radius='lg',
     )
 
 
@@ -37,14 +38,14 @@ def stepper_step(label: str,
     Returns a stepper step with redirecting icons, if provided with an href.
     """
     icon = DashIconify(icon=icon, width=22)
-    active_step = dmc.Anchor(icon, href=href, c='#495057', inline=True) if href else icon
+    active_step = dmc.Anchor(icon, href=href, c='#0066a1', inline=True) if href else icon
     completed_step = dmc.Anchor(icon, href=href, c='white', inline=True) if href else icon
 
     return dmc.StepperStep(
         label=dmc.NavLink(label=label, description=description, href=href,
-                          rightSection=None, active=False, style={'margin-top': '-10px'}),
+                          active=False),
         icon=active_step,
         completedIcon=completed_step,
         allowStepClick=allow_step_click,
-        fz=18
+        fz=18,
     )

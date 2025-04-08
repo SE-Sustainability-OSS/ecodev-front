@@ -11,9 +11,11 @@ def stack(children: Any,
           gap: str | int = 'md',
           width: int | str = '100%',
           align: str = 'stretch',
+          style: dict | None = None,
+          padding: int = 0
           ) -> dmc.Stack:
     """
     Renders a dmc.Stack component that encapsulates a page
     """
     return dmc.Stack(children=children, align=align, justify='flex-end', gap=gap, id=id,
-                     w=width)
+                     w=width, style=style, p=padding)
