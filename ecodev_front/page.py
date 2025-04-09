@@ -85,24 +85,6 @@ class Page(Frozen):
         module_name = Path(self.file).stem.split('.')[-2].split('_')[-1]
         return f'/{module_name}/{self.name}'
 
-    def register(self, file: str) -> None:
-        """
-        Registers the page with Dash
-        """
-        register_page(
-            module=file,
-            path=self.url,
-            title=self.title,
-            layout=self.base_layout
-        )
-
-    @property
-    def base_layout(self) -> list[dmc.Stack]:
-        """
-        Returns a basic layout for the page.
-        """
-        return [page_layout(self.id, self.title, self.icon, self.description)]
-
     @property
     def stepper_step(self) -> dmc.StepperStep:
         return stepper_step(
