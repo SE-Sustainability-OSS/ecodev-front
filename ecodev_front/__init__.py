@@ -62,6 +62,7 @@ from ecodev_front.ids import LOGOUT_BTN_ID
 from ecodev_front.ids import MAIN_CONTENT_ID
 from ecodev_front.ids import NAVBAR
 from ecodev_front.ids import PAGE
+from ecodev_front.ids import PROJECT_HEADER_ID
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 from ecodev_front.loading_overlay import loading_overlay
@@ -79,6 +80,9 @@ from ecodev_front.notifications import LOADING_ERROR_NOTIF_ID
 from ecodev_front.notifications import LOADING_INFO_NOTIF_ID
 from ecodev_front.notifications import SAVE_NOTIF_ID
 from ecodev_front.notifications import VALIDATION_NOTIF_ID
+from ecodev_front.page import Page
+from ecodev_front.page_header import page_header
+from ecodev_front.page_header import page_project_header
 from ecodev_front.report_value import report_value
 from ecodev_front.search_bar import search_bar
 from ecodev_front.segment_control import segmented_control
@@ -115,5 +119,6 @@ __all__ = [
     'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID',
     'VALIDATION_NOTIF_ID', 'LOADING_ERROR_NOTIF_ID', 'LOADING_INFO_NOTIF_ID', 'SAVE_NOTIF_ID',
     'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif',
-    'loading_overlay', 'accordion', 'accordion_item', 'drawer'
+    'loading_overlay', 'accordion', 'accordion_item', 'drawer', 'STEPPER_ID'
+    'Module', 'Page', 'page_header', 'page_project_header', 'PROJECT_HEADER_ID'
 ]
