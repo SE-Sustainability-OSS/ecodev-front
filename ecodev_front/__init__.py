@@ -68,6 +68,7 @@ from ecodev_front.ids import URL
 from ecodev_front.loading_overlay import loading_overlay
 from ecodev_front.login import login
 from ecodev_front.modal import modal
+from ecodev_front.module import Module
 from ecodev_front.nav_items import action_item
 from ecodev_front.nav_items import menu
 from ecodev_front.nav_items import menu_item
@@ -90,6 +91,7 @@ from ecodev_front.select import select
 from ecodev_front.shadow_box import shadow_box
 from ecodev_front.shadow_button import shadow_button
 from ecodev_front.stack import stack
+from ecodev_front.stepper import STEPPER_ID
 from ecodev_front.stepper import stepper_step
 from ecodev_front.stepper import vertical_stepper
 from ecodev_front.tables import custom_column_def
@@ -119,6 +121,6 @@ __all__ = [
     'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID',
     'VALIDATION_NOTIF_ID', 'LOADING_ERROR_NOTIF_ID', 'LOADING_INFO_NOTIF_ID', 'SAVE_NOTIF_ID',
     'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif',
-    'loading_overlay', 'accordion', 'accordion_item', 'drawer', 'STEPPER_ID'
-    'Module', 'Page', 'page_header', 'page_project_header', 'PROJECT_HEADER_ID'
+    'loading_overlay', 'accordion', 'accordion_item', 'drawer', 'STEPPER_ID',
+    'Module', 'Page', 'page_header', 'page_project_header', 'PROJECT_HEADER_ID',
 ]
