@@ -96,13 +96,8 @@ from ecodev_front.notifications import LOADING_INFO_NOTIF_ID
 from ecodev_front.notifications import SAVE_NOTIF_ID
 from ecodev_front.notifications import VALIDATION_NOTIF_ID
 from ecodev_front.page import Page
-<<<<<<< HEAD
 from ecodev_front.page_header import page_project_header
 from ecodev_front.page_header import page_title_header
-=======
-from ecodev_front.page_header import page_header
-from ecodev_front.page_header import page_project_header
->>>>>>> ed387bc (added pages and modules)
 from ecodev_front.report_value import report_value
 from ecodev_front.search_bar import search_bar
 from ecodev_front.segment_control import segmented_control
@@ -240,26 +235,4 @@ __all__ = [
     'sub_text',
     'text_header',
     'upload_box',
-=======
-    'CHILDREN', 'DATA', 'PATHNAME', 'N_CLICKS', 'VALUE', 'URL', 'TOKEN',
-    'HEADER_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID', 'LOGOUT_BTN_ID',
-    'LOGIN_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'NAVBAR', 'ASIDE',
-    'DISABLED', 'STYLE', 'PAGE', 'APPSHELL', 'ASIDE', 'NAVBAR', 'dash_base_layout',
-    'app_logo', 'app_title', 'header_logo', 'menu', 'data_table', 'header_divider',
-    'action_item', 'login', 'menu_item', 'upload_box', 'card_section',
-    'card_title', 'macro_info', 'number_formatting', 'background_card', 'search_bar',
-    'graph_box', 'footer_style', 'report_value', 'centered_div', 'pie_chart',
-    'app_footer', 'vertical_stepper', 'stepper_step', 'group', 'segmented_control',
-    'select', 'stack', 'text_header', 'sub_text', 'divider', 'kpi',
-    'shadow_box', 'shadow_button', 'navlink', 'get_magnitude', 'APP_NAME',
-    'custom_column_def', 'download_button', 'modal', 'BOTTOM_LEGEND', 'alert', 'DagColTypes',
-    'hide_duplicate_legends', 'scatter', 'subplots', 'subplots_y_axis_labels',
-    'HORIZONTAL_CENTERED_LEGEND', 'bar_chart', 'locale_fr_FR', 'apply_fig_layout',
-    'get_formatted_data_sunburst', 'container', 'button', 'NOTIFICATION_ID', 'dash_icon', 'ACTIVE',
-    'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID',
-    'VALIDATION_NOTIF_ID', 'LOADING_ERROR_NOTIF_ID', 'LOADING_INFO_NOTIF_ID', 'SAVE_NOTIF_ID',
-    'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif',
-    'loading_overlay', 'accordion', 'accordion_item', 'drawer', 'STEPPER_ID'
-    'Module', 'Page', 'page_header', 'page_project_header', 'PROJECT_HEADER_ID'
->>>>>>> ed387bc (added pages and modules)
 ]
