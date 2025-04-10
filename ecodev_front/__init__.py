@@ -117,7 +117,6 @@ from ecodev_front.text import text_header
 from ecodev_front.upload_box import upload_box
 
 __all__ = [
-<<<<<<< HEAD
     'accordion',
     'accordion_item',
     'alert',
