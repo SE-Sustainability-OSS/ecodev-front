@@ -1,10 +1,11 @@
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
+
+from ecodev_front.icon import dash_icon
 
 
-def button(id: str,
+def button(id: str | dict,
            text: str,
-           icon: DashIconify,
+           icon: str,
            variant: str = 'filled',
            color: str = 'default-color',
            full_width: bool = True,
@@ -24,7 +25,7 @@ def button(id: str,
         id=id,
         color=color,
         variant=variant,
-        leftSection=icon,
+        leftSection=dash_icon(icon),
         fullWidth=full_width,
         w=w
     )

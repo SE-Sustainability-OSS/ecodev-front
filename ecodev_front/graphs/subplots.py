@@ -13,7 +13,8 @@ def subplots(rows: int,
              row_titles: List[str] | None = None,
              subplot_titles: List[str] | None = None,
              specs: List | None = None,
-             vertical_spacing: float = 0.05) -> go.Figure:
+             vertical_spacing: float = 0.05,
+             row_heights: list[int] | None = None) -> go.Figure:
     """
     Function to create subplots
     - rows: number of rows
@@ -32,7 +33,8 @@ def subplots(rows: int,
                          row_titles=row_titles,
                          subplot_titles=subplot_titles,
                          specs=specs,
-                         vertical_spacing=vertical_spacing)
+                         vertical_spacing=vertical_spacing,
+                         row_heights=row_heights)
 
 
 def subplots_y_axis_labels(fig: go.Figure,

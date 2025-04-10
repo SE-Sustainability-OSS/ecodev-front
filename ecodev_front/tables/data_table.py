@@ -42,7 +42,8 @@ def data_table(id: str,
                row_style: dict | None = None,
                dash_grid_options: dict | None = None,
                pagination: bool = False,
-               pagination_page_size: int = 5
+               pagination_page_size: int = 5,
+               tree_table: bool = False,
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
@@ -83,8 +84,17 @@ def data_table(id: str,
         # Enables pagination
         'pagination': pagination,
         'paginationPageSize': pagination_page_size,
-
     }
+
+    if tree_table:
+        dash_grid_options |= {'autoGroupColumnDef': {
+            'cellRendererParams': {
+                'suppressCount': True,
+            },
+            'getDataPath': {'function': 'getDataPath(params)'},
+            'treeData': True,
+            'rowSelection': 'single'
+        }}
 
     return dag.AgGrid(
         id=id,

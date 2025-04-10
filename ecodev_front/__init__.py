@@ -1,9 +1,10 @@
+from ecodev_front.accordion import accordion
+from ecodev_front.accordion import accordion_item
 from ecodev_front.alert import alert
-from ecodev_front.app_header import app_logo
-from ecodev_front.app_header import APP_NAME
-from ecodev_front.app_header import app_title
-from ecodev_front.app_header import header_logo
 from ecodev_front.app_layout import dash_base_layout
+from ecodev_front.app_logo import app_logo
+from ecodev_front.app_title import APP_NAME
+from ecodev_front.app_title import app_title
 from ecodev_front.button import button
 from ecodev_front.card import background_card
 from ecodev_front.card import card_section
@@ -33,6 +34,7 @@ from ecodev_front.div import centered_div
 from ecodev_front.divider import divider
 from ecodev_front.divider import header_divider
 from ecodev_front.download_button import download_button
+from ecodev_front.drawer import drawer
 from ecodev_front.footer import app_footer
 from ecodev_front.footer import footer_style
 from ecodev_front.graphs import apply_fig_layout
@@ -47,7 +49,7 @@ from ecodev_front.graphs import scatter
 from ecodev_front.graphs import subplots
 from ecodev_front.graphs import subplots_y_axis_labels
 from ecodev_front.group import group
-from ecodev_front.icon import icon
+from ecodev_front.icon import dash_icon
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
 from ecodev_front.ids import FOOTER_ID
@@ -59,14 +61,29 @@ from ecodev_front.ids import LOGOUT_BTN_ID
 from ecodev_front.ids import MAIN_CONTENT_ID
 from ecodev_front.ids import NAVBAR
 from ecodev_front.ids import PAGE
+from ecodev_front.ids import PROJECT_HEADER_ID
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
+from ecodev_front.loading_overlay import loading_overlay
 from ecodev_front.login import login
 from ecodev_front.modal import modal
+from ecodev_front.module import Module
 from ecodev_front.nav_items import action_item
 from ecodev_front.nav_items import menu
 from ecodev_front.nav_items import menu_item
+from ecodev_front.navbar import navbar
 from ecodev_front.navlink import navlink
+from ecodev_front.notifications import get_complete_notif
+from ecodev_front.notifications import get_error_notif
+from ecodev_front.notifications import get_info_notif
+from ecodev_front.notifications import get_launch_notif
+from ecodev_front.notifications import LOADING_ERROR_NOTIF_ID
+from ecodev_front.notifications import LOADING_INFO_NOTIF_ID
+from ecodev_front.notifications import SAVE_NOTIF_ID
+from ecodev_front.notifications import VALIDATION_NOTIF_ID
+from ecodev_front.page import Page
+from ecodev_front.page_header import page_project_header
+from ecodev_front.page_header import page_title_header
 from ecodev_front.report_value import report_value
 from ecodev_front.search_bar import search_bar
 from ecodev_front.segment_control import segmented_control
@@ -74,6 +91,7 @@ from ecodev_front.select import select
 from ecodev_front.shadow_box import shadow_box
 from ecodev_front.shadow_button import shadow_button
 from ecodev_front.stack import stack
+from ecodev_front.stepper import STEPPER_ID
 from ecodev_front.stepper import stepper_step
 from ecodev_front.stepper import vertical_stepper
 from ecodev_front.tables import custom_column_def
@@ -83,32 +101,26 @@ from ecodev_front.tables import locale_fr_FR
 from ecodev_front.text import sub_text
 from ecodev_front.text import text_header
 from ecodev_front.upload_box import upload_box
-from ecodev_front.notifications import VALIDATION_NOTIF_ID
-from ecodev_front.notifications import LOADING_ERROR_NOTIF_ID
-from ecodev_front.notifications import LOADING_INFO_NOTIF_ID
-from ecodev_front.notifications import SAVE_NOTIF_ID
-from ecodev_front.notifications import get_launch_notif
-from ecodev_front.notifications import get_complete_notif
-from ecodev_front.notifications import get_error_notif
-from ecodev_front.notifications import get_info_notif
 
 __all__ = [
     'CHILDREN', 'DATA', 'PATHNAME', 'N_CLICKS', 'VALUE', 'URL', 'TOKEN',
     'HEADER_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID', 'LOGOUT_BTN_ID',
     'LOGIN_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'NAVBAR', 'ASIDE',
     'DISABLED', 'STYLE', 'PAGE', 'APPSHELL', 'ASIDE', 'NAVBAR', 'dash_base_layout',
-    'app_logo', 'app_title', 'header_logo', 'menu', 'data_table', 'header_divider',
+    'app_logo', 'app_title', 'menu', 'data_table', 'header_divider',
     'action_item', 'login', 'menu_item', 'upload_box', 'card_section',
     'card_title', 'macro_info', 'number_formatting', 'background_card', 'search_bar',
     'graph_box', 'footer_style', 'report_value', 'centered_div', 'pie_chart',
     'app_footer', 'vertical_stepper', 'stepper_step', 'group', 'segmented_control',
-    'select', 'stack', 'text_header', 'sub_text', 'divider', 'kpi',
+    'select', 'stack', 'text_header', 'sub_text', 'divider', 'kpi', 'navbar',
     'shadow_box', 'shadow_button', 'navlink', 'get_magnitude', 'APP_NAME',
     'custom_column_def', 'download_button', 'modal', 'BOTTOM_LEGEND', 'alert', 'DagColTypes',
     'hide_duplicate_legends', 'scatter', 'subplots', 'subplots_y_axis_labels',
     'HORIZONTAL_CENTERED_LEGEND', 'bar_chart', 'locale_fr_FR', 'apply_fig_layout',
-    'get_formatted_data_sunburst', 'container', 'button', 'NOTIFICATION_ID', 'icon', 'ACTIVE',
+    'get_formatted_data_sunburst', 'container', 'button', 'NOTIFICATION_ID', 'dash_icon', 'ACTIVE',
     'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID',
     'VALIDATION_NOTIF_ID', 'LOADING_ERROR_NOTIF_ID', 'LOADING_INFO_NOTIF_ID', 'SAVE_NOTIF_ID',
-    'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif'
+    'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif',
+    'loading_overlay', 'accordion', 'accordion_item', 'drawer', 'STEPPER_ID',
+    'Module', 'Page', 'page_title_header', 'page_project_header', 'PROJECT_HEADER_ID',
 ]
