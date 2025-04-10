@@ -6,7 +6,7 @@ from pathlib import Path
 from dash import register_page
 from ecodev_core import Frozen
 
-from ecodev_front.page_header import page_header
+from ecodev_front.page_layout import page_layout
 from ecodev_front.stepper import stepper_step
 
 
@@ -41,7 +41,7 @@ class Page(Frozen):
         """
         Returns a basic layout for the page.
         """
-        return [page_header(self.id, self.title, self.icon, self.description)]
+        return [page_layout(self.id, self.title, self.icon, self.description)]
 
     def register(self, file: str):
         """

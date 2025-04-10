@@ -72,6 +72,7 @@ from ecodev_front.module import Module
 from ecodev_front.nav_items import action_item
 from ecodev_front.nav_items import menu
 from ecodev_front.nav_items import menu_item
+from ecodev_front.navbar import navbar
 from ecodev_front.navlink import navlink
 from ecodev_front.notifications import get_complete_notif
 from ecodev_front.notifications import get_error_notif
@@ -82,8 +83,8 @@ from ecodev_front.notifications import LOADING_INFO_NOTIF_ID
 from ecodev_front.notifications import SAVE_NOTIF_ID
 from ecodev_front.notifications import VALIDATION_NOTIF_ID
 from ecodev_front.page import Page
-from ecodev_front.page_header import page_header
 from ecodev_front.page_header import page_project_header
+from ecodev_front.page_header import page_title_header
 from ecodev_front.report_value import report_value
 from ecodev_front.search_bar import search_bar
 from ecodev_front.segment_control import segmented_control
@@ -112,7 +113,7 @@ __all__ = [
     'card_title', 'macro_info', 'number_formatting', 'background_card', 'search_bar',
     'graph_box', 'footer_style', 'report_value', 'centered_div', 'pie_chart',
     'app_footer', 'vertical_stepper', 'stepper_step', 'group', 'segmented_control',
-    'select', 'stack', 'text_header', 'sub_text', 'divider', 'kpi',
+    'select', 'stack', 'text_header', 'sub_text', 'divider', 'kpi', 'navbar',
     'shadow_box', 'shadow_button', 'navlink', 'get_magnitude', 'APP_NAME',
     'custom_column_def', 'download_button', 'modal', 'BOTTOM_LEGEND', 'alert', 'DagColTypes',
     'hide_duplicate_legends', 'scatter', 'subplots', 'subplots_y_axis_labels',
@@ -122,5 +123,5 @@ __all__ = [
     'VALIDATION_NOTIF_ID', 'LOADING_ERROR_NOTIF_ID', 'LOADING_INFO_NOTIF_ID', 'SAVE_NOTIF_ID',
     'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif',
     'loading_overlay', 'accordion', 'accordion_item', 'drawer', 'STEPPER_ID',
-    'Module', 'Page', 'page_header', 'page_project_header', 'PROJECT_HEADER_ID',
+    'Module', 'Page', 'page_title_header', 'page_project_header', 'PROJECT_HEADER_ID',
 ]
