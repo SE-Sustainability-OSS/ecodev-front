@@ -28,9 +28,9 @@ def page_header(page_id: str,
                         style={'backgroundColor': icon_color,
                                'borderRadius': '8px', 'padding': '7px'}),
                 dmc.Stack([
-                    dmc.Title(title, fz=18, c=color, fw=700),
-                    dmc.Text(description, fz=16, fs='italic', c='dimmed', truncate=True)
-                ], gap=0)
+                    dmc.Title(title, fz=18, c=color, fw=700, ta='left'),
+                    dmc.Text(description, fz=16, fs='italic', c='dimmed', truncate=True, ta='left')
+                ], gap=0, w='90%')
             ], w='60%'),
             dmc.Group([
                 dmc.Divider(orientation='vertical', size=2, mr=10),

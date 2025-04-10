@@ -1,6 +1,8 @@
 """
 Module implementing a generic page object to be used throughout the app
 """
+from pathlib import Path
+
 from dash import register_page
 from ecodev_core import Frozen
 
@@ -12,8 +14,7 @@ class Page(Frozen):
     """
     Class representing an application page.
     """
-    id: str
-    url: str
+    file: str
 
     name: str
     icon: str
@@ -23,6 +24,17 @@ class Page(Frozen):
 
     protected: bool = True
     admin: bool = False
+
+    @property
+    def id(self):
+        module_name = Path(self.file).stem.split('.')[-2].replace('_', '-')
+        page_name = Path(self.file).stem.split('.')[-1].replace('_', '-')
+        return f'{module_name}-{page_name}'
+
+    @property
+    def url(self):
+        module_name = Path(self.file).stem.split('.')[-2].split('_')[-1]
+        return f'/{module_name}/{self.name}'
 
     @property
     def base_layout(self):
