@@ -1,11 +1,10 @@
 from ecodev_front.accordion import accordion
 from ecodev_front.accordion import accordion_item
 from ecodev_front.alert import alert
-from ecodev_front.app_header import app_logo
-from ecodev_front.app_header import APP_NAME
-from ecodev_front.app_header import app_title
-from ecodev_front.app_header import header_logo
 from ecodev_front.app_layout import dash_base_layout
+from ecodev_front.app_logo import app_logo
+from ecodev_front.app_title import APP_NAME
+from ecodev_front.app_title import app_title
 from ecodev_front.button import button
 from ecodev_front.card import background_card
 from ecodev_front.card import card_section
@@ -108,7 +107,7 @@ __all__ = [
     'HEADER_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID', 'LOGOUT_BTN_ID',
     'LOGIN_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'NAVBAR', 'ASIDE',
     'DISABLED', 'STYLE', 'PAGE', 'APPSHELL', 'ASIDE', 'NAVBAR', 'dash_base_layout',
-    'app_logo', 'app_title', 'header_logo', 'menu', 'data_table', 'header_divider',
+    'app_logo', 'app_title', 'menu', 'data_table', 'header_divider',
     'action_item', 'login', 'menu_item', 'upload_box', 'card_section',
     'card_title', 'macro_info', 'number_formatting', 'background_card', 'search_bar',
     'graph_box', 'footer_style', 'report_value', 'centered_div', 'pie_chart',
