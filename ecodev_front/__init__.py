@@ -5,6 +5,7 @@ from ecodev_front.app_layout import dash_base_layout
 from ecodev_front.app_logo import app_logo
 from ecodev_front.app_title import APP_NAME
 from ecodev_front.app_title import app_title
+from ecodev_front.aside_buttons import aside_buttons, OPEN_ASIDE_BTN_ID, CLOSE_ASIDE_BTN_ID, HIDE, SHOW
 from ecodev_front.button import button
 from ecodev_front.card import background_card
 from ecodev_front.card import card_section
@@ -98,6 +99,9 @@ from ecodev_front.notifications import VALIDATION_NOTIF_ID
 from ecodev_front.page import Page
 from ecodev_front.page_header import page_project_header
 from ecodev_front.page_header import page_title_header
+from ecodev_front.page_layout import basic_layout
+from ecodev_front.page_layout import header_layout
+from ecodev_front.add_page import add_page
 from ecodev_front.report_value import report_value
 from ecodev_front.search_bar import search_bar
 from ecodev_front.segment_control import segmented_control
@@ -112,6 +116,8 @@ from ecodev_front.tables import custom_column_def
 from ecodev_front.tables import DagColTypes
 from ecodev_front.tables import data_table
 from ecodev_front.tables import locale_fr_FR
+from ecodev_front.text import app_name_header, page_header, header_subtitle
+from ecodev_front.text import section_header
 from ecodev_front.text import sub_text
 from ecodev_front.text import text_header
 from ecodev_front.upload_box import upload_box

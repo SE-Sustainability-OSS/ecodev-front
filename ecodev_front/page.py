@@ -2,12 +2,11 @@
 Module implementing a generic page object to be used throughout the app
 """
 from pathlib import Path
+from typing import Callable
 
 import dash_mantine_components as dmc
-from dash import register_page
 from ecodev_core import Frozen
 
-from ecodev_front.page_layout import page_layout
 from ecodev_front.stepper import stepper_step
 
 
@@ -49,41 +48,33 @@ class Page(Frozen):
     url: str
         The page's url, derived from the module and page directory name.
 
-
-    base_layout: list[dmc.Stack]
-        Returns a base layout for the page, with a page title header, project header placeholder
-        and page content placeholder.
-
     stepper_step: dmc.StepperStep
         Returns a stepper step for the page, to be used in the module navbar.
-
-    Methods
-    ---------
-    register(file: str)
-        Registers the page with Dash.
-
     """
-    file: str
+    module: str
 
     name: str
     icon: str
-
     title: str
-    description: str = ''
+    description: str
+    
+    layout: Callable
+    aside: Callable | None = None
 
     protected: bool = True
     admin: bool = False
 
     @property
     def id(self) -> str:
-        module_name = Path(self.file).stem.split('.')[-2].replace('_', '-')
-        page_name = Path(self.file).stem.split('.')[-1].replace('_', '-')
-        return f'{module_name}-{page_name}'
+        module_name = Path(self.module).stem.split('.')[-2].replace('_', '-')
+        page_name = Path(self.module).stem.split('.')[-1].replace('_', '-')
+        return f'{module_name}-{page_name}-id'
 
     @property
     def url(self) -> str:
-        module_name = Path(self.file).stem.split('.')[-2].split('_')[-1]
-        return f'/{module_name}/{self.name}'
+        module_name = Path(self.module).stem.split('.')[-2].split('_')[-1]
+        page_name = Path(self.module).stem.split('.')[-1].split('page_')[-1].replace('_', '-')
+        return f'/{module_name}/{page_name}'
 
     @property
     def stepper_step(self) -> dmc.StepperStep:
@@ -93,3 +84,7 @@ class Page(Frozen):
             icon=self.icon,
             href=self.url,
         )
+        
+    @property
+    def render_layout(self) -> dmc.Box:
+        return self.layout(self)
