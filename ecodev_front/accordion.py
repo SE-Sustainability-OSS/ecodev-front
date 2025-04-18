@@ -30,8 +30,9 @@ def accordion_item(id: str,
                    icon: str,
                    color: str,
                    text: str,
-                   num_securities: int,
-                   content: Any):
+                   content: Any,
+                   display_num: int | None = None) -> dmc.AccordionItem:
+
     """
     Returns an accordion item
     """
@@ -45,7 +46,7 @@ def accordion_item(id: str,
                                                                  style={'color': 'gray',
                                                                         'fontWeight': 650}))],
                                              justify='left', gap='xs'),
-                                         dmc.Kbd(num_securities, fz=14, c=color, mr=10),
+                                         dmc.Kbd(display_num, fz=14, c=color, mr=10) if display_num else None,
                                      ], justify='space-between')),
                                  dmc.AccordionPanel(content)
                              ])

@@ -49,7 +49,7 @@ def stepper_step(label: str,
 
     return dmc.StepperStep(
         label=dmc.NavLink(label=label, description=description, href=href,
-                          rightSection=None, active=False),
+                          active=False),
         icon=active_step,
         completedIcon=completed_step,
         allowStepClick=allow_step_click,

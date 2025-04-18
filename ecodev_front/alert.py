@@ -21,6 +21,6 @@ def alert(title: str,
         title=title,
         children=message,
         color=color,
-        width=width,
+        w=width,
         style=style or {}
     )

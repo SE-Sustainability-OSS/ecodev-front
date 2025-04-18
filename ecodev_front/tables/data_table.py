@@ -32,7 +32,7 @@ class DashAgGridEnterprise(BaseSettings):
 DAG_ENTERPRISE_AUTH = DashAgGridEnterprise()
 
 
-def data_table(id: str,
+def data_table(id: str | dict,
                row_data: Union[List[Dict], Any],
                column_defs: list[dict[Any, Any]] | None = None,
                default_col_def: dict | None = None,
@@ -107,7 +107,7 @@ def data_table(id: str,
         getRowStyle=row_style,
         columnSize='responsiveSizeToFit',
         dashGridOptions=dash_grid_options,
-        className='ag-theme-material',
+        className='ag-theme-material'
     )
 
 
