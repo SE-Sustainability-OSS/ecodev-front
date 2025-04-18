@@ -12,35 +12,35 @@ from ecodev_front.card import card_title
 from ecodev_front.card import kpi
 from ecodev_front.card import macro_info
 from ecodev_front.constants import ACTIVE
+from ecodev_front.constants import ALLOW_STEP_CLICK
+from ecodev_front.constants import CELL_CLICKED
+from ecodev_front.constants import CHECKED
 from ecodev_front.constants import CHILDREN
+from ecodev_front.constants import CLICK_DATA
+from ecodev_front.constants import COL_ID
 from ecodev_front.constants import CONTENTS
 from ecodev_front.constants import DATA
 from ecodev_front.constants import DISABLED
+from ecodev_front.constants import ERROR
+from ecodev_front.constants import FIGURE
+from ecodev_front.constants import HIDDEN
 from ecodev_front.constants import ID
 from ecodev_front.constants import INDEX
+from ecodev_front.constants import LABEL
+from ecodev_front.constants import LOADING
 from ecodev_front.constants import LOCAL
 from ecodev_front.constants import N_CLICKS
 from ecodev_front.constants import NOTIFICATION_ID
 from ecodev_front.constants import OPENED
+from ecodev_front.constants import OPTIONS
 from ecodev_front.constants import PATHNAME
+from ecodev_front.constants import REQUIRED
+from ecodev_front.constants import ROW_DATA
+from ecodev_front.constants import ROW_ID
+from ecodev_front.constants import STEPS
 from ecodev_front.constants import STYLE
 from ecodev_front.constants import TYPE
 from ecodev_front.constants import VALUE
-from ecodev_front.constants import FIGURE
-from ecodev_front.constants import HIDDEN
-from ecodev_front.constants import ROW_DATA
-from ecodev_front.constants import ROW_ID
-from ecodev_front.constants import CELL_CLICKED
-from ecodev_front.constants import CLICK_DATA
-from ecodev_front.constants import ERROR
-from ecodev_front.constants import COL_ID
-from ecodev_front.constants import LOADING
-from ecodev_front.constants import CHECKED
-from ecodev_front.constants import ALLOW_STEP_CLICK
-from ecodev_front.constants import STEPS
-from ecodev_front.constants import LABEL
-from ecodev_front.constants import OPTIONS
-from ecodev_front.constants import REQUIRED
 from ecodev_front.container import container
 from ecodev_front.display_utils import get_magnitude
 from ecodev_front.display_utils import number_formatting
@@ -117,26 +117,121 @@ from ecodev_front.text import text_header
 from ecodev_front.upload_box import upload_box
 
 __all__ = [
-    'CHILDREN', 'DATA', 'PATHNAME', 'N_CLICKS', 'VALUE', 'URL', 'TOKEN',
-    'HEADER_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID', 'LOGOUT_BTN_ID',
-    'LOGIN_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'NAVBAR', 'ASIDE',
-    'DISABLED', 'STYLE', 'PAGE', 'APPSHELL', 'ASIDE', 'NAVBAR', 'dash_base_layout',
-    'app_logo', 'app_title', 'menu', 'data_table', 'header_divider',
-    'action_item', 'login', 'menu_item', 'upload_box', 'card_section',
-    'card_title', 'macro_info', 'number_formatting', 'background_card', 'search_bar',
-    'graph_box', 'footer_style', 'report_value', 'centered_div', 'pie_chart',
-    'app_footer', 'vertical_stepper', 'stepper_step', 'group', 'segmented_control',
-    'select', 'stack', 'text_header', 'sub_text', 'divider', 'kpi', 'navbar',
-    'shadow_box', 'shadow_button', 'navlink', 'get_magnitude', 'APP_NAME',
-    'custom_column_def', 'download_button', 'modal', 'BOTTOM_LEGEND', 'alert', 'DagColTypes',
-    'hide_duplicate_legends', 'scatter', 'subplots', 'subplots_y_axis_labels',
-    'HORIZONTAL_CENTERED_LEGEND', 'bar_chart', 'locale_fr_FR', 'apply_fig_layout',
-    'get_formatted_data_sunburst', 'container', 'button', 'NOTIFICATION_ID', 'dash_icon', 
-    'ACTIVE', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID', 'HIDDEN', 'FIGURE',
-    'ROW_DATA', 'ROW_ID', 'COL_ID', 'CELL_CLICKED', 'CLICK_DATA', 'CHECKED', 'ERROR', 
-    'LOADING', 'ALLOW_STEP_CLICK', 'STEPS', 'LABEL', 'OPTIONS', 'REQUIRED',
-    'VALIDATION_NOTIF_ID', 'LOADING_ERROR_NOTIF_ID', 'LOADING_INFO_NOTIF_ID', 'SAVE_NOTIF_ID',
-    'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif',
-    'loading_overlay', 'accordion', 'accordion_item', 'drawer', 'STEPPER_ID',
-    'Module', 'Page', 'page_title_header', 'page_project_header', 'PROJECT_HEADER_ID',
+    'accordion',
+    'accordion_item',
+    'alert',
+    'dash_base_layout',
+    'app_logo',
+    'APP_NAME',
+    'app_title',
+    'button',
+    'background_card',
+    'card_section',
+    'card_title',
+    'kpi',
+    'macro_info',
+    'ACTIVE',
+    'ALLOW_STEP_CLICK',
+    'CELL_CLICKED',
+    'CHECKED',
+    'CHILDREN',
+    'CLICK_DATA',
+    'COL_ID',
+    'CONTENTS',
+    'DATA',
+    'DISABLED',
+    'ERROR',
+    'FIGURE',
+    'HIDDEN',
+    'ID',
+    'INDEX',
+    'LABEL',
+    'LOADING',
+    'LOCAL',
+    'N_CLICKS',
+    'NOTIFICATION_ID',
+    'OPENED',
+    'OPTIONS',
+    'PATHNAME',
+    'REQUIRED',
+    'ROW_DATA',
+    'ROW_ID',
+    'STEPS',
+    'STYLE',
+    'TYPE',
+    'VALUE',
+    'container',
+    'get_magnitude',
+    'number_formatting',
+    'centered_div',
+    'divider',
+    'header_divider',
+    'download_button',
+    'drawer',
+    'app_footer',
+    'footer_style',
+    'apply_fig_layout',
+    'bar_chart',
+    'BOTTOM_LEGEND',
+    'get_formatted_data_sunburst',
+    'graph_box',
+    'hide_duplicate_legends',
+    'HORIZONTAL_CENTERED_LEGEND',
+    'pie_chart',
+    'scatter',
+    'subplots',
+    'subplots_y_axis_labels',
+    'group',
+    'dash_icon',
+    'APPSHELL',
+    'ASIDE',
+    'FOOTER_ID',
+    'HEADER_ID',
+    'LOGIN_BTN_ID',
+    'LOGIN_PASSWORD_INPUT_ID',
+    'LOGIN_USERNAME_INPUT_ID',
+    'LOGOUT_BTN_ID',
+    'MAIN_CONTENT_ID',
+    'NAVBAR',
+    'PAGE',
+    'PROJECT_HEADER_ID',
+    'TOKEN',
+    'URL',
+    'loading_overlay',
+    'login',
+    'modal',
+    'Module',
+    'action_item',
+    'menu',
+    'menu_item',
+    'navbar',
+    'navlink',
+    'get_complete_notif',
+    'get_error_notif',
+    'get_info_notif',
+    'get_launch_notif',
+    'LOADING_ERROR_NOTIF_ID',
+    'LOADING_INFO_NOTIF_ID',
+    'SAVE_NOTIF_ID',
+    'VALIDATION_NOTIF_ID',
+    'Page',
+    'page_project_header',
+    'page_title_header',
+    'report_value',
+    'search_bar',
+    'segmented_control',
+    'select',
+    'shadow_box',
+    'shadow_button',
+    'stack',
+    'STEPPER_ID',
+    'stepper_step',
+    'vertical_stepper',
+    'custom_column_def',
+    'DagColTypes',
+    'data_table',
+    'locale_fr_FR',
+    'sub_text',
+    'text_header',
+    'upload_box',
 ]

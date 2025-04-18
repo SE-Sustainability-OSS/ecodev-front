@@ -47,7 +47,5 @@ def select(id: str | dict,
         return content
 
     return dmc.Stack([
-      dmc.Text(label_text, c=label_color, id=label_id), 
-      content], gap='xs', w='100%', id=stack_id)
-    )
-
+        dmc.Text(label_text, c=label_color, id=label_id),
+        content], gap='xs', w='100%', id=stack_id)
