@@ -32,6 +32,7 @@ def accordion_item(id: str,
                    text: str,
                    content: Any,
                    display_num: int | None = None) -> dmc.AccordionItem:
+
     """
     Returns an accordion item
     """

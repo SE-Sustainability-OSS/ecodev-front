@@ -6,9 +6,15 @@ from typing import Dict
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
+from ecodev_front.constants import INDEX
+from ecodev_front.constants import TYPE
+
+STEPPER_ID = 'stepper-id'
+
 
 def vertical_stepper(id: str,
                      steps: list[dmc.StepperStep],
+                     active_step: int = 0,
                      color: str = '#0066a1',
                      style: Dict | None = None,
                      allow_next_steps_select: bool = True
@@ -17,8 +23,8 @@ def vertical_stepper(id: str,
     Returns a vertical stepper.
     """
     return dmc.Stepper(
-        id=id,
-        active=0,
+        id={TYPE: STEPPER_ID, INDEX: id},
+        active=active_step,
         orientation='vertical',
         color=color,
         children=steps,
@@ -32,6 +38,7 @@ def stepper_step(label: str,
                  icon: str,
                  description: str | None = None,
                  href: str | None = None,
+                 allow_step_click: bool = True
                  ) -> dmc.StepperStep:
     """
     Returns a stepper step with redirecting icons, if provided with an href.
@@ -45,5 +52,6 @@ def stepper_step(label: str,
                           active=False),
         icon=active_step,
         completedIcon=completed_step,
-        fz=18
+        allowStepClick=allow_step_click,
+        fz=18,
     )

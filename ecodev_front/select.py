@@ -26,9 +26,8 @@ def select(id: str | dict,
            placeholder: str | None = None,
            ) -> dmc.Stack | dmc.Select:
     """
-   Simple select with sensible default parameters
+    Simple select with sensible default parameters
     """
-
     content = dmc.Select(
         id=id,
         value=value,
@@ -47,4 +46,8 @@ def select(id: str | dict,
     if not label_text:
         return content
 
-    return dmc.Stack([dmc.Text(label_text, c=label_color, id=label_id), content], gap='xs', w='100%', id=stack_id)
+    return dmc.Stack([
+      dmc.Text(label_text, c=label_color, id=label_id), 
+      content], gap='xs', w='100%', id=stack_id)
+    )
+

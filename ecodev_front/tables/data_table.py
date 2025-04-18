@@ -44,7 +44,6 @@ def data_table(id: str | dict,
                pagination: bool = False,
                pagination_page_size: int = 5,
                tree_table: bool = False,
-
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
