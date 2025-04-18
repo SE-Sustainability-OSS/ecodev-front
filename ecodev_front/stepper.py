@@ -32,7 +32,6 @@ def stepper_step(label: str,
                  icon: str,
                  description: str | None = None,
                  href: str | None = None,
-                 allow_step_click: bool = True
                  ) -> dmc.StepperStep:
     """
     Returns a stepper step with redirecting icons, if provided with an href.
@@ -46,6 +45,5 @@ def stepper_step(label: str,
                           active=False),
         icon=active_step,
         completedIcon=completed_step,
-        allowStepClick=allow_step_click,
-        fz=18,
+        fz=18
     )

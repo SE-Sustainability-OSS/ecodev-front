@@ -21,6 +21,13 @@ VISIBLE = 'visible'
 CHECKED = 'checked'
 ROW_ID = 'rowId'
 COL_ID = 'colId'
+ERROR = 'error'
+LOADING = 'loading'
+ALLOW_STEP_CLICK = 'allowStepClick'
+STEPS = 'steps'
+LABEL = 'label'
+OPTIONS = 'options'
+REQUIRED = 'required'
 
 """
 Table constants

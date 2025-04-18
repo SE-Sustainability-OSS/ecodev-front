@@ -38,11 +38,12 @@ packages = [{include = "ecodev_front"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-dash = "~2"
-dash-ag-grid = "~31.2"
+dash = "~3"
+dash-ag-grid = "~31"
 dash-iconify = "~0"
-dash-mantine-components = "0.14.6"
-plotly = "~5"
+dash-mantine-components = "~1"
+ecodev-core = "~0"
+plotly = "~6"
 
 
 [build-system]
