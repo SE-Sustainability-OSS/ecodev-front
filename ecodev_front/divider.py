@@ -9,7 +9,7 @@ def divider(orientation: str = 'horizontal',
             position: str = 'center',
             margin: int = 10,
             w: str | int = '',
-            color: str = 'default-color'
+            color: str = '#0066a1'
             ) -> dmc.Divider:
     """
     Renders a divider

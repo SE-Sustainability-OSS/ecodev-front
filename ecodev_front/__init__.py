@@ -32,6 +32,21 @@ from ecodev_front.container import container
 from ecodev_front.display_utils import get_magnitude
 from ecodev_front.display_utils import number_formatting
 from ecodev_front.div import centered_div
+from ecodev_front.constants import FIGURE
+from ecodev_front.constants import HIDDEN
+from ecodev_front.constants import ROW_DATA
+from ecodev_front.constants import ROW_ID
+from ecodev_front.constants import CELL_CLICKED
+from ecodev_front.constants import CLICK_DATA
+from ecodev_front.constants import ERROR
+from ecodev_front.constants import COL_ID
+from ecodev_front.constants import LOADING
+from ecodev_front.constants import CHECKED
+from ecodev_front.constants import ALLOW_STEP_CLICK
+from ecodev_front.constants import STEPS
+from ecodev_front.constants import LABEL
+from ecodev_front.constants import OPTIONS
+from ecodev_front.constants import REQUIRED
 from ecodev_front.divider import divider
 from ecodev_front.divider import header_divider
 from ecodev_front.download_button import download_button
@@ -112,7 +127,9 @@ __all__ = [
     'hide_duplicate_legends', 'scatter', 'subplots', 'subplots_y_axis_labels',
     'HORIZONTAL_CENTERED_LEGEND', 'bar_chart', 'locale_fr_FR', 'apply_fig_layout',
     'get_formatted_data_sunburst', 'container', 'button', 'NOTIFICATION_ID', 'dash_icon', 'ACTIVE',
-    'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID',
+    'CLICKDATA', 'LOCAL', 'OPENED', 'CONTENTS', 'TYPE', 'INDEX', 'ID', 'HIDDEN', 'FIGURE',
+    'ROW_DATA', 'ROW_ID', 'CELL_CLICKED', 'CLICK_DATA', 'CHECKED', 'ERROR', 'LOADING',
+    'ALLOW_STEP_CLICK', 'STEPS', 'LABEL', 'OPTIONS', 'REQUIRED',
     'VALIDATION_NOTIF_ID', 'LOADING_ERROR_NOTIF_ID', 'LOADING_INFO_NOTIF_ID', 'SAVE_NOTIF_ID',
     'get_launch_notif', 'get_complete_notif', 'get_error_notif', 'get_info_notif',
     'loading_overlay', 'accordion', 'accordion_item', 'drawer'

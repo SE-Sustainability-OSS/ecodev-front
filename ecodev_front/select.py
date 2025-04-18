@@ -29,7 +29,7 @@ def select(id: str | dict,
    Simple select with sensible default parameters
     """
 
-    content = [dmc.Select(
+    content = dmc.Select(
         id=id,
         value=value,
         data=data,
@@ -42,10 +42,9 @@ def select(id: str | dict,
         size=size,
         leftSection=dash_icon(left_section) if left_section else None,
         placeholder=placeholder
-    )]
+    )
 
     if not label_text:
-        return content[0]
+        return content
 
-    content = [dmc.Text(label_text, c=label_color, id=label_id)] + content
-    return dmc.Stack(content, gap='xs', w='100%', id=stack_id)
+    return dmc.Stack([dmc.Text(label_text, c=label_color, id=label_id), content], gap='xs', w='100%', id=stack_id)
