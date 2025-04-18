@@ -46,7 +46,7 @@ def card_title(title: str,
     content += component if isinstance(component, list) else [component]
     return card_section(
         dmc.Group(children=content,
-                  style={'backgroundColor': background_color, 'padding-right': '10px'},
+                  style={'backgroundColor': background_color},
                   justify=justify
                   )
     )

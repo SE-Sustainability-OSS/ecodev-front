@@ -1,6 +1,7 @@
 """
 Base app component, utilising dmc.AppShell.
 """
+from typing import Any
 import dash
 import dash_mantine_components as dmc
 from dash import dcc
@@ -17,9 +18,11 @@ from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 
 
+
+
 def dash_base_layout(stores: list[tuple[str, str]],
                      main_color: str = '#0066A1',
-                     colors: dict[str, list[str]] | None = None,
+                     theme: dict[str, dict[str, Any] | list[str]] | None = None,
                      header_height: int = 55,
                      footer_height: int = 40,
                      main_content_style: dict[str, str] | None = None
@@ -29,7 +32,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
     """
     return dmc.MantineProvider(
         forceColorScheme='light',
-        theme={'colors': colors} if colors else None,
+        theme=theme,#{'colors': colors} if colors else None,
         children=dmc.AppShell([
             dcc.Location(id=URL, refresh='callback-nav'),
             dcc.Store(id=TOKEN, data={TOKEN: None}, storage_type='local'),
@@ -46,8 +49,9 @@ def dash_base_layout(stores: list[tuple[str, str]],
 
             dmc.AppShellMain(
                 id=MAIN_CONTENT_ID,
-                children=html.Div(style={'width': '100%'}, children=dash.page_container),
-                style=main_content_style or {'width': '100%',
+                children=html.Div(style={'width': '100%'}, 
+                                  children=dash.page_container),
+                style=main_content_style or {'width': '100%', 
                                              'justifyContent': 'center',
                                              'display': 'flex'},
             ),
@@ -78,7 +82,10 @@ def dash_base_layout(stores: list[tuple[str, str]],
             )],
 
             id=APPSHELL,
-            style={'padding': '0', 'background-color': '#f2f2f2'},
+            style={'padding': '0', 
+                   'background-color': '#f2f2f2', 
+                   'overflow':'hidden', 
+                   'height':'96vh'},
             header={'height': header_height},
             footer={'height': footer_height},
             navbar={
