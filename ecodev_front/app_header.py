@@ -22,7 +22,7 @@ def app_header(header_logo: dmc.Anchor,
     return dmc.Group(
         children=[app_logo(), app_title(), header_app_pages(action_items), user_admin_settings],
         justify='space-between',
-        align='stretch',
+        align='center',
         style={
             'backgroundColor': '#0066A1',
             'color': 'white',

@@ -57,7 +57,7 @@ class Page(Frozen):
     icon: str
     title: str
     description: str
-    
+
     layout: Callable
     aside: Callable | None = None
 
@@ -65,16 +65,28 @@ class Page(Frozen):
     admin: bool = False
 
     @property
+    def module_name(self) -> str | None:
+        if (name := Path(self.module).stem.split('.')[-2].replace('_', '-')) == 'pages':
+            return None
+        return name
+
+    @property
+    def page_name(self) -> str:
+        return Path(self.module).stem.split('.')[-1].split('page_')[-1].replace('_', '-')
+
+    @property
     def id(self) -> str:
-        module_name = Path(self.module).stem.split('.')[-2].replace('_', '-')
-        page_name = Path(self.module).stem.split('.')[-1].replace('_', '-')
-        return f'{module_name}-{page_name}-id'
+        if self.module_name:
+            return f'{self.module_name}-{self.page_name}-id'
+        return f'{self.page_name}-id'
 
     @property
     def url(self) -> str:
-        module_name = Path(self.module).stem.split('.')[-2].split('_')[-1]
-        page_name = Path(self.module).stem.split('.')[-1].split('page_')[-1].replace('_', '-')
-        return f'/{module_name}/{page_name}'
+        if self.module_name:
+            return f'/{self.module_name}/{self.page_name}'
+        if self.page_name == 'main':
+            return '/'
+        return f'/{self.page_name}'
 
     @property
     def stepper_step(self) -> dmc.StepperStep:
@@ -84,7 +96,7 @@ class Page(Frozen):
             icon=self.icon,
             href=self.url,
         )
-        
+
     @property
     def render_layout(self) -> dmc.Box:
         return self.layout(self)
