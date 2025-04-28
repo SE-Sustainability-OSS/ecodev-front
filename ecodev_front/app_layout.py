@@ -21,7 +21,7 @@ from ecodev_front.ids import URL
 
 def dash_base_layout(stores: list[tuple[str, str]],
                      main_color: str = '#0066A1',
-                     colors: dict[str, dict[str, Any] | list[str]] | None = None,
+                     theme: dict[str, dict[str, Any] | list[str]] | None = None,
                      header_height: int = 55,
                      footer_height: int = 40,
                      main_content_style: dict[str, str] | None = None
@@ -31,7 +31,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
     """
     return dmc.MantineProvider(
         forceColorScheme='light',
-        theme={'colors': colors} if colors else None,
+        theme=theme,
         children=dmc.AppShell([
             dcc.Location(id=URL, refresh='callback-nav'),
             dcc.Store(id=TOKEN, data={TOKEN: None}, storage_type='local'),
@@ -69,7 +69,8 @@ def dash_base_layout(stores: list[tuple[str, str]],
                 children=[],
                 zIndex=90,
                 withBorder=True,
-                visibleFrom='md'
+                visibleFrom='md',
+                className='my-navbar'
             ),
 
             dmc.AppShellAside(
@@ -84,7 +85,7 @@ def dash_base_layout(stores: list[tuple[str, str]],
             style={'padding': '0',
                    'background-color': '#f2f2f2',
                    'overflow': 'hidden',
-                   'height': '96vh'},
+                   'height': '98vh'},
             header={'height': header_height},
             footer={'height': footer_height},
             navbar={

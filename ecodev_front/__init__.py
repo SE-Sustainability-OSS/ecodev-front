@@ -92,7 +92,9 @@ from ecodev_front.module import Module
 from ecodev_front.nav_items import action_item
 from ecodev_front.nav_items import menu
 from ecodev_front.nav_items import menu_item
-from ecodev_front.navbar import navbar
+from ecodev_front.navbar import icon_navbar
+from ecodev_front.navbar import stepper_navbar
+from ecodev_front.navbar_page_icon import navbar_page_icon
 from ecodev_front.navlink import navlink
 from ecodev_front.notifications import get_complete_notif
 from ecodev_front.notifications import get_error_notif
@@ -103,7 +105,6 @@ from ecodev_front.notifications import LOADING_INFO_NOTIF_ID
 from ecodev_front.notifications import SAVE_NOTIF_ID
 from ecodev_front.notifications import VALIDATION_NOTIF_ID
 from ecodev_front.page import Page
-from ecodev_front.page_header import page_header
 from ecodev_front.page_header import page_project_header
 from ecodev_front.page_header import page_title_header
 from ecodev_front.page_layout import basic_layout
@@ -124,7 +125,7 @@ from ecodev_front.tables import data_table
 from ecodev_front.tables import locale_fr_FR
 from ecodev_front.text import app_name_header
 from ecodev_front.text import header_subtitle
-from ecodev_front.text import page_header
+from ecodev_front.text import page_title
 from ecodev_front.text import section_header
 from ecodev_front.text import sub_text
 from ecodev_front.text import text_header
@@ -225,7 +226,9 @@ __all__ = [
     'action_item',
     'menu',
     'menu_item',
-    'navbar',
+    'navbar_page_icon',
+    'icon_navbar',
+    'stepper_navbar',
     'navlink',
     'get_complete_notif',
     'get_error_notif',
@@ -256,7 +259,7 @@ __all__ = [
     'locale_fr_FR',
     'app_name_header',
     'header_subtitle',
-    'page_header',
+    'page_title',
     'section_header',
     'sub_text',
     'text_header',

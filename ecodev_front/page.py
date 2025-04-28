@@ -5,8 +5,10 @@ from pathlib import Path
 from typing import Callable
 
 import dash_mantine_components as dmc
+from dash import register_page
 from ecodev_core import Frozen
 
+from ecodev_front.navbar_page_icon import navbar_page_icon
 from ecodev_front.stepper import stepper_step
 
 
@@ -97,6 +99,16 @@ class Page(Frozen):
             href=self.url,
         )
 
-    @property
-    def render_layout(self) -> dmc.Box:
-        return self.layout(self)
+    def navbar_icon(self, active) -> dmc.Anchor:
+        return navbar_page_icon(self.icon, self.title, self.url, active)
+
+    def register(self, *args, **kwargs):
+        """
+        Register the page in the app
+        """
+        register_page(
+            module=self.module,
+            path=self.url,
+            title=self.title,
+            layout=self.layout(self)
+        )
