@@ -19,7 +19,7 @@ from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 
 
-def dash_base_layout(stores: list[tuple[str, str]],
+def dash_base_layout(stores: list[dcc.Store],
                      main_color: str = '#0066A1',
                      theme: dict[str, dict[str, Any] | list[str]] | None = None,
                      header_height: int = 55,
@@ -35,11 +35,11 @@ def dash_base_layout(stores: list[tuple[str, str]],
         children=dmc.AppShell([
             dcc.Location(id=URL, refresh='callback-nav'),
             dcc.Store(id=TOKEN, data={TOKEN: None}, storage_type='local'),
-            *[dcc.Store(id=store_id, storage_type=storage_type)
-              for store_id, storage_type in stores],
+            *stores,
 
             html.Div(id=NOTIFICATION_ID),
-            dmc.NotificationProvider(position='top-left'),
+            dmc.NotificationProvider(position='top-center'),
+
             dmc.AppShellHeader(id=HEADER_ID,
                                style={'background-color': main_color},
                                zIndex=100,
