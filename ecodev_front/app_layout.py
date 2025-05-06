@@ -56,7 +56,7 @@ def dash_base_layout(stores: list[dcc.Store],
             ),
 
             dmc.AppShellFooter(id=FOOTER_ID, zIndex=100, children=[],
-                               style={'paddingBottom': '10px',
+                               style={'paddingBottom': '50px',
                                       'backgroundColor': main_color,
                                       'color': 'white',
                                       'textAlign': 'center',

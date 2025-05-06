@@ -1,6 +1,5 @@
 from ecodev_front.accordion import accordion
 from ecodev_front.accordion import accordion_item
-from ecodev_front.add_page import add_page
 from ecodev_front.alert import alert
 from ecodev_front.app_layout import dash_base_layout
 from ecodev_front.app_logo import app_logo
@@ -134,7 +133,6 @@ from ecodev_front.upload_box import upload_box
 __all__ = [
     'accordion',
     'accordion_item',
-    'add_page',
     'alert',
     'dash_base_layout',
     'app_logo',
