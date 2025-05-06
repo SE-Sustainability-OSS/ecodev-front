@@ -3,8 +3,8 @@ from ecodev_front.accordion import accordion_item
 from ecodev_front.alert import alert
 from ecodev_front.app_layout import dash_base_layout
 from ecodev_front.app_logo import app_logo
+from ecodev_front.app_title import app_header_name
 from ecodev_front.app_title import APP_NAME
-from ecodev_front.app_title import app_title
 from ecodev_front.aside_buttons import aside_buttons
 from ecodev_front.aside_buttons import CLOSE_ASIDE_BTN_ID
 from ecodev_front.aside_buttons import HIDE
@@ -65,6 +65,7 @@ from ecodev_front.graphs import graph_box
 from ecodev_front.graphs import hide_duplicate_legends
 from ecodev_front.graphs import HORIZONTAL_CENTERED_LEGEND
 from ecodev_front.graphs import pie_chart
+from ecodev_front.graphs import PLOTLY_TOOLS
 from ecodev_front.graphs import scatter
 from ecodev_front.graphs import subplots
 from ecodev_front.graphs import subplots_y_axis_labels
@@ -122,12 +123,12 @@ from ecodev_front.tables import custom_column_def
 from ecodev_front.tables import DagColTypes
 from ecodev_front.tables import data_table
 from ecodev_front.tables import locale_fr_FR
-from ecodev_front.text import app_name_header
-from ecodev_front.text import header_subtitle
+from ecodev_front.text import app_title
 from ecodev_front.text import page_title
-from ecodev_front.text import section_header
-from ecodev_front.text import sub_text
-from ecodev_front.text import text_header
+from ecodev_front.text import section_title
+from ecodev_front.text import subtext
+from ecodev_front.text import subtitle
+from ecodev_front.text import text_title
 from ecodev_front.upload_box import upload_box
 
 __all__ = [
@@ -137,7 +138,7 @@ __all__ = [
     'dash_base_layout',
     'app_logo',
     'APP_NAME',
-    'app_title',
+    'app_header_name',
     'aside_buttons',
     'CLOSE_ASIDE_BTN_ID',
     'OPEN_ASIDE_BTN_ID',
@@ -198,6 +199,7 @@ __all__ = [
     'hide_duplicate_legends',
     'HORIZONTAL_CENTERED_LEGEND',
     'pie_chart',
+    'PLOTLY_TOOLS',
     'scatter',
     'subplots',
     'subplots_y_axis_labels',
@@ -255,11 +257,11 @@ __all__ = [
     'DagColTypes',
     'data_table',
     'locale_fr_FR',
-    'app_name_header',
-    'header_subtitle',
+    'app_title',
+    'subtitle',
     'page_title',
-    'section_header',
-    'sub_text',
-    'text_header',
+    'section_title',
+    'subtext',
+    'text_title',
     'upload_box',
 ]

@@ -7,7 +7,7 @@ from dash_iconify import DashIconify
 from ecodev_front.divider import divider
 from ecodev_front.module import Module
 from ecodev_front.stepper import vertical_stepper
-from ecodev_front.text import section_header
+from ecodev_front.text import section_title
 
 
 def icon_navbar(module: Module,
@@ -52,7 +52,7 @@ def stepper_navbar(id: str,
     return dmc.Stack([
         dmc.Group([
             DashIconify(icon=icon, color='gray', width=28),
-            section_header(title, c='dimmed'),
+            section_title(title, c='dimmed'),
         ], align='center', mt=10, mb=10, gap=10),
         divider(margin=0, color='lightgray'),
         dmc.ScrollArea(
