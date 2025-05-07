@@ -85,7 +85,7 @@ def dash_base_layout(stores: list[dcc.Store],
             style={'padding': '0',
                    'background-color': '#f2f2f2',
                    'overflow': 'hidden',
-                   'height': '98vh'},
+                   'height': '96vh'},
             header={'height': header_height},
             footer={'height': footer_height},
             navbar={
