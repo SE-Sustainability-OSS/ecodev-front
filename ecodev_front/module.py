@@ -2,17 +2,17 @@
 Module implementing a generic module object to be used throughout the app
 """
 from pathlib import Path
+from typing import Callable
 
 import dash_mantine_components as dmc
 from dash import html
-from ecodev_core import Basic
+from ecodev_core import Frozen
 
 from ecodev_front.nav_items import action_item
-from ecodev_front.navbar import navbar
 from ecodev_front.page import Page
 
 
-class Module(Basic):
+class Module(Frozen):
     """
     Class representing an application module.
 
@@ -61,7 +61,8 @@ class Module(Basic):
     name: str
     icon: str
 
-    pages: list[Page] = []
+    pages: list[Page]
+    navbar_layout: Callable
 
     protected: bool = True
     admin: bool = False
@@ -86,14 +87,8 @@ class Module(Basic):
             href=self.pages[0].url,
         )
 
-    def module_navbar(self, active_step: int = 0) -> dmc.Stack:
+    def render_navbar(self, active_page: int = 0) -> dmc.Stack:
         """
-        Returns a styled navbar for the module.
+        Renders the module's navbar from the navbar layout function provided.
         """
-        return navbar(
-            id=self.id,
-            name=self.name,
-            icon=self.icon,
-            steps=[page.stepper_step for page in self.pages],
-            active_step=active_step
-        )
+        return self.navbar_layout(self, active_page)

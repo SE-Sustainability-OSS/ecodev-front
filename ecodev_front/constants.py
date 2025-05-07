@@ -50,6 +50,7 @@ LOCAL_STORE = 'local'
 
 NOTIFICATION_ID = 'notification-id'
 MAIN_PAGE_URL = '/'
+LOGIN_PAGE_URL = '/login'
 
 """
 Unit Converters

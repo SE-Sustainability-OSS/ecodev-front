@@ -4,6 +4,8 @@ Module implementing the app header components
 import dash_mantine_components as dmc
 from dash import html
 
+from ecodev_front.app_logo import app_logo
+from ecodev_front.app_title import app_header_name
 from ecodev_front.login import login
 
 HEADER_DIVIDER = dmc.Divider(orientation='vertical', m=5)
@@ -18,9 +20,10 @@ def app_header(header_logo: dmc.Anchor,
     Only show certain additional buttons to admins or user with owner access to portfolios.
     """
     return dmc.Group(
-        children=[header_logo, header_app_pages(action_items), user_admin_settings],
+        children=[app_logo(), app_header_name(), header_app_pages(
+            action_items), user_admin_settings],
         justify='space-between',
-        align='stretch',
+        align='center',
         style={
             'backgroundColor': '#0066A1',
             'color': 'white',
@@ -46,7 +49,6 @@ def header_app_pages(action_items: list[html.Div]) -> dmc.Group:
     """
     Example of how to create / assemble the header for the app specific pages.
     """
-
     return dmc.Group(
         [x for y in [[x, HEADER_DIVIDER] for x in action_items] for x in y],
         justify='space-around', gap='xl'

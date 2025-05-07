@@ -17,8 +17,8 @@ class AppNameConf(BaseSettings):
 APP_NAME = AppNameConf().app_name
 
 
-def app_title(app_name: str | None = None, color='white') -> dmc.Title:
+def app_header_name(app_name: str | None = None, color='white') -> dmc.Title:
     """
-    Application title component.
+    Application name for the header component.
     """
     return dmc.Text(app_name or APP_NAME, c=color, fz=25, fw=700, fs='normal')

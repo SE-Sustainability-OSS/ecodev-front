@@ -5,28 +5,59 @@ import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
 from ecodev_front.divider import divider
+from ecodev_front.module import Module
 from ecodev_front.stepper import vertical_stepper
+from ecodev_front.text import section_title
 
 
-def navbar(id: str,
-           name: str,
-           icon: str,
-           steps: list[dmc.StepperStep],
-           active_step: int = 0
-           ) -> dmc.Stack:
+def icon_navbar(module: Module,
+                active_page: int
+                ) -> dmc.Stack:
+    """
+    Renders a short module navbar, with an action icon for each page.
+    """
+    return dmc.Stack([
+        dmc.Stack([
+            dmc.Tooltip(
+                DashIconify(icon=module.icon, color='#cdcdcd', width=44),
+                label=f'{module.name.capitalize()} Module',
+                position='bottom',
+                color='gray',
+                transitionProps={
+                    'transition': 'slide-down',
+                    'duration': 200,
+                    'timingFunction': 'ease'
+                },
+            )
+        ], align='center', mt=5, mb=0),
+        divider(margin=0, color='lightgray'),
+        dmc.ScrollArea(
+            dmc.Stack([
+                page.navbar_icon(active=active_page == idx)
+                for idx, page in enumerate(module.pages)], gap='2vh'),
+            h='90vh', mt=20,
+        )
+    ], p=10)
+
+
+def stepper_navbar(id: str,
+                   title: str,
+                   icon: str,
+                   steps: list[dmc.StepperStep],
+                   active_step: int = 0
+                   ) -> dmc.Stack:
     """
     Renders a navbar with a module title and a vertical stepper step embedded in a scrollable area.
     """
     return dmc.Stack([
         dmc.Group([
-            DashIconify(icon=icon, color='gray', width=24),
-            dmc.Title(name.capitalize(), fz=20, fw=700, c='dimmed', ta='left'),
-        ], align='center', mt=10, mb=10, gap=5),
+            DashIconify(icon=icon, color='gray', width=28),
+            section_title(title, c='dimmed'),
+        ], align='center', mt=10, mb=10, gap=10),
         divider(margin=0, color='lightgray'),
         dmc.ScrollArea(
             vertical_stepper(
                 id=id,
-                color='default-color',
                 steps=steps,
                 active_step=active_step
             ),

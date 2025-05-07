@@ -25,7 +25,7 @@ def action_item(id: str,
                    'color': 'grey',
                    'font-size': '12px'},
             position='bottom',
-            offset=9,
+            offset=10,
             children=[
                 dmc.Anchor(href=href,
                            target=target,
@@ -41,8 +41,7 @@ def action_item(id: str,
                                ),
                            ])
             ])
-    ], style={'disp'
-              'lay': 'flex',
+    ], style={'display': 'flex',
               'justifyContent': 'center',
               'alignItems': 'center',
               'textAlign': 'center'})

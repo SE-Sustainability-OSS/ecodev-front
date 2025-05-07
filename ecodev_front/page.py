@@ -2,12 +2,13 @@
 Module implementing a generic page object to be used throughout the app
 """
 from pathlib import Path
+from typing import Callable
 
 import dash_mantine_components as dmc
 from dash import register_page
 from ecodev_core import Frozen
 
-from ecodev_front.page_layout import page_layout
+from ecodev_front.navbar_page_icon import navbar_page_icon
 from ecodev_front.stepper import stepper_step
 
 
@@ -49,59 +50,45 @@ class Page(Frozen):
     url: str
         The page's url, derived from the module and page directory name.
 
-
-    base_layout: list[dmc.Stack]
-        Returns a base layout for the page, with a page title header, project header placeholder
-        and page content placeholder.
-
     stepper_step: dmc.StepperStep
         Returns a stepper step for the page, to be used in the module navbar.
-
-    Methods
-    ---------
-    register(file: str)
-        Registers the page with Dash.
-
     """
-    file: str
+    module: str
 
     name: str
     icon: str
-
     title: str
-    description: str = ''
+    description: str
+
+    layout: Callable
+    aside: Callable | None = None
 
     protected: bool = True
     admin: bool = False
 
     @property
+    def module_name(self) -> str | None:
+        if (name := Path(self.module).stem.split('.')[-2].replace('_', '-')) == 'pages':
+            return None
+        return name
+
+    @property
+    def page_name(self) -> str:
+        return Path(self.module).stem.split('.')[-1].split('page_')[-1].replace('_', '-')
+
+    @property
     def id(self) -> str:
-        module_name = Path(self.file).stem.split('.')[-2].replace('_', '-')
-        page_name = Path(self.file).stem.split('.')[-1].replace('_', '-')
-        return f'{module_name}-{page_name}'
+        if self.module_name:
+            return f'{self.module_name}-{self.page_name}-id'
+        return f'{self.page_name}-id'
 
     @property
     def url(self) -> str:
-        module_name = Path(self.file).stem.split('.')[-2].split('_')[-1]
-        return f'/{module_name}/{self.name}'
-
-    def register(self, file: str) -> None:
-        """
-        Registers the page with Dash
-        """
-        register_page(
-            module=file,
-            path=self.url,
-            title=self.title,
-            layout=self.base_layout
-        )
-
-    @property
-    def base_layout(self) -> list[dmc.Stack]:
-        """
-        Returns a basic layout for the page.
-        """
-        return [page_layout(self.id, self.title, self.icon, self.description)]
+        if self.module_name:
+            return f'/{self.module_name}/{self.page_name}'
+        if self.page_name == 'main':
+            return '/'
+        return f'/{self.page_name}'
 
     @property
     def stepper_step(self) -> dmc.StepperStep:
@@ -110,4 +97,18 @@ class Page(Frozen):
             description='',
             icon=self.icon,
             href=self.url,
+        )
+
+    def navbar_icon(self, active) -> dmc.Anchor:
+        return navbar_page_icon(self.icon, self.title, self.url, active)
+
+    def register(self, *args, **kwargs):
+        """
+        Register the page in the app
+        """
+        register_page(
+            module=self.module,
+            path=self.url,
+            title=self.title,
+            layout=self.layout(self)
         )
