@@ -6,12 +6,14 @@ from dash_iconify import DashIconify
 
 from ecodev_front.divider import divider
 from ecodev_front.module import Module
+from ecodev_front.page import Page
 from ecodev_front.stepper import vertical_stepper
 from ecodev_front.text import section_title
 
 
 def icon_navbar(module: Module,
-                active_page: int
+                pages: list[Page],
+                active_page: int,
                 ) -> dmc.Stack:
     """
     Renders a short module navbar, with an action icon for each page.
@@ -34,7 +36,7 @@ def icon_navbar(module: Module,
         dmc.ScrollArea(
             dmc.Stack([
                 page.navbar_icon(active=active_page == idx)
-                for idx, page in enumerate(module.pages)], gap='2vh'),
+                for idx, page in enumerate(pages)], gap='2vh'),
             h='90vh', mt=20,
         )
     ], p=10)

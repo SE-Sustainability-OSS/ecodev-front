@@ -7,9 +7,13 @@ from typing import Callable
 import dash_mantine_components as dmc
 from dash import html
 from ecodev_core import Frozen
+from ecodev_core import logger_get
 
 from ecodev_front.nav_items import action_item
 from ecodev_front.page import Page
+from ecodev_front.shadow_button import module_main_button
+
+log = logger_get(__name__)
 
 
 class Module(Frozen):
@@ -33,6 +37,14 @@ class Module(Frozen):
         The list of the module's pages. They can be registered after the module has been defined.
         At least one page must be defined per module to avoid breaking functionalities
         (e.g. header icon)
+
+    navbar_layout: Callable
+        A function which renders the navbar content for this module.
+
+
+    main_page_button_kwargs: dict = {}
+        Dictionary containing the kwargs of the module_main_button function.
+        Optional. Use to override default proposed values
 
     protected: bool
         If the module is protected, the user must be authenticated to access it. Default is True.
@@ -64,6 +76,8 @@ class Module(Frozen):
     pages: list[Page]
     navbar_layout: Callable
 
+    main_page_button_kwargs: dict = {}
+
     protected: bool = True
     admin: bool = False
 
@@ -87,8 +101,24 @@ class Module(Frozen):
             href=self.pages[0].url,
         )
 
-    def render_navbar(self, active_page: int = 0) -> dmc.Stack:
+    def render_navbar(self, **kwargs) -> dmc.Stack:
         """
         Renders the module's navbar from the navbar layout function provided.
         """
-        return self.navbar_layout(self, active_page)
+        return self.navbar_layout(self, **kwargs)
+
+    def render_main_page_button(self):
+        """
+        Renders the main module's button.
+        You can pass custom module_main_button args when creating the module through the
+        main_page_button_kwargs dict.
+        """
+        default_kwargs = {
+            'id': self.id,
+            'label_top': 'View',
+            'label_bottom': self.name.capitalize(),
+            'icon': self.icon,
+            'color': '#0066a1'
+        } | self.main_page_button_kwargs
+
+        return module_main_button(**default_kwargs)
