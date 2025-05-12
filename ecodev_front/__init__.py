@@ -30,6 +30,7 @@ from ecodev_front.constants import DISABLED
 from ecodev_front.constants import ERROR
 from ecodev_front.constants import FIGURE
 from ecodev_front.constants import HIDDEN
+from ecodev_front.constants import HREF
 from ecodev_front.constants import ID
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import LABEL
@@ -114,6 +115,7 @@ from ecodev_front.search_bar import search_bar
 from ecodev_front.segment_control import segmented_control
 from ecodev_front.select import select
 from ecodev_front.shadow_box import shadow_box
+from ecodev_front.shadow_button import module_main_button
 from ecodev_front.shadow_button import shadow_button
 from ecodev_front.stack import stack
 from ecodev_front.stepper import STEPPER_ID
@@ -164,6 +166,7 @@ __all__ = [
     'ERROR',
     'FIGURE',
     'HIDDEN',
+    'HREF',
     'ID',
     'INDEX',
     'LABEL',
@@ -249,6 +252,7 @@ __all__ = [
     'select',
     'shadow_box',
     'shadow_button',
+    'module_main_button',
     'stack',
     'STEPPER_ID',
     'stepper_step',

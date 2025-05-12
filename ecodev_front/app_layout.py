@@ -19,7 +19,7 @@ from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 
 
-def dash_base_layout(stores: list[dcc.Store],
+def dash_base_layout(stores: list[dcc.Store] = [],
                      main_color: str = '#0066A1',
                      theme: dict[str, dict[str, Any] | list[str]] | None = None,
                      header_height: int = 55,
