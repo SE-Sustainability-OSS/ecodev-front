@@ -24,12 +24,12 @@ def basic_layout(page: Page) -> dmc.Stack:
 
 def header_layout(page: Page,
                   color: str = '#0066a1',
-                  with_icon: bool = False,
+                  with_icon: bool = True,
                   icon_color: str = '#97BDD3',
-                  ) -> dmc.Stack:
+                  ) -> html.Div:
     """
-    Returns a standard page layout, with title header, project header placeholder
-    and page content placeholder. And aside buttons.
+    Returns a page with title header, project header placeholder, aside buttons,
+    and page content placeholder.
     """
     return html.Div([
         aside_buttons(),
