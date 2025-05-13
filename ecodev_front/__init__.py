@@ -3,8 +3,8 @@ from ecodev_front.accordion import accordion_item
 from ecodev_front.alert import alert
 from ecodev_front.app_layout import dash_base_layout
 from ecodev_front.app_logo import app_logo
+from ecodev_front.app_name import APP_NAME
 from ecodev_front.app_title import app_header_name
-from ecodev_front.app_title import APP_NAME
 from ecodev_front.aside_buttons import aside_buttons
 from ecodev_front.aside_buttons import CLOSE_ASIDE_BTN_ID
 from ecodev_front.aside_buttons import HIDE
