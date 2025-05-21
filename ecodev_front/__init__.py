@@ -58,6 +58,7 @@ from ecodev_front.download_button import download_button
 from ecodev_front.drawer import drawer
 from ecodev_front.footer import app_footer
 from ecodev_front.footer import footer_style
+from ecodev_front.further_info import further_info
 from ecodev_front.graphs import apply_fig_layout
 from ecodev_front.graphs import bar_chart
 from ecodev_front.graphs import BOTTOM_LEGEND
@@ -131,6 +132,7 @@ from ecodev_front.text import section_title
 from ecodev_front.text import subtext
 from ecodev_front.text import subtitle
 from ecodev_front.text import text_title
+from ecodev_front.text import label_text
 from ecodev_front.upload_box import upload_box
 
 __all__ = [
@@ -194,6 +196,7 @@ __all__ = [
     'drawer',
     'app_footer',
     'footer_style',
+    'further_info',
     'apply_fig_layout',
     'bar_chart',
     'BOTTOM_LEGEND',
@@ -267,5 +270,6 @@ __all__ = [
     'section_title',
     'subtext',
     'text_title',
+    'label_text',
     'upload_box',
 ]
