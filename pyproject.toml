@@ -38,7 +38,7 @@ packages = [{include = "ecodev_front"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-dash = "^2.18"
+dash = "~3"
 dash-ag-grid = "~31"
 dash-iconify = "~0"
 dash-mantine-components = "~1"
