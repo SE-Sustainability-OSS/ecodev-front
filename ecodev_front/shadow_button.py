@@ -15,6 +15,7 @@ def shadow_button(id: str | dict[str, str],
                   shadow_color: str,
                   radius: str = 'md',
                   shadow_thickness: int = 8,
+                  disabled: bool = False,
                   style: dict = {}
                   ) -> dmc.Button:
     """
@@ -29,6 +30,7 @@ def shadow_button(id: str | dict[str, str],
                       dmc.Button(id=id,
                                  children=children,
                                  radius=radius,
+                                 disabled=disabled,
                                  variant='subtle',
                                  style={'height': '100%',
                                         'width': '100%',
@@ -46,17 +48,21 @@ def module_main_button(id: str,
                        label_top: str,
                        label_bottom: str,
                        color: str,
-                       w: str | int = 230) -> html.Div:
+                       disabled: bool = False,
+                       w: str | int = 230,
+                       style: dict = {}) -> html.Div:
     """
     Renders a shadow_button with text above and below an icon
     """
+    color = color if not disabled else '#dcdcdc'
     return shadow_button(
         id={TYPE: MODULE_BUTTON, INDEX: id},
+        disabled=disabled,
         children=dmc.Stack([
             dmc.Text(label_top, fz='18', c=color),
             DashIconify(icon=icon, width=45, color=color),
             dmc.Text(label_bottom, fz='22', fw=700, c=color)
-        ], align='center', gap='xs', style={'min-width': '100px'}, p=10),
+        ], align='center', gap='5px', style={'min-width': '100px'}),
         shadow_color=color,
-        style={'min-width': 200, 'width': w, 'max-width': 280}
+        style={'min-width': 200, 'width': w, 'max-width': 280} | style
     )

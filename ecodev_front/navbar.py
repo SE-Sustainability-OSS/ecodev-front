@@ -42,9 +42,7 @@ def icon_navbar(module: Module,
     ], p=10)
 
 
-def stepper_navbar(id: str,
-                   title: str,
-                   icon: str,
+def stepper_navbar(module: Module,
                    steps: list[dmc.StepperStep],
                    active_step: int = 0
                    ) -> dmc.Stack:
@@ -53,13 +51,13 @@ def stepper_navbar(id: str,
     """
     return dmc.Stack([
         dmc.Group([
-            DashIconify(icon=icon, color='gray', width=28),
-            section_title(title, c='dimmed'),
-        ], align='center', mt=10, mb=10, gap=10),
+            DashIconify(icon=module.icon, color='gray', width=28),
+            section_title(module.name.capitalize(), c='dimmed'),
+        ], align='center', mt=5, mb=10, gap=10),
         divider(margin=0, color='lightgray'),
         dmc.ScrollArea(
             vertical_stepper(
-                id=id,
+                id=f'{module.id}-stepper',
                 steps=steps,
                 active_step=active_step
             ),
