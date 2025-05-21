@@ -11,7 +11,9 @@ from ecodev_front.page import Page
 from ecodev_front.page_header import page_title_header
 
 
-def basic_layout(page: Page, enable_scroll: bool = True, aside_width: int | str = '270px') -> dmc.Stack:
+def basic_layout(page: Page,
+                 enable_scroll: bool = True,
+                 aside_width: int | str | None = None) -> dmc.Stack:
     """
     Renders a basic layout (no header, simply a div/scroll-area with page.id) and aside buttons.
     NOTE: If disabling the scroll area, ensure that your page content fits !
@@ -20,7 +22,7 @@ def basic_layout(page: Page, enable_scroll: bool = True, aside_width: int | str 
         (dmc.ScrollArea(id=page.id, w='98%', h='81vh', pr=25, mb=0, offsetScrollbars='50px')
          if enable_scroll else
          dmc.Stack(id=page.id, w='100%', h='81vh', m='auto', mt=0, pt=0)),
-        aside_buttons(aside_width),
+        aside_buttons(aside_width) if aside_width else aside_buttons(),
     ], w='97%', m='auto', mt=5, style={'height': '96vh'}, mb=00)
 
 
@@ -29,7 +31,7 @@ def header_layout(page: Page,
                   with_icon: bool = True,
                   icon_color: str = '#97BDD3',
                   enable_scroll: bool = True,
-                  aside_width: int | str = '270px'
+                  aside_width: int | str | None = None
                   ) -> dmc.Stack:
     """
     Returns a page with title header, project header placeholder, aside buttons,
@@ -49,5 +51,5 @@ def header_layout(page: Page,
         (dmc.ScrollArea(id=page.id, w='100%', h='81vh', pr=25, mb=0, offsetScrollbars='50px')
          if enable_scroll else
          dmc.Stack(id=page.id, w='98%', h='81vh', m='auto', mt=0, pt=0)),
-        aside_buttons(aside_width),
+        aside_buttons(aside_width) if aside_width else aside_buttons(),
     ], w='97%', m='auto', mt=5, style={'height': '95vh'}, mb=0)

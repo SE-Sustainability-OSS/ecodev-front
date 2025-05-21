@@ -127,12 +127,12 @@ from ecodev_front.tables import DagColTypes
 from ecodev_front.tables import data_table
 from ecodev_front.tables import locale_fr_FR
 from ecodev_front.text import app_title
+from ecodev_front.text import label_text
 from ecodev_front.text import page_title
 from ecodev_front.text import section_title
 from ecodev_front.text import subtext
 from ecodev_front.text import subtitle
 from ecodev_front.text import text_title
-from ecodev_front.text import label_text
 from ecodev_front.upload_box import upload_box
 
 __all__ = [
