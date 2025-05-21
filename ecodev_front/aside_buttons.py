@@ -35,7 +35,7 @@ def open_aside_button() -> dmc.Affix:
     )
 
 
-def close_aside_button(aside_width: str = '16.7%') -> dmc.Affix:
+def close_aside_button(aside_width: str = '272px') -> dmc.Affix:
     """
     Returns an aside close button, at edge of where the aside extends.
     """
@@ -54,7 +54,7 @@ def close_aside_button(aside_width: str = '16.7%') -> dmc.Affix:
     )
 
 
-def aside_buttons(aside_width: str = '16.7%') -> html.Div:
+def aside_buttons(aside_width: str = '272px') -> html.Div:
     """
     Renders the aside buttons on a page. Must be present on the layout of every page
     containing a collapsible aside.

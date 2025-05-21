@@ -94,7 +94,7 @@ class Page(Frozen):
     def stepper_step(self) -> dmc.StepperStep:
         return stepper_step(
             label=self.title,
-            description='',
+            description=self.description,
             icon=self.icon,
             href=self.url,
         )
