@@ -133,7 +133,6 @@ from ecodev_front.text import section_title
 from ecodev_front.text import subtext
 from ecodev_front.text import subtitle
 from ecodev_front.text import text_title
-from ecodev_front.text import label_text
 from ecodev_front.upload_box import upload_box
 
 __all__ = [
