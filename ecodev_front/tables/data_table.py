@@ -33,17 +33,18 @@ DAG_ENTERPRISE_AUTH = DashAgGridEnterprise()
 
 
 def data_table(id: str | dict,
-               row_data: Union[List[Dict], Any],
+               row_data: List[Dict] | Any,
                column_defs: list[dict[Any, Any]] | None = None,
                default_col_def: dict | None = None,
-               auto_height: bool = True,
                style: dict | None = None,
-               row_alternating_color='#f5f5f5',
                row_style: dict | None = None,
                dash_grid_options: dict | None = None,
                pagination: bool = False,
                pagination_page_size: int = 5,
                tree_table: bool = False,
+               floating_filter: bool = False,
+               wrap_text: bool = False,
+               theme: str = 'ag-theme-quartz'
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
@@ -52,34 +53,18 @@ def data_table(id: str | dict,
     column_defs = column_defs or _create_default_column_definitions(row_data)
     style = style
     default_col_def = default_col_def or {
-        # make every column use 'text' filter by default
-        'filter': 'agTextColumnFilter',
         # enable floating filters by default
-        'floatingFilter': True,
-        # make columns resizable
-        'resizable': True,
-        'sortable': True,
-        'wrapHeaderText': True,
-        'autoHeaderHeight': True,
-        'wrapText': True,
+        'floatingFilter': floating_filter,
+        # 'wrapHeaderText': True,
         # make row overflow
-        'autoHeight': auto_height,
-        # Make columns editable
-        'editable': True
+        'wrapText': wrap_text,
     }
-    row_style = row_style or {
-        'styleConditions': [
-            {
-                'condition': 'params.node.rowIndex % 2 === 1',
-                'style': {'backgroundColor': row_alternating_color},
-            },
-        ]
-    }
+    row_style = row_style
 
     dash_grid_options = dash_grid_options or {
         'colResizeDefault': 'shift',
         'rowSelection': 'single',
-        'headerHeight': 30,
+        'headerHeight': 50,
         'groupHeaderHeight': 30,
         # Enables pagination
         'pagination': pagination,
@@ -98,8 +83,8 @@ def data_table(id: str | dict,
 
     return dag.AgGrid(
         id=id,
-        enableEnterpriseModules=DAG_ENTERPRISE_AUTH.enable_dag_enterprise,
-        licenseKey=DAG_ENTERPRISE_AUTH.dag_license_key,
+        enableEnterpriseModules=True,
+        licenseKey='',
         columnDefs=column_defs,
         rowData=row_data if isinstance(row_data, list) else row_data.to_dict('records'),
         defaultColDef=default_col_def,
@@ -107,7 +92,7 @@ def data_table(id: str | dict,
         getRowStyle=row_style,
         columnSize='responsiveSizeToFit',
         dashGridOptions=dash_grid_options,
-        className='ag-theme-material'
+        className=theme
     )
 
 
