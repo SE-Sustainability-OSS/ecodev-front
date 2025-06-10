@@ -47,6 +47,7 @@ def data_table(id: str | dict,
                theme: str = 'ag-theme-quartz',
                side_filter: bool = False,
                autogenerate_column_defs: bool = True,
+               selected_rows: List[Dict] | Any = None,
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
@@ -57,6 +58,8 @@ def data_table(id: str | dict,
             the sidebar key in dash_grid_options
         autogenerate_column_defs (bool) : if True, creates column_defs from row_data if \
             column_defs is not provided. Defaults to True.
+        selected_rows (list) : list of rows to select. Applies only to table with selectable \
+            columns
     """
 
     column_defs = column_defs or _create_default_column_definitions(
@@ -100,6 +103,7 @@ def data_table(id: str | dict,
         licenseKey='',
         columnDefs=column_defs,
         rowData=row_data if isinstance(row_data, list) else row_data.to_dict('records'),
+        selectedRows=selected_rows,
         defaultColDef=default_col_def,
         style=style,
         getRowStyle=row_style,
