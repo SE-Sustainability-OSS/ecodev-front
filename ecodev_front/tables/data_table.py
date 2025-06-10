@@ -44,13 +44,23 @@ def data_table(id: str | dict,
                tree_table: bool = False,
                floating_filter: bool = False,
                wrap_text: bool = False,
-               theme: str = 'ag-theme-quartz'
+               theme: str = 'ag-theme-quartz',
+               side_filter: bool = False,
+               autogenerate_column_defs: bool = True,
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
+
+    Args:
+        side_filter (bool) : if True, adds a side bar with filtering options. Filters \
+            will be generated for columns according to the config in column_defs. Overwrites
+            the sidebar key in dash_grid_options
+        autogenerate_column_defs (bool) : if True, creates column_defs from row_data if \
+            column_defs is not provided. Defaults to True.
     """
 
-    column_defs = column_defs or _create_default_column_definitions(row_data)
+    column_defs = column_defs or _create_default_column_definitions(
+        row_data) if autogenerate_column_defs else []
     style = style
     default_col_def = default_col_def or {
         # enable floating filters by default
@@ -70,6 +80,9 @@ def data_table(id: str | dict,
         'pagination': pagination,
         'paginationPageSize': pagination_page_size,
     }
+
+    if side_filter:
+        dash_grid_options['sideBar'] = 'filters'
 
     if tree_table:
         dash_grid_options |= {'autoGroupColumnDef': {
