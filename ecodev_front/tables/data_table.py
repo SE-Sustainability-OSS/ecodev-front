@@ -48,6 +48,7 @@ def data_table(id: str | dict,
                side_filter: bool = False,
                autogenerate_column_defs: bool = True,
                selected_rows: List[Dict] | Any = None,
+               auto_height: bool = False,
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
@@ -60,6 +61,9 @@ def data_table(id: str | dict,
             column_defs is not provided. Defaults to True.
         selected_rows (list) : list of rows to select. Applies only to table with selectable \
             columns
+        auto_height (list) : if True, the grid to auto-sizes its height to the number of rows \
+            displayed inside the grid. Overwrites the domLayout key in dash_grid_options and
+            height in style
     """
 
     column_defs = column_defs or _create_default_column_definitions(
@@ -96,6 +100,13 @@ def data_table(id: str | dict,
             'treeData': True,
             'rowSelection': 'single'
         }}
+
+    if auto_height:
+        dash_grid_options['domLayout'] = 'autoHeight'
+        if isinstance(style, dict):
+            style['height'] = None
+        else:
+            style = {'height': None}
 
     return dag.AgGrid(
         id=id,
