@@ -47,6 +47,8 @@ def data_table(id: str | dict,
                theme: str = 'ag-theme-quartz',
                side_filter: bool = False,
                autogenerate_column_defs: bool = True,
+               selected_rows: List[Dict] | Any = None,
+               auto_height: bool = False,
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
@@ -57,6 +59,11 @@ def data_table(id: str | dict,
             the sidebar key in dash_grid_options
         autogenerate_column_defs (bool) : if True, creates column_defs from row_data if \
             column_defs is not provided. Defaults to True.
+        selected_rows (list) : list of rows to select. Applies only to table with selectable \
+            columns
+        auto_height (list) : if True, the grid to auto-sizes its height to the number of rows \
+            displayed inside the grid. Overwrites the domLayout key in dash_grid_options and
+            height in style
     """
 
     column_defs = column_defs or _create_default_column_definitions(
@@ -94,12 +101,20 @@ def data_table(id: str | dict,
             'rowSelection': 'single'
         }}
 
+    if auto_height:
+        dash_grid_options['domLayout'] = 'autoHeight'
+        if isinstance(style, dict):
+            style['height'] = None
+        else:
+            style = {'height': None}
+
     return dag.AgGrid(
         id=id,
         enableEnterpriseModules=True,
         licenseKey='',
         columnDefs=column_defs,
         rowData=row_data if isinstance(row_data, list) else row_data.to_dict('records'),
+        selectedRows=selected_rows,
         defaultColDef=default_col_def,
         style=style,
         getRowStyle=row_style,
