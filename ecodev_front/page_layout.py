@@ -19,11 +19,12 @@ def basic_layout(page: Page,
     NOTE: If disabling the scroll area, ensure that your page content fits !
     """
     return dmc.Stack([
-        (dmc.ScrollArea(id=page.id, w='98%', h='81vh', pr=25, mb=0, offsetScrollbars='50px')
+        (dmc.ScrollArea(dmc.Stack(id=page.id, mb=100, w='100%'),
+                        w='100%', h='85vh', pr=25, mb=0, offsetScrollbars='50px')
          if enable_scroll else
-         dmc.Stack(id=page.id, w='100%', h='81vh', m='auto', mt=0, pt=0)),
+         dmc.Stack(id=page.id, w='98%', h='90vh', m='auto', mt=0, pt=0)),
         aside_buttons(aside_width) if aside_width else aside_buttons(),
-    ], w='97%', m='auto', mt=5, style={'height': '96vh'}, mb=00)
+    ], w='97%', m='auto', mt=5, style={'height': '95vh'}, mb=0)
 
 
 def header_layout(page: Page,
@@ -48,8 +49,9 @@ def header_layout(page: Page,
             ], w='35%', justify='flex-end')
         ], justify='space-between', align='center', w='100%'),
         dmc.Divider(w='100%'),
-        (dmc.ScrollArea(id=page.id, w='100%', h='81vh', pr=25, mb=0, offsetScrollbars='50px')
+        (dmc.ScrollArea(dmc.Stack(id=page.id, mb=100, w='100%'),
+                        w='100%', h='81vh', pr=25, mb=0, offsetScrollbars='50px')
          if enable_scroll else
          dmc.Stack(id=page.id, w='98%', h='81vh', m='auto', mt=0, pt=0)),
         aside_buttons(aside_width) if aside_width else aside_buttons(),
-    ], w='97%', m='auto', mt=5, style={'height': '95vh'}, mb=0)
+    ], w='97%', m='auto', mt=5, style={'height': '96vh'}, mb=0)
