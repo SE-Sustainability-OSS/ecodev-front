@@ -11,11 +11,11 @@ def app_title(text: str, c: str = 'black', ta: str = 'left', mb: int = 10, **kwa
     return dmc.Title(text, order=1, ta=ta, c=c, tt='capitalize', mb=mb, **kwargs)
 
 
-def page_title(text: str, c: str = '#0066a1', ta: str = 'left', mb: int = 5, **kwargs) -> dmc.Title:
+def page_title(text: str, c: str = '#0066a1', ta: str = 'left', **kwargs) -> dmc.Title:
     """
     Renders a formatted title text for page headers
     """
-    return dmc.Title(text, order=2, ta=ta, c=c, tt='capitalize', mb=mb, ff='Averta Bold', **kwargs)
+    return dmc.Title(text, order=2, ta=ta, c=c, tt='capitalize', ff='Averta Bold', **kwargs)
 
 
 def section_title(text: str, c: str = '#424242', ta: str = 'left', **kwargs) -> dmc.Title:

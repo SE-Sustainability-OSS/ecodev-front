@@ -41,7 +41,7 @@ def card_title(title: str,
     optional additional component (e.g. select, slider, etc.) on its right hand side.
     """
     content = [dmc.Text(title, fz=size, fw=900, c=color, ff=font, ta=align, id=title_id,
-                        bg=background_color, p=10)]
+                        bg=background_color, p=10, w='100%')]
 
     content += component if isinstance(component, list) else [component]
     return card_section(
