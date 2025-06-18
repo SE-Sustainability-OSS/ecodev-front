@@ -5,7 +5,6 @@ from typing import Any
 from typing import Optional
 
 import dash_mantine_components as dmc
-from dash import html
 
 from ecodev_front.icon import dash_icon
 
@@ -14,16 +13,17 @@ DEFAULT_STYLE = {
     'justifyContent': 'center'}
 
 
-def background_card(children: list[dmc.CardSection | html.Div],
+def background_card(children: list,
                     style: dict[str, str | int | float] | None = None,
                     className: str = '',
-                    card_id: str = ''
+                    card_id: str = '',
+                    **kwargs
                     ) -> dmc.Card:
     """
     Returns a formatted dmc.Card
     """
     return dmc.Card(children, radius='md', shadow='sm', style=style or DEFAULT_STYLE,
-                    className=className, id=card_id)
+                    className=className, id=card_id, **kwargs)
 
 
 def card_title(title: str,
@@ -94,5 +94,5 @@ def kpi(icon: str,
                 ], gap='xs'
             ),
         ], bg='#f7f8f9', w=250)])
-    ],  label=tooltip, position='top', offset=3,
+    ], label=tooltip, position='top', offset=3,
         withArrow=True, closeDelay=300, color=c)
