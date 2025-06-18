@@ -33,7 +33,7 @@ STEPS = 'steps'
 LABEL = 'label'
 OPTIONS = 'options'
 REQUIRED = 'required'
-
+DISPLAY = 'display'
 
 """
 Table constants

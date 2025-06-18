@@ -13,4 +13,5 @@ def app_logo(logo_path: str = '/assets/logo.png',
     Application logo component.
     """
     style = style or {'margin-left': '10px', 'width': width}
-    return dmc.AspectRatio(dmc.Image(src=logo_path), ratio=ratio, style=style)
+    return dmc.AspectRatio(dmc.Image(src=logo_path), ratio=ratio, style=style,
+                           display='center')

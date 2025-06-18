@@ -89,6 +89,7 @@ from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 from ecodev_front.loading_overlay import loading_overlay
 from ecodev_front.login import login
+from ecodev_front.login import login_card
 from ecodev_front.modal import modal
 from ecodev_front.module import Module
 from ecodev_front.nav_items import action_item
@@ -272,4 +273,5 @@ __all__ = [
     'text_title',
     'label_text',
     'upload_box',
+    'login_card'
 ]

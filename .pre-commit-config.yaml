@@ -1,7 +1,7 @@
 default_language_version:
     python: python3
 default_stages:
-- commit
+- pre-commit
 repos:
 -   repo: https://github.com/pre-commit/mirrors-autopep8
     rev: v2.0.4
@@ -15,10 +15,10 @@ repos:
     hooks:
     -   id: trailing-whitespace
         stages:
-        - commit
+        - pre-commit
     -   id: end-of-file-fixer
         stages:
-        - commit
+        - pre-commit
     -   id: check-merge-conflict
     -   id: double-quote-string-fixer
     -   id: check-byte-order-marker
