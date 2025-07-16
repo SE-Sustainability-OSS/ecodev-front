@@ -5,18 +5,18 @@ from dash_iconify import DashIconify
 def further_info(
     info: str | list[dmc.Text], 
     large: bool = False, 
+    position: str = "top-right",
+    multiline: bool= True,
+    offset: int=3,
+    radius: str= "md",
+    closeDelay: int = 300,
+    color: str = "white",
+    style: dict = {"max-width": 500, "border": "1px solid #dcdcdc"},
     **kwargs
 ) -> dmc.Tooltip:
     """
     Renders a gray info icon which opens the further info tooltip.
     """
-    kwargs.setdefault("position", "top-right")
-    kwargs.setdefault("multiline", True)
-    kwargs.setdefault("offset", 3)
-    kwargs.setdefault("radius", "md")
-    kwargs.setdefault("closeDelay", 300)
-    kwargs.setdefault("color", "white")
-    kwargs.setdefault("style", {"max-width": 500, "border": "1px solid #dcdcdc"})
 
     return dmc.Tooltip(
         label=dmc.Text(info, c='black') if isinstance(info, str) else info,
@@ -27,5 +27,12 @@ def further_info(
                 width=28 if large else 22,
             )
         ],
+        position=position,
+        multiline=multiline,
+        offset=offset,
+        radius=radius,
+        closeDelay=closeDelay,
+        color=color,
+        style=style,
         **kwargs
     )
