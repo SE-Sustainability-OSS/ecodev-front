@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ecodev-front"
-version = "0.0.90"
+version = "0.0.91"
 description = "Dash component helpers"
 authors = ["Amaury Salles <amaury.salles@gmail.com>",
 			"Yoann Diep <yoann.diep@hotmail.fr>",
@@ -38,7 +38,7 @@ packages = [{include = "ecodev_front"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-dash = "^2.18"
+dash = "~3"
 dash-ag-grid = "~31"
 dash-iconify = "~0"
 dash-mantine-components = "~1"
