@@ -6,12 +6,14 @@ from dash import html
 from dash_iconify import DashIconify
 
 
-def action_item(id: str,
+def action_item(id: str | dict,
                 label: str,
-                icon: DashIconify,
+                icon: str,
                 href: str,
                 icon_color: str = 'white',
-                in_new_tab: bool = False
+                icon_width: int = 30,
+                in_new_tab: bool = False,
+                **kwargs
                 ) -> html.Div:
     """
     A navbar action item (i.e. icon button without a menu).
@@ -33,11 +35,12 @@ def action_item(id: str,
                                dmc.ActionIcon(
                                    DashIconify(icon=icon,
                                                color=icon_color,
-                                               width=30),
+                                               width=icon_width),
                                    id=id,
                                    size='xl',
                                    variant='transparent',
                                    n_clicks=0,
+                                   **kwargs
                                ),
                            ])
             ])

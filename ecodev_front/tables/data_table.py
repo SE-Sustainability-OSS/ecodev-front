@@ -7,9 +7,11 @@ from typing import List
 from typing import Union
 
 import dash_ag_grid as dag
+from ecodev_core import logger_get
 from pydantic_settings import BaseSettings
 from pydantic_settings import SettingsConfigDict
 
+log = logger_get(__name__)
 locale_fr_FR = """d3.formatLocale({
   "decimal": ",",
   "thousands": "\u00a0",
@@ -49,6 +51,8 @@ def data_table(id: str | dict,
                autogenerate_column_defs: bool = True,
                selected_rows: List[Dict] | Any = None,
                auto_height: bool = False,
+               hide_empty_cols: bool = False,
+               empty_cols_to_show: list[str] = []
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
@@ -108,12 +112,27 @@ def data_table(id: str | dict,
         else:
             style = {'height': None}
 
+    row_data = row_data if isinstance(row_data, list) else row_data.to_dict('records')
+
+    if hide_empty_cols:
+        empty_cols_idx = []
+        for idx, col_def in enumerate(column_defs):
+            if (col := col_def['field']) not in empty_cols_to_show:
+                for row in row_data:
+                    if value := row.get(col, None):
+                        break
+                if value is None:
+                    empty_cols_idx.append(idx)
+
+        column_defs = [col_def for idx, col_def in enumerate(column_defs)
+                       if idx not in empty_cols_idx]
+
     return dag.AgGrid(
         id=id,
         enableEnterpriseModules=True,
         licenseKey='',
         columnDefs=column_defs,
-        rowData=row_data if isinstance(row_data, list) else row_data.to_dict('records'),
+        rowData=row_data,
         selectedRows=selected_rows,
         defaultColDef=default_col_def,
         style=style,
