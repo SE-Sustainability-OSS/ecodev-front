@@ -19,7 +19,7 @@ PAGE = 'page'
 APPSHELL = 'appshell'
 ASIDE = 'aside'
 NAVBAR = 'navbar'
-HOME_BUTTON_ID = 'home_button_id'
+HOME_BUTTON = 'home-button-id'
 MODULE_BUTTON = 'module-button'
 DOCUMENTATION = 'documentation'
 
@@ -51,7 +51,7 @@ ACTION_ITEM = 'action-item'
 
 __all__ = ['URL', 'TOKEN', 'HEADER_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID',
            'LOGIN_BTN_ID', 'LOGOUT_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'NAVBAR',
-           'ASIDE', 'PAGE', 'APPSHELL', 'HOME_BUTTON_ID', 'MODULE_BUTTON', 'LOGIN', 'USERNAME',
+           'ASIDE', 'PAGE', 'APPSHELL', 'HOME_BUTTON', 'MODULE_BUTTON', 'LOGIN', 'USERNAME',
            'PASSWORD', 'BUTTON', 'TABLE', 'LOADING_OVERLAY', 'MODAL', 'OUTPUT', 'USE', 'CONTINUE',
            'ACCORDION_ITEM', 'NULLIFY', 'SWITCH', 'TEXT_INPUT', 'DRAWER', 'DIV',
            'SEGMENTED_CONTROL', 'CHECKBOX', 'DOCUMENTATION', 'ACTION_ITEM']

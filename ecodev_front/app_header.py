@@ -11,7 +11,7 @@ from ecodev_front.constants import LOGIN_PAGE_URL
 from ecodev_front.constants import MAIN_PAGE_URL
 from ecodev_front.documentation import documentation_icon_link
 from ecodev_front.icon import dash_icon
-from ecodev_front.ids import HOME_BUTTON_ID
+from ecodev_front.ids import HOME_BUTTON
 from ecodev_front.ids import LOGOUT_BTN_ID
 from ecodev_front.login import login
 from ecodev_front.nav_items import action_item
@@ -21,7 +21,7 @@ HEADER_DIVIDER = dmc.Divider(orientation='vertical', color='gray.2', mt=10, mb=1
 HOME_ACTION_ICON = dmc.ActionIcon([
     dash_icon('mdi:chevron-left', color='white', width=80),
     dash_icon('ic:round-home', color='white', width=80)
-], variant='transparent', size='xl', id=HOME_BUTTON_ID, ml=5, mr=5)
+], variant='transparent', size='xl', id=HOME_BUTTON, ml=5, mr=5)
 
 LOGOUT_BUTTON = action_item(
     id=LOGOUT_BTN_ID, label='LOGOUT', icon='ic:baseline-logout', href=LOGIN_PAGE_URL
