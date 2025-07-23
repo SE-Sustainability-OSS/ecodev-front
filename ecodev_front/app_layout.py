@@ -43,7 +43,7 @@ def dash_base_layout(stores: list[dcc.Store] = [],
             dmc.AppShellHeader(id=HEADER_ID,
                                style={'background-color': main_color},
                                zIndex=100,
-                               children=[]
+                               children=[],
                                ),
 
             dmc.AppShellMain(

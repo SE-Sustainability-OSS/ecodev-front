@@ -4,8 +4,8 @@ Module implementing the navbar login / logout components
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-from ecodev_front import INDEX
-from ecodev_front import TYPE
+from ecodev_front.constants import INDEX
+from ecodev_front.constants import TYPE
 from ecodev_front.ids import BUTTON
 from ecodev_front.ids import LOGIN
 from ecodev_front.ids import LOGIN_BTN_ID

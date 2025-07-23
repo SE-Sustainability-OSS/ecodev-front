@@ -1,6 +1,10 @@
 from ecodev_front.accordion import accordion
 from ecodev_front.accordion import accordion_item
 from ecodev_front.alert import alert
+from ecodev_front.app_header import display_app_header
+from ecodev_front.app_header import HEADER_DIVIDER
+from ecodev_front.app_header import HOME_ACTION_ICON
+from ecodev_front.app_header import LOGOUT_BUTTON
 from ecodev_front.app_layout import dash_base_layout
 from ecodev_front.app_logo import app_logo
 from ecodev_front.app_name import APP_NAME
@@ -11,6 +15,8 @@ from ecodev_front.aside_buttons import HIDE
 from ecodev_front.aside_buttons import OPEN_ASIDE_BTN_ID
 from ecodev_front.aside_buttons import SHOW
 from ecodev_front.button import button
+from ecodev_front.button import render_continue_button
+from ecodev_front.button import render_save_button
 from ecodev_front.card import background_card
 from ecodev_front.card import card_section
 from ecodev_front.card import card_title
@@ -54,6 +60,8 @@ from ecodev_front.display_utils import number_formatting
 from ecodev_front.div import centered_div
 from ecodev_front.divider import divider
 from ecodev_front.divider import header_divider
+from ecodev_front.documentation import documentation_icon_link
+from ecodev_front.documentation import documentation_text
 from ecodev_front.download_button import download_button
 from ecodev_front.drawer import drawer
 from ecodev_front.footer import app_footer
@@ -273,5 +281,13 @@ __all__ = [
     'text_title',
     'label_text',
     'upload_box',
-    'login_card'
+    'login_card',
+    'HEADER_DIVIDER',
+    'display_app_header',
+    'render_continue_button',
+    'render_save_button',
+    'HOME_ACTION_ICON',
+    'LOGOUT_BUTTON',
+    'documentation_icon_link',
+    'documentation_text'
 ]

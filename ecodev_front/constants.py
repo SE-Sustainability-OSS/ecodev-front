@@ -60,3 +60,17 @@ THOUSAND = 1000
 MILLION = 1_000_000
 BILLION = 1_000_000_000
 TRILLION = 1_000_000_000_000
+
+"""
+DATA VERSIONING
+"""
+UPDATE_TYPE = 'update_type'
+INSERTED = 'inserted'
+UPDATED = 'updated'
+DELETED = 'deleted'
+UNCHANGED = 'unchanged'
+OLD_VALUE = 'old-value'
+NEW_VALUE = 'new-value'
+MAIN_ID = 'main-id'
+STAGING_ID = 'staging-id'
+UPDATED_AT = 'updated_at'
