@@ -55,6 +55,7 @@ def data_table(id: str | dict,
                hide_empty_cols: bool = False,
                empty_cols_to_show: list[str] = [],
                get_row_id: Optional[str] = None,
+               **kwargs,
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
@@ -146,6 +147,7 @@ def data_table(id: str | dict,
         dashGridOptions=dash_grid_options,
         className=theme,
         getRowId=get_row_id,
+        **kwargs,
     )
 
 
