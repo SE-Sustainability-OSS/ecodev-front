@@ -4,6 +4,7 @@ Module implementing a generic Dash AG Grid table
 from typing import Any
 from typing import Dict
 from typing import List
+from typing import Optional
 from typing import Union
 
 import dash_ag_grid as dag
@@ -52,22 +53,26 @@ def data_table(id: str | dict,
                selected_rows: List[Dict] | Any = None,
                auto_height: bool = False,
                hide_empty_cols: bool = False,
-               empty_cols_to_show: list[str] = []
+               empty_cols_to_show: list[str] = [],
+               get_row_id: Optional[str] = None,
                ) -> dag.AgGrid:
     """
     Generic Dash AG Grid table
 
     Args:
-        side_filter (bool) : if True, adds a side bar with filtering options. Filters \
+        side_filter (bool): if True, adds a side bar with filtering options. Filters \
             will be generated for columns according to the config in column_defs. Overwrites
             the sidebar key in dash_grid_options
-        autogenerate_column_defs (bool) : if True, creates column_defs from row_data if \
+        autogenerate_column_defs (bool): if True, creates column_defs from row_data if \
             column_defs is not provided. Defaults to True.
-        selected_rows (list) : list of rows to select. Applies only to table with selectable \
+        selected_rows (list): list of rows to select. Applies only to table with selectable \
             columns
-        auto_height (list) : if True, the grid to auto-sizes its height to the number of rows \
+        auto_height (list): if True, the grid to auto-sizes its height to the number of rows \
             displayed inside the grid. Overwrites the domLayout key in dash_grid_options and
             height in style
+        get_row_id (Optional[str]): js function to assign the `RowID` of each row in row_data \
+            from the table's data. Ex : "params.data.id" to assign it to "id" field.
+            See https://dash.plotly.com/dash-ag-grid/row-ids for more information.
     """
 
     column_defs = column_defs or _create_default_column_definitions(
@@ -139,7 +144,8 @@ def data_table(id: str | dict,
         getRowStyle=row_style,
         columnSize='responsiveSizeToFit',
         dashGridOptions=dash_grid_options,
-        className=theme
+        className=theme,
+        getRowId=get_row_id,
     )
 
 
