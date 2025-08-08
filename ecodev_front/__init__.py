@@ -107,6 +107,7 @@ from ecodev_front.navbar import icon_navbar
 from ecodev_front.navbar import stepper_navbar
 from ecodev_front.navbar_page_icon import navbar_page_icon
 from ecodev_front.navlink import navlink
+from ecodev_front.notification import send_notification
 from ecodev_front.notifications import get_complete_notif
 from ecodev_front.notifications import get_error_notif
 from ecodev_front.notifications import get_info_notif
@@ -289,5 +290,6 @@ __all__ = [
     'HOME_ACTION_ICON',
     'LOGOUT_BUTTON',
     'documentation_icon_link',
-    'documentation_text'
+    'documentation_text',
+    'send_notification'
 ]
