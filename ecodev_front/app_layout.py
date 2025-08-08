@@ -15,6 +15,7 @@ from ecodev_front.ids import FOOTER_ID
 from ecodev_front.ids import HEADER_ID
 from ecodev_front.ids import MAIN_CONTENT_ID
 from ecodev_front.ids import NAVBAR
+from ecodev_front.ids import NOTIFICATION
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 
@@ -38,7 +39,7 @@ def dash_base_layout(stores: list[dcc.Store] = [],
             *stores,
 
             html.Div(id=NOTIFICATION_ID),
-            dmc.NotificationProvider(position='top-center'),
+            dmc.NotificationContainer(id=NOTIFICATION),
 
             dmc.AppShellHeader(id=HEADER_ID,
                                style={'background-color': main_color},

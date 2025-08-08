@@ -34,6 +34,13 @@ LABEL = 'label'
 OPTIONS = 'options'
 REQUIRED = 'required'
 DISPLAY = 'display'
+SEND_NOTIFICATIONS = 'sendNotifications'
+TITLE = 'title'
+ACTION = 'action'
+MESSAGE = 'message'
+ICON = 'icon'
+COLOR = 'color'
+CREATED_AT = 'created_at'
 
 """
 Table constants
