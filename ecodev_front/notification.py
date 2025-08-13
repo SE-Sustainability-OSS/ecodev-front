@@ -14,6 +14,7 @@ def send_notification(title: str,
                       color: str | None = None,
                       with_close_button: bool = True,
                       notif_id: str | None = None,
+                      **kwargs,
                       ):
     """
     Returns a list of dict to be sent to the SEND_NOTIFICATION component
@@ -33,4 +34,5 @@ def send_notification(title: str,
              ICON: dash_icon(icon=icon),
              COLOR: color,
              WITH_CLOSE_BUTTON: with_close_button,
+             **kwargs,
              }]
