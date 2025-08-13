@@ -13,9 +13,9 @@ def send_notification(title: str,
     """
     Returns a list of dict to be sent to the SEND_NOTIFICATION component
     """
-    icon = icon or 'ic:round-celebration' if title == 'Success' else \
-        'icon-park-outline:link-cloud-faild' if title == 'Failure' else ''
-    color = color or 'green' if title == 'Success' else 'red' if title == 'Failure' else 'gray'
+    icon = icon or ('ic:round-celebration' if title == 'Success' else
+                    'icon-park-outline:link-cloud-faild' if title == 'Failure' else '')
+    color = color or ('green' if title == 'Success' else 'red' if title == 'Failure' else 'gray')
     return [{TITLE: title,
              ACTION: 'show',
              MESSAGE: message,
