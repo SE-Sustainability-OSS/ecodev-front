@@ -41,6 +41,7 @@ MESSAGE = 'message'
 ICON = 'icon'
 COLOR = 'color'
 CREATED_AT = 'created_at'
+WITH_CLOSE_BUTTON = 'withCloseButton'
 
 """
 Table constants

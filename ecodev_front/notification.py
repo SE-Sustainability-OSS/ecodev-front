@@ -4,14 +4,20 @@ from ecodev_front.constants import COLOR
 from ecodev_front.constants import ICON
 from ecodev_front.constants import MESSAGE
 from ecodev_front.constants import TITLE
+from ecodev_front.constants import WITH_CLOSE_BUTTON
 
 
 def send_notification(title: str,
                       message: str,
                       icon: str | None = None,
-                      color: str | None = None):
+                      color: str | None = None,
+                      with_close_button: bool = True,
+                      ):
     """
     Returns a list of dict to be sent to the SEND_NOTIFICATION component
+
+    Args:
+        with_close_button (bool): Adds a close button to the notification div
     """
     icon = icon or ('ic:round-celebration' if title == 'Success' else
                     'icon-park-outline:link-cloud-faild' if title == 'Failure' else '')
@@ -20,4 +26,6 @@ def send_notification(title: str,
              ACTION: 'show',
              MESSAGE: message,
              ICON: dash_icon(icon=icon),
-             COLOR: color}]
+             COLOR: color,
+             WITH_CLOSE_BUTTON: with_close_button,
+             }]
