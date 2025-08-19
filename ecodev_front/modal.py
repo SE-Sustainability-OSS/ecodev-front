@@ -6,14 +6,17 @@ from typing import Any
 import dash_mantine_components as dmc
 
 
-def modal(id: str,
-          children: Any,
+def modal(id: str | dict,
+          children: Any = [],
           size: int | str = '80%',
           with_close_button: bool = False,
-          padding: int = 10
+          padding: int = 10,
+          close_on_escape: bool = True,
+          close_on_click_outside: bool = True
           ) -> dmc.Modal:
     """
     Returns a dmc.Modal which can be used to display content on the screen temporarily
     """
     return dmc.Modal(id=id, children=children, size=size, withCloseButton=with_close_button,
-                     padding=padding)
+                     padding=padding, closeOnEscape=close_on_escape,
+                     closeOnClickOutside=close_on_click_outside)

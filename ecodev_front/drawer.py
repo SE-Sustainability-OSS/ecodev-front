@@ -2,7 +2,7 @@ import dash_mantine_components as dmc
 
 
 def drawer(title: str,
-           id: str = '',
+           id: str | dict = '',
            padding: str | int = 'md',
            size: str = '60%'):
     """

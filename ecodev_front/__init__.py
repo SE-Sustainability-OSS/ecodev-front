@@ -15,8 +15,8 @@ from ecodev_front.aside_buttons import HIDE
 from ecodev_front.aside_buttons import OPEN_ASIDE_BTN_ID
 from ecodev_front.aside_buttons import SHOW
 from ecodev_front.button import button
-from ecodev_front.button import render_continue_button
-from ecodev_front.button import render_save_button
+from ecodev_front.button import ButtonAction
+from ecodev_front.button import render_action_button
 from ecodev_front.card import background_card
 from ecodev_front.card import card_section
 from ecodev_front.card import card_title
@@ -285,11 +285,11 @@ __all__ = [
     'login_card',
     'HEADER_DIVIDER',
     'display_app_header',
-    'render_continue_button',
-    'render_save_button',
+    'render_action_button',
     'HOME_ACTION_ICON',
     'LOGOUT_BUTTON',
     'documentation_icon_link',
     'documentation_text',
-    'send_notification'
+    'send_notification',
+    'ButtonAction'
 ]

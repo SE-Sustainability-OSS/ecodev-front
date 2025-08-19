@@ -24,6 +24,10 @@ MODULE_BUTTON = 'module-button'
 DOCUMENTATION = 'documentation'
 NOTIFICATION = 'notification'
 
+
+"""
+Button Actions
+"""
 USE = 'use'
 CONTINUE = 'continue'
 SAVE = 'save'
@@ -34,7 +38,13 @@ REJECT = 'reject'
 SUBMIT_BTN = 'submit-btn'
 CLOSE_BTN = 'close-btn'
 SAVE_BTN = 'save-btn'
-
+CONTINUE_BTN = 'continue-btn'
+ACCEPT_BTN = 'accept-btn'
+CONFIRM_BTN = 'confirm-btn'
+CANCEL_BTN = 'cancel-btn'
+DELETE_BTN = 'delete-btn'
+UPDATE_BTN = 'update-btn'
+ADD_BTN = 'add-btn'
 """
 Component types
 """

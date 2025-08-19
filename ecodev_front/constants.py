@@ -21,10 +21,7 @@ CHECKED = 'checked'
 HIDDEN = 'hidden'
 HREF = 'href'
 FIGURE = 'figure'
-ROW_DATA = 'rowData'
-ROW_ID = 'rowId'
-COL_ID = 'colId'
-CELL_CLICKED = 'cellClicked'
+
 CLICK_DATA = 'clickData'
 ERROR = 'error'
 LOADING = 'loading'
@@ -50,6 +47,9 @@ CELL_RENDERER_DATA = 'cellRendererData'
 ROW_DATA = 'rowData'
 ROW_INDEX = 'rowIndex'
 CELL_CLICKED = 'cellClicked'
+CELL_VALUE_CHANGED = 'cellValueChanged'
+ROW_ID = 'rowId'
+COL_ID = 'colId'
 
 """
 Stores

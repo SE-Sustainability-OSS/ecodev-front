@@ -55,6 +55,7 @@ def data_table(id: str | dict,
                hide_empty_cols: bool = False,
                empty_cols_to_show: list[str] = [],
                get_row_id: Optional[str] = None,
+               draggable: bool = False,
                **kwargs,
                ) -> dag.AgGrid:
     """
@@ -82,6 +83,7 @@ def data_table(id: str | dict,
     default_col_def = default_col_def or {
         # enable floating filters by default
         'floatingFilter': floating_filter,
+        'filter': 'agTextColumnFilter',
         # 'wrapHeaderText': True,
         # make row overflow
         'wrapText': wrap_text,
@@ -102,14 +104,16 @@ def data_table(id: str | dict,
         dash_grid_options['sideBar'] = 'filters'
 
     if tree_table:
-        dash_grid_options |= {'autoGroupColumnDef': {
-            'cellRendererParams': {
-                'suppressCount': True,
+        dash_grid_options |= {
+            'autoGroupColumnDef': {
+                'cellRendererParams': {
+                    'suppressCount': True,
+                },
             },
             'getDataPath': {'function': 'getDataPath(params)'},
             'treeData': True,
-            'rowSelection': 'single'
-        }}
+            'rowSelection': 'single',
+        }
 
     if auto_height:
         dash_grid_options['domLayout'] = 'autoHeight'
@@ -132,6 +136,18 @@ def data_table(id: str | dict,
 
         column_defs = [col_def for idx, col_def in enumerate(column_defs)
                        if idx not in empty_cols_idx]
+
+    if draggable:
+        dash_grid_options |= {
+            'rowDragManaged': True,
+            'animateRows': True,
+            'domLayout': 'autoHeight',
+            'autoHeight': True,
+            'rowDragEntireRow': True,
+            'rowDragMultiRow': 'single',
+            'suppressMaintainUnsortedOrder': True,
+            'rowSelection': 'single',
+        }
 
     return dag.AgGrid(
         id=id,
