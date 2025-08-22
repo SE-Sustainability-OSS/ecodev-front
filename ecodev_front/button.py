@@ -104,7 +104,7 @@ def render_action_button(index: str,
     """
     return dmc.Button(
         children=label or action,
-        id={TYPE: f'{ACTION_TO_ID[action]}-btn', INDEX: index},
+        id={TYPE: ACTION_TO_ID[action], INDEX: index},
         color=color or ACTION_TO_COLOR.get(action) or 'blue.7',
         leftSection=dash_icon(ACTION_TO_ICON[action]),
         display=display,
