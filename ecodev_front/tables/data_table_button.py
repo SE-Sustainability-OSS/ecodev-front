@@ -3,10 +3,16 @@ from typing import Any
 
 
 def dash_ag_grid_button(field: str,
-                         color: str,
+                         value=None,
+                         color='green',
                          variant='filled',
                          margin='1px',
-                         header_name=''
+                         header_name='',
+                         cell_renderer='DMC_Button',
+                         radius='md',
+                         left_icon=None,
+                         right_icon=None,
+                         **kwargs
                          ) -> dict[str, Any]:
     """
     Helper function to display a dmc.Button in Dash AG Grid column
@@ -15,12 +21,16 @@ def dash_ag_grid_button(field: str,
         'field': field,
         'headerName': header_name,
         'editable': False,
-        'cellRenderer': 'DMC_Button',
+        'cellRenderer': cell_renderer,
         'cellRendererParams': {
             'color': color,
             'variant': variant,
-            'radius': 'md',
+            'radius': radius,
             'margin': margin,
-            'value': field
+            'value': value,
+            'leftIcon': left_icon,
+            'rightIcon': right_icon
         },
+        **kwargs
     }
+    
