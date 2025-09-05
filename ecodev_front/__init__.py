@@ -136,6 +136,7 @@ from ecodev_front.tables import custom_column_def
 from ecodev_front.tables import DagColTypes
 from ecodev_front.tables import data_table
 from ecodev_front.tables import locale_fr_FR
+from ecodev_front.tables.data_table_button import dash_ag_grid_button
 from ecodev_front.text import app_title
 from ecodev_front.text import label_text
 from ecodev_front.text import page_title
@@ -291,5 +292,6 @@ __all__ = [
     'documentation_icon_link',
     'documentation_text',
     'send_notification',
-    'ButtonAction'
+    'ButtonAction',
+    'dash_ag_grid_button'
 ]
