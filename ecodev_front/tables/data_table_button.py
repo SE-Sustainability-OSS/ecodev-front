@@ -19,7 +19,7 @@ def dash_ag_grid_button(field: str,
     """
     return {
         'field': field,
-        'headerName': header_name if header_name is not None else field,
+        'headerName': header_name,
         'editable': False,
         'cellRenderer': cell_renderer,
         'cellRendererParams': {
@@ -27,7 +27,7 @@ def dash_ag_grid_button(field: str,
             'variant': variant,
             'radius': radius,
             'margin': margin,
-            'value': value,
+            'value': value if value is not None else field,
             'leftIcon': left_icon,
             'rightIcon': right_icon
         },
