@@ -31,9 +31,6 @@ dagcomponentfuncs.DMC_Button = function (props) {
     if (props.leftIcon) {
         leftIcon = iconGenerator(props.leftIcon, props.color);
     }
-    if (props.rightIcon) {
-        rightIcon = iconGenerator(props.rightIcon, props.color);
-    }
     return React.createElement(
         window.dash_mantine_components.Button,
         {
@@ -41,7 +38,6 @@ dagcomponentfuncs.DMC_Button = function (props) {
             variant: props.variant,
             color: props.color,
             leftSection: leftIcon,
-            rightSection: rightIcon,
             radius: props.radius,
             style: {
                 margin: props.margin,
