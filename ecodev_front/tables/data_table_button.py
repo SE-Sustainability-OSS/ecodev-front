@@ -7,11 +7,11 @@ def dash_ag_grid_button(field: str,
                          color='green',
                          variant='filled',
                          margin='1px',
-                         header_name='',
+                         header_name: str = None,
                          cell_renderer='DMC_Button',
                          radius='md',
-                         left_icon=None,
-                         right_icon=None,
+                         left_icon: str = None,
+                         right_icon:str = None,
                          **kwargs
                          ) -> dict[str, Any]:
     """
@@ -19,7 +19,7 @@ def dash_ag_grid_button(field: str,
     """
     return {
         'field': field,
-        'headerName': header_name,
+        'headerName': header_name if header_name is not None else field,
         'editable': False,
         'cellRenderer': cell_renderer,
         'cellRendererParams': {
