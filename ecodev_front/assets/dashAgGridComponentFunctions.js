@@ -27,7 +27,7 @@ dagcomponentfuncs.DMC_Button = function (props) {
     function onClick() {
         setData();
     }
-    let leftIcon, rightIcon;
+    let leftIcon;
     if (props.leftIcon) {
         leftIcon = iconGenerator(props.leftIcon, props.color);
     }
