@@ -3,7 +3,8 @@ from typing import Any
 
 
 def dash_ag_grid_button(field: str,
-                         value: str =None,
+                         value:str =None,
+                         header_name: str = '',
                          color:str = 'green',
                          variant:str = 'filled',
                          margin:str = '1px',
@@ -40,7 +41,7 @@ def dash_ag_grid_button(field: str,
     """
     return {
         'field': field,
-        'headerName': '',
+        'headerName': header_name,
         'editable': False,
         'cellRenderer': cell_renderer,
         'cellRendererParams': {
