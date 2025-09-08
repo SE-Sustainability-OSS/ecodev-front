@@ -48,8 +48,8 @@ dagcomponentfuncs.DMC_Button = function (props) {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                paddingLeft: '10px', 
-                paddingRight: '0px', 
+                paddingLeft: '5px', 
+                paddingRight: '5px', 
             },
         },
         props.value
