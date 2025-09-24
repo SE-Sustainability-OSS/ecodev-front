@@ -46,9 +46,18 @@ def subtext(text: str, c: str = '#989898', ta: str = 'left', **kwargs) -> dmc.Te
     return dmc.Text(children=text, c=c, fz=14, fs='italic', ta=ta, **kwargs)
 
 
-def label_text(text: str, ta='left', fz='0.875rem', fs='normal', **kwargs) -> dmc.Text:
+def label_text(text: str, 
+               fz: str = '0.875rem', 
+               fs: str = 'normal', 
+               ta: str = 'left',
+               ff: str = 'Cabin, sans-serif',
+               required: bool = False, 
+               **kwargs) -> dmc.Text:
     """
     Renders a component label, aligned with dmc component labels.
     To be used on custom made components
     """
-    return dmc.Text(text, fz=fz, fs=fs, ff='Cabin, sans-serif', ta=ta, **kwargs)
+    label = dmc.Text(text, fz=fz, fs=fs, ff=ff, ta=ta, **kwargs)
+    if not required:
+        return label
+    return dmc.Group([label, dmc.Text('*', c='red', fw='600')], justify='flex-start', gap=3)

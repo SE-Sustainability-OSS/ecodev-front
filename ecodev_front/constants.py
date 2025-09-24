@@ -56,8 +56,11 @@ Stores
 """
 SESSION_STORE = 'session'
 LOCAL_STORE = 'local'
-
 NOTIFICATION_ID = 'notification-id'
+
+"""
+URLS
+"""
 MAIN_PAGE_URL = '/'
 LOGIN_PAGE_URL = '/login'
 
@@ -82,3 +85,76 @@ NEW_VALUE = 'new-value'
 MAIN_ID = 'main-id'
 STAGING_ID = 'staging-id'
 UPDATED_AT = 'updated_at'
+
+
+__all__ = [
+    'CHILDREN',
+    'DATA',
+    'PATHNAME',
+    'N_CLICKS',
+    'VALUE',
+    'DISABLED',
+    'STYLE',
+    'ACTIVE',
+    'LOCAL',
+    'OPENED',
+    'CONTENTS',
+    'FILENAME',
+    'TYPE',
+    'INDEX',
+    'ID',
+    'VISIBLE',
+    'CHECKED',
+    'HIDDEN',
+    'HREF',
+    'FIGURE',
+    
+    'CLICK_DATA',
+    'ERROR',
+    'LOADING',
+    'ALLOW_STEP_CLICK',
+    'STEPS',
+    'LABEL',
+    'OPTIONS',
+    'REQUIRED',
+    'DISPLAY',
+    'SEND_NOTIFICATIONS',
+    'TITLE',
+    'ACTION',
+    'MESSAGE',
+    'ICON',
+    'COLOR',
+    'CREATED_AT',
+    'WITH_CLOSE_BUTTON',
+    
+    'CELL_RENDERER_DATA',
+    'ROW_DATA',
+    'ROW_INDEX',
+    'CELL_CLICKED',
+    'CELL_VALUE_CHANGED',
+    'ROW_ID',
+    'COL_ID',
+    
+    'SESSION_STORE',
+    'LOCAL_STORE',
+    'NOTIFICATION_ID',
+    
+    'MAIN_PAGE_URL',
+    'LOGIN_PAGE_URL',
+    
+    'THOUSAND',
+    'MILLION',
+    'BILLION',
+    'TRILLION',
+    
+    'UPDATE_TYPE',
+    'INSERTED',
+    'UPDATED',
+    'DELETED',
+    'UNCHANGED',
+    'OLD_VALUE',
+    'NEW_VALUE',
+    'MAIN_ID',
+    'STAGING_ID',
+    'UPDATED_AT',
+]

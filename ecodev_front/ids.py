@@ -1,7 +1,6 @@
 """
 File containing component IDs, to use in callbacks
 """
-
 URL = 'url'
 TOKEN = 'token'
 HEADER_ID = 'navbar-id'
@@ -45,6 +44,7 @@ CANCEL_BTN = 'cancel-btn'
 DELETE_BTN = 'delete-btn'
 UPDATE_BTN = 'update-btn'
 ADD_BTN = 'add-btn'
+
 """
 Component types
 """
@@ -53,6 +53,7 @@ LOADING_OVERLAY = 'loading-overlay'
 MODAL = 'modal'
 BUTTON = 'button'
 OUTPUT = 'output'
+PLACEHOLDER = 'placeholder'
 ACCORDION_ITEM = 'accordion-item'
 SELECT = 'select'
 NULLIFY = 'nullify'
@@ -69,11 +70,67 @@ ACCORDION = 'accordion'
 STACK = 'stack'
 MULTI_SELECT = 'multi-select'
 
-__all__ = ['URL', 'TOKEN', 'HEADER_ID', 'LOGIN_USERNAME_INPUT_ID', 'LOGIN_PASSWORD_INPUT_ID',
-           'LOGIN_BTN_ID', 'LOGOUT_BTN_ID', 'FOOTER_ID', 'MAIN_CONTENT_ID', 'NAVBAR',
-           'ASIDE', 'PAGE', 'APPSHELL', 'HOME_BUTTON', 'MODULE_BUTTON', 'LOGIN', 'USERNAME',
-           'PASSWORD', 'BUTTON', 'TABLE', 'LOADING_OVERLAY', 'MODAL', 'OUTPUT', 'USE', 'CONTINUE',
-           'ACCORDION_ITEM', 'NULLIFY', 'SWITCH', 'TEXT_INPUT', 'DRAWER', 'DIV',
-           'SEGMENTED_CONTROL', 'CHECKBOX', 'DOCUMENTATION', 'ACTION_ITEM', 'TAGS_INPUT',
-           'INTERVAL', 'ACCORDION', 'STACK', 'SELECT', 'MULTI_SELECT', 'NOTIFICATION', 'SAVE_BTN',
-           'SUBMIT_BTN', 'CLOSE_BTN']
+
+__all__ = [
+    'URL',
+    'TOKEN',
+    'HEADER_ID',
+    'LOGIN',
+    'USERNAME',
+    'PASSWORD',
+    'LOGIN_USERNAME_INPUT_ID',
+    'LOGIN_PASSWORD_INPUT_ID',
+    'LOGIN_BTN_ID',
+    'LOGOUT_BTN_ID',
+    'FOOTER_ID',
+    'PROJECT_HEADER_ID',
+    'MAIN_CONTENT_ID',
+    'PAGE',
+    'APPSHELL',
+    'ASIDE',
+    'NAVBAR',
+    'HOME_BUTTON',
+    'MODULE_BUTTON',
+    'DOCUMENTATION',
+    'NOTIFICATION',
+    
+    'USE',
+    'CONTINUE',
+    'SAVE',
+    'COLUMN',
+    'ACCEPT',
+    'REJECT',
+    
+    'SUBMIT_BTN',
+    'CLOSE_BTN',
+    'SAVE_BTN',
+    'CONTINUE_BTN',
+    'ACCEPT_BTN',
+    'CONFIRM_BTN',
+    'CANCEL_BTN',
+    'DELETE_BTN',
+    'UPDATE_BTN',
+    'ADD_BTN',
+    
+    'TABLE',
+    'LOADING_OVERLAY',
+    'MODAL',
+    'BUTTON',
+    'OUTPUT',
+    'PLACEHOLDER',
+    'ACCORDION_ITEM',
+    'SELECT',
+    'NULLIFY',
+    'SWITCH',
+    'TEXT_INPUT',
+    'DRAWER',
+    'DIV',
+    'SEGMENTED_CONTROL',
+    'CHECKBOX',
+    'ACTION_ITEM',
+    'TAGS_INPUT',
+    'INTERVAL',
+    'ACCORDION',
+    'STACK',
+    'MULTI_SELECT',
+]
