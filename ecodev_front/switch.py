@@ -10,6 +10,7 @@ from ecodev_front.text import label_text
 
 def switch(id: str,
            data: dict[str, str],
+           value: str | None = None,
            label: str = '',
            color: str = 'blue.7',
            bg: str = 'white',
@@ -23,7 +24,7 @@ def switch(id: str,
     """
     switch = dmc.SegmentedControl(
         id={TYPE: SWITCH, INDEX: id},
-        value=data[0][VALUE],
+        value=value if value else data[0][VALUE],
         data=data,
         color=color,
         size=size,

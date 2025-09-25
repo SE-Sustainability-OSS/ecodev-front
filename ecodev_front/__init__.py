@@ -320,7 +320,7 @@ __all__ = [
     'HEADER_DIVIDER',
     'display_app_header',
     'render_action_button',
-    'HOME_ACTION_ICON',q
+    'HOME_ACTION_ICON',
     'LOGOUT_BUTTON',
     'documentation_icon_link',
     'documentation_text',
