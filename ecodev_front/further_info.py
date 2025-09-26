@@ -9,7 +9,7 @@ def further_info(
     multiline: bool= True,
     offset: int=3,
     radius: str= "md",
-    closeDelay: int = 300,
+    closeDelay: int = 0,
     color: str = "white",
     style: dict = {"max-width": 500, "border": "1px solid #dcdcdc"},
     **kwargs
@@ -17,7 +17,6 @@ def further_info(
     """
     Renders a gray info icon which opens the further info tooltip.
     """
-
     return dmc.Tooltip(
         label=dmc.Text(info, c='black') if isinstance(info, str) else info,
         children=[
