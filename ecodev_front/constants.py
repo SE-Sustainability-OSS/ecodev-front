@@ -39,6 +39,7 @@ ICON = 'icon'
 COLOR = 'color'
 CREATED_AT = 'created_at'
 WITH_CLOSE_BUTTON = 'withCloseButton'
+N_INTERVALS = 'n_intervals'
 
 """
 Table constants
@@ -108,7 +109,7 @@ __all__ = [
     'HIDDEN',
     'HREF',
     'FIGURE',
-    
+
     'CLICK_DATA',
     'ERROR',
     'LOADING',
@@ -126,7 +127,8 @@ __all__ = [
     'COLOR',
     'CREATED_AT',
     'WITH_CLOSE_BUTTON',
-    
+    'N_INTERVALS',
+
     'CELL_RENDERER_DATA',
     'ROW_DATA',
     'ROW_INDEX',
@@ -134,19 +136,19 @@ __all__ = [
     'CELL_VALUE_CHANGED',
     'ROW_ID',
     'COL_ID',
-    
+
     'SESSION_STORE',
     'LOCAL_STORE',
     'NOTIFICATION_ID',
-    
+
     'MAIN_PAGE_URL',
     'LOGIN_PAGE_URL',
-    
+
     'THOUSAND',
     'MILLION',
     'BILLION',
     'TRILLION',
-    
+
     'UPDATE_TYPE',
     'INSERTED',
     'UPDATED',

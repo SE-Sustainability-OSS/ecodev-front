@@ -8,16 +8,39 @@ import dash_mantine_components as dmc
 from dash import dcc
 from dash import html
 
+from ecodev_front.button import ButtonAction
+from ecodev_front.button import render_action_button
+from ecodev_front.constants import ERROR
+from ecodev_front.constants import INDEX
 from ecodev_front.constants import NOTIFICATION_ID
+from ecodev_front.constants import TYPE
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
+from ecodev_front.ids import ERROR_MODAL
 from ecodev_front.ids import FOOTER_ID
 from ecodev_front.ids import HEADER_ID
+from ecodev_front.ids import INTERVAL
 from ecodev_front.ids import MAIN_CONTENT_ID
+from ecodev_front.ids import MODAL
 from ecodev_front.ids import NAVBAR
 from ecodev_front.ids import NOTIFICATION
+from ecodev_front.ids import TEXT
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
+from ecodev_front.modal import modal
+
+
+def get_error_monitor_component():
+    """
+    Get a hidden interval component to monitor errors.
+    This should be added to the main layout.
+    """
+    return dcc.Interval(
+        id={TYPE: INTERVAL, INDEX: ERROR},
+        interval=2000,  # Check every 2 seconds
+        n_intervals=0,
+        disabled=False
+    )
 
 
 def dash_base_layout(stores: list[dcc.Store] = [],
@@ -40,7 +63,21 @@ def dash_base_layout(stores: list[dcc.Store] = [],
 
             html.Div(id=NOTIFICATION_ID),
             dmc.NotificationContainer(id=NOTIFICATION),
-
+            get_error_monitor_component(),
+            modal(
+                id={TYPE: MODAL, INDEX: ERROR},
+                children=[
+                    dmc.Stack([
+                        dmc.Text(
+                            id={TYPE: TEXT, INDEX: ERROR},
+                            size='sm',
+                            style={'whiteSpace': 'pre-wrap', 'fontFamily': 'monospace'}
+                        ),
+                        render_action_button(index=ERROR_MODAL, action=ButtonAction.CLOSE)
+                    ])
+                ],
+                size='lg',
+            ),
             dmc.AppShellHeader(id=HEADER_ID,
                                style={'background-color': main_color},
                                zIndex=100,

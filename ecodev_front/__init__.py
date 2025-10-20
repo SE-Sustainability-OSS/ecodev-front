@@ -9,12 +9,12 @@ from ecodev_front.app_layout import dash_base_layout
 from ecodev_front.app_logo import app_logo
 from ecodev_front.app_name import APP_NAME
 from ecodev_front.app_title import app_header_name
-from ecodev_front.aside_section import aside_section
 from ecodev_front.aside_buttons import aside_buttons
 from ecodev_front.aside_buttons import CLOSE_ASIDE_BTN_ID
 from ecodev_front.aside_buttons import HIDE
 from ecodev_front.aside_buttons import OPEN_ASIDE_BTN_ID
 from ecodev_front.aside_buttons import SHOW
+from ecodev_front.aside_section import aside_section
 from ecodev_front.button import button
 from ecodev_front.button import ButtonAction
 from ecodev_front.button import render_action_button
@@ -23,69 +23,70 @@ from ecodev_front.card import card_section
 from ecodev_front.card import card_title
 from ecodev_front.card import kpi
 from ecodev_front.card import macro_info
-from ecodev_front.constants import CHILDREN
-from ecodev_front.constants import DATA
-from ecodev_front.constants import PATHNAME
-from ecodev_front.constants import N_CLICKS
-from ecodev_front.constants import VALUE
-from ecodev_front.constants import DISABLED
-from ecodev_front.constants import STYLE
+from ecodev_front.constants import ACTION
 from ecodev_front.constants import ACTIVE
-from ecodev_front.constants import LOCAL
-from ecodev_front.constants import OPENED
-from ecodev_front.constants import CONTENTS
-from ecodev_front.constants import FILENAME
-from ecodev_front.constants import TYPE
-from ecodev_front.constants import INDEX
-from ecodev_front.constants import ID
-from ecodev_front.constants import VISIBLE
+from ecodev_front.constants import ALLOW_STEP_CLICK
+from ecodev_front.constants import BILLION
+from ecodev_front.constants import CELL_CLICKED
+from ecodev_front.constants import CELL_RENDERER_DATA
+from ecodev_front.constants import CELL_VALUE_CHANGED
 from ecodev_front.constants import CHECKED
+from ecodev_front.constants import CHILDREN
+from ecodev_front.constants import CLICK_DATA
+from ecodev_front.constants import COL_ID
+from ecodev_front.constants import COLOR
+from ecodev_front.constants import CONTENTS
+from ecodev_front.constants import CREATED_AT
+from ecodev_front.constants import DATA
+from ecodev_front.constants import DELETED
+from ecodev_front.constants import DISABLED
+from ecodev_front.constants import DISPLAY
+from ecodev_front.constants import ERROR
+from ecodev_front.constants import FIGURE
+from ecodev_front.constants import FILENAME
 from ecodev_front.constants import HIDDEN
 from ecodev_front.constants import HREF
-from ecodev_front.constants import FIGURE
-from ecodev_front.constants import CLICK_DATA
-from ecodev_front.constants import ERROR
-from ecodev_front.constants import LOADING
-from ecodev_front.constants import ALLOW_STEP_CLICK
-from ecodev_front.constants import STEPS
-from ecodev_front.constants import LABEL
-from ecodev_front.constants import OPTIONS
-from ecodev_front.constants import REQUIRED
-from ecodev_front.constants import DISPLAY
-from ecodev_front.constants import SEND_NOTIFICATIONS
-from ecodev_front.constants import TITLE
-from ecodev_front.constants import ACTION
-from ecodev_front.constants import MESSAGE
 from ecodev_front.constants import ICON
-from ecodev_front.constants import COLOR
-from ecodev_front.constants import CREATED_AT
-from ecodev_front.constants import WITH_CLOSE_BUTTON
-from ecodev_front.constants import CELL_RENDERER_DATA
-from ecodev_front.constants import ROW_DATA
-from ecodev_front.constants import ROW_INDEX
-from ecodev_front.constants import CELL_CLICKED
-from ecodev_front.constants import CELL_VALUE_CHANGED
-from ecodev_front.constants import ROW_ID
-from ecodev_front.constants import COL_ID
-from ecodev_front.constants import SESSION_STORE
-from ecodev_front.constants import LOCAL_STORE
-from ecodev_front.constants import NOTIFICATION_ID
-from ecodev_front.constants import MAIN_PAGE_URL
-from ecodev_front.constants import LOGIN_PAGE_URL
-from ecodev_front.constants import THOUSAND
-from ecodev_front.constants import MILLION
-from ecodev_front.constants import BILLION
-from ecodev_front.constants import TRILLION
-from ecodev_front.constants import UPDATE_TYPE
+from ecodev_front.constants import ID
+from ecodev_front.constants import INDEX
 from ecodev_front.constants import INSERTED
-from ecodev_front.constants import UPDATED
-from ecodev_front.constants import DELETED
-from ecodev_front.constants import UNCHANGED
-from ecodev_front.constants import OLD_VALUE
-from ecodev_front.constants import NEW_VALUE
+from ecodev_front.constants import LABEL
+from ecodev_front.constants import LOADING
+from ecodev_front.constants import LOCAL
+from ecodev_front.constants import LOCAL_STORE
+from ecodev_front.constants import LOGIN_PAGE_URL
 from ecodev_front.constants import MAIN_ID
+from ecodev_front.constants import MAIN_PAGE_URL
+from ecodev_front.constants import MESSAGE
+from ecodev_front.constants import MILLION
+from ecodev_front.constants import N_CLICKS
+from ecodev_front.constants import N_INTERVALS
+from ecodev_front.constants import NEW_VALUE
+from ecodev_front.constants import NOTIFICATION_ID
+from ecodev_front.constants import OLD_VALUE
+from ecodev_front.constants import OPENED
+from ecodev_front.constants import OPTIONS
+from ecodev_front.constants import PATHNAME
+from ecodev_front.constants import REQUIRED
+from ecodev_front.constants import ROW_DATA
+from ecodev_front.constants import ROW_ID
+from ecodev_front.constants import ROW_INDEX
+from ecodev_front.constants import SEND_NOTIFICATIONS
+from ecodev_front.constants import SESSION_STORE
 from ecodev_front.constants import STAGING_ID
+from ecodev_front.constants import STEPS
+from ecodev_front.constants import STYLE
+from ecodev_front.constants import THOUSAND
+from ecodev_front.constants import TITLE
+from ecodev_front.constants import TRILLION
+from ecodev_front.constants import TYPE
+from ecodev_front.constants import UNCHANGED
+from ecodev_front.constants import UPDATE_TYPE
+from ecodev_front.constants import UPDATED
 from ecodev_front.constants import UPDATED_AT
+from ecodev_front.constants import VALUE
+from ecodev_front.constants import VISIBLE
+from ecodev_front.constants import WITH_CLOSE_BUTTON
 from ecodev_front.container import container
 from ecodev_front.display_utils import get_magnitude
 from ecodev_front.display_utils import number_formatting
@@ -113,64 +114,66 @@ from ecodev_front.graphs import subplots
 from ecodev_front.graphs import subplots_y_axis_labels
 from ecodev_front.group import group
 from ecodev_front.icon import dash_icon
-from ecodev_front.ids import URL
-from ecodev_front.ids import TOKEN
-from ecodev_front.ids import HEADER_ID
-from ecodev_front.ids import LOGIN
-from ecodev_front.ids import USERNAME
-from ecodev_front.ids import PASSWORD
-from ecodev_front.ids import LOGIN_USERNAME_INPUT_ID
-from ecodev_front.ids import LOGIN_PASSWORD_INPUT_ID
-from ecodev_front.ids import LOGIN_BTN_ID
-from ecodev_front.ids import LOGOUT_BTN_ID
-from ecodev_front.ids import FOOTER_ID
-from ecodev_front.ids import PROJECT_HEADER_ID
-from ecodev_front.ids import MAIN_CONTENT_ID
-from ecodev_front.ids import PAGE
+from ecodev_front.ids import ACCEPT
+from ecodev_front.ids import ACCEPT_BTN
+from ecodev_front.ids import ACCORDION
+from ecodev_front.ids import ACCORDION_ITEM
+from ecodev_front.ids import ACTION_ITEM
+from ecodev_front.ids import ADD_BTN
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
-from ecodev_front.ids import NAVBAR
-from ecodev_front.ids import HOME_BUTTON
-from ecodev_front.ids import MODULE_BUTTON
-from ecodev_front.ids import DOCUMENTATION
-from ecodev_front.ids import NOTIFICATION
-from ecodev_front.ids import USE
-from ecodev_front.ids import CONTINUE
-from ecodev_front.ids import SAVE
-from ecodev_front.ids import COLUMN
-from ecodev_front.ids import ACCEPT
-from ecodev_front.ids import REJECT
-from ecodev_front.ids import SUBMIT_BTN
-from ecodev_front.ids import CLOSE_BTN
-from ecodev_front.ids import SAVE_BTN
-from ecodev_front.ids import CONTINUE_BTN
-from ecodev_front.ids import ACCEPT_BTN
-from ecodev_front.ids import CONFIRM_BTN
-from ecodev_front.ids import CANCEL_BTN
-from ecodev_front.ids import DELETE_BTN
-from ecodev_front.ids import UPDATE_BTN
-from ecodev_front.ids import ADD_BTN
-from ecodev_front.ids import TABLE
-from ecodev_front.ids import LOADING_OVERLAY
-from ecodev_front.ids import MODAL
 from ecodev_front.ids import BUTTON
-from ecodev_front.ids import OUTPUT
-from ecodev_front.ids import PLACEHOLDER
-from ecodev_front.ids import ACCORDION_ITEM
-from ecodev_front.ids import SELECT
-from ecodev_front.ids import NULLIFY
-from ecodev_front.ids import SWITCH
-from ecodev_front.ids import TEXT_INPUT
-from ecodev_front.ids import DRAWER
-from ecodev_front.ids import DIV
-from ecodev_front.ids import SEGMENTED_CONTROL
+from ecodev_front.ids import CANCEL_BTN
 from ecodev_front.ids import CHECKBOX
-from ecodev_front.ids import ACTION_ITEM
-from ecodev_front.ids import TAGS_INPUT
+from ecodev_front.ids import CLOSE_BTN
+from ecodev_front.ids import COLUMN
+from ecodev_front.ids import CONFIRM_BTN
+from ecodev_front.ids import CONTINUE
+from ecodev_front.ids import CONTINUE_BTN
+from ecodev_front.ids import DELETE_BTN
+from ecodev_front.ids import DIV
+from ecodev_front.ids import DOCUMENTATION
+from ecodev_front.ids import DRAWER
+from ecodev_front.ids import ERROR_MODAL
+from ecodev_front.ids import FOOTER_ID
+from ecodev_front.ids import HEADER_ID
+from ecodev_front.ids import HOME_BUTTON
 from ecodev_front.ids import INTERVAL
-from ecodev_front.ids import ACCORDION
-from ecodev_front.ids import STACK
+from ecodev_front.ids import LOADING_OVERLAY
+from ecodev_front.ids import LOGIN
+from ecodev_front.ids import LOGIN_BTN_ID
+from ecodev_front.ids import LOGIN_PASSWORD_INPUT_ID
+from ecodev_front.ids import LOGIN_USERNAME_INPUT_ID
+from ecodev_front.ids import LOGOUT_BTN_ID
+from ecodev_front.ids import MAIN_CONTENT_ID
+from ecodev_front.ids import MODAL
+from ecodev_front.ids import MODULE_BUTTON
 from ecodev_front.ids import MULTI_SELECT
+from ecodev_front.ids import NAVBAR
+from ecodev_front.ids import NOTIFICATION
+from ecodev_front.ids import NULLIFY
+from ecodev_front.ids import OUTPUT
+from ecodev_front.ids import PAGE
+from ecodev_front.ids import PASSWORD
+from ecodev_front.ids import PLACEHOLDER
+from ecodev_front.ids import PROJECT_HEADER_ID
+from ecodev_front.ids import REJECT
+from ecodev_front.ids import SAVE
+from ecodev_front.ids import SAVE_BTN
+from ecodev_front.ids import SEGMENTED_CONTROL
+from ecodev_front.ids import SELECT
+from ecodev_front.ids import STACK
+from ecodev_front.ids import SUBMIT_BTN
+from ecodev_front.ids import SWITCH
+from ecodev_front.ids import TABLE
+from ecodev_front.ids import TAGS_INPUT
+from ecodev_front.ids import TEXT
+from ecodev_front.ids import TEXT_INPUT
+from ecodev_front.ids import TOKEN
+from ecodev_front.ids import UPDATE_BTN
+from ecodev_front.ids import URL
+from ecodev_front.ids import USE
+from ecodev_front.ids import USERNAME
 from ecodev_front.loading_overlay import loading_overlay
 from ecodev_front.login import login
 from ecodev_front.login import login_card
@@ -327,7 +330,7 @@ __all__ = [
     'send_notification',
     'ButtonAction',
     'dash_ag_grid_button',
-    
+
     # Constants
     'CHILDREN',
     'DATA',
@@ -392,7 +395,8 @@ __all__ = [
     'MAIN_ID',
     'STAGING_ID',
     'UPDATED_AT',
-    
+    'N_INTERVALS',
+
     # IDs
     'URL',
     'TOKEN',
@@ -415,14 +419,15 @@ __all__ = [
     'MODULE_BUTTON',
     'DOCUMENTATION',
     'NOTIFICATION',
-    
+    'ERROR_MODAL',
+
     'USE',
     'CONTINUE',
     'SAVE',
     'COLUMN',
     'ACCEPT',
     'REJECT',
-    
+
     'SUBMIT_BTN',
     'CLOSE_BTN',
     'SAVE_BTN',
@@ -433,7 +438,7 @@ __all__ = [
     'DELETE_BTN',
     'UPDATE_BTN',
     'ADD_BTN',
-    
+
     'TABLE',
     'LOADING_OVERLAY',
     'MODAL',
@@ -455,4 +460,5 @@ __all__ = [
     'ACCORDION',
     'STACK',
     'MULTI_SELECT',
+    'TEXT'
 ]
