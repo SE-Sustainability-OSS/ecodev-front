@@ -22,7 +22,7 @@ HOME_BUTTON = 'home-button-id'
 MODULE_BUTTON = 'module-button'
 DOCUMENTATION = 'documentation'
 NOTIFICATION = 'notification'
-
+ERROR_MODAL = 'error-modal'
 
 """
 Button Actions
@@ -69,6 +69,7 @@ INTERVAL = 'interval'
 ACCORDION = 'accordion'
 STACK = 'stack'
 MULTI_SELECT = 'multi-select'
+TEXT = 'text'
 
 
 __all__ = [
@@ -93,14 +94,14 @@ __all__ = [
     'MODULE_BUTTON',
     'DOCUMENTATION',
     'NOTIFICATION',
-    
+
     'USE',
     'CONTINUE',
     'SAVE',
     'COLUMN',
     'ACCEPT',
     'REJECT',
-    
+
     'SUBMIT_BTN',
     'CLOSE_BTN',
     'SAVE_BTN',
@@ -111,7 +112,7 @@ __all__ = [
     'DELETE_BTN',
     'UPDATE_BTN',
     'ADD_BTN',
-    
+
     'TABLE',
     'LOADING_OVERLAY',
     'MODAL',
@@ -133,4 +134,5 @@ __all__ = [
     'ACCORDION',
     'STACK',
     'MULTI_SELECT',
+    'TEXT'
 ]
