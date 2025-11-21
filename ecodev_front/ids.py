@@ -44,6 +44,7 @@ CANCEL_BTN = 'cancel-btn'
 DELETE_BTN = 'delete-btn'
 UPDATE_BTN = 'update-btn'
 ADD_BTN = 'add-btn'
+DOWNLOAD_BTN = 'download-btn'
 
 """
 Component types
@@ -60,6 +61,7 @@ NULLIFY = 'nullify'
 SWITCH = 'switch'
 TEXT_INPUT = 'text-input'
 DRAWER = 'drawer'
+OVERLAY='overlay'
 DIV = 'div'
 SEGMENTED_CONTROL = 'segmented-control'
 CHECKBOX = 'checkbox'
@@ -82,6 +84,7 @@ NUMBER_INPUT = 'number-input'
 ACTION_ICON = 'action-icon'
 GRAPH = 'graph'
 SLIDER = 'slider'
+DOWNLOAD_OUT = 'download-out'
 
 __all__ = [
     'URL',

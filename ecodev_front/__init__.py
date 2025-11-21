@@ -100,7 +100,6 @@ from ecodev_front.divider import divider
 from ecodev_front.divider import header_divider
 from ecodev_front.documentation import documentation_icon_link
 from ecodev_front.documentation import documentation_text
-from ecodev_front.download_button import download_button
 from ecodev_front.drawer import drawer
 from ecodev_front.footer import app_footer
 from ecodev_front.footer import footer_style
@@ -130,6 +129,32 @@ from ecodev_front.ids import ALERT
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
 from ecodev_front.ids import ASSET_ID
+from ecodev_front.ids import NAVBAR
+from ecodev_front.ids import HOME_BUTTON
+from ecodev_front.ids import MODULE_BUTTON
+from ecodev_front.ids import DOCUMENTATION
+from ecodev_front.ids import NOTIFICATION
+from ecodev_front.ids import USE
+from ecodev_front.ids import CONTINUE
+from ecodev_front.ids import SAVE
+from ecodev_front.ids import COLUMN
+from ecodev_front.ids import ACCEPT
+from ecodev_front.ids import REJECT
+from ecodev_front.ids import SUBMIT_BTN
+from ecodev_front.ids import CLOSE_BTN
+from ecodev_front.ids import SAVE_BTN
+from ecodev_front.ids import CONTINUE_BTN
+from ecodev_front.ids import ACCEPT_BTN
+from ecodev_front.ids import CONFIRM_BTN
+from ecodev_front.ids import CANCEL_BTN
+from ecodev_front.ids import DELETE_BTN
+from ecodev_front.ids import UPDATE_BTN
+from ecodev_front.ids import ADD_BTN
+from ecodev_front.ids import DOWNLOAD_BTN
+from ecodev_front.ids import DOWNLOAD_OUT
+from ecodev_front.ids import TABLE
+from ecodev_front.ids import LOADING_OVERLAY
+from ecodev_front.ids import MODAL
 from ecodev_front.ids import BUTTON
 from ecodev_front.ids import CANCEL_BTN
 from ecodev_front.ids import CHECKBOX
@@ -271,7 +296,6 @@ __all__ = [
     'centered_div',
     'divider',
     'header_divider',
-    'download_button',
     'drawer',
     'app_footer',
     'footer_style',
@@ -465,7 +489,13 @@ __all__ = [
     'DELETE_BTN',
     'UPDATE_BTN',
     'ADD_BTN',
+<<<<<<< HEAD
 
+=======
+    'DOWNLOAD_BTN',
+    'DOWNLOAD_OUT',
+    
+>>>>>>> 2b3ae9f (updated components)
     'TABLE',
     'LOADING_OVERLAY',
     'MODAL',
