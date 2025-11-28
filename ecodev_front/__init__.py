@@ -157,6 +157,17 @@ from ecodev_front.ids import LOADING_OVERLAY
 from ecodev_front.ids import MODAL
 from ecodev_front.ids import BUTTON
 from ecodev_front.ids import CANCEL_BTN
+from ecodev_front.ids import OUTPUT
+from ecodev_front.ids import PLACEHOLDER
+from ecodev_front.ids import ACCORDION_ITEM
+from ecodev_front.ids import SELECT
+from ecodev_front.ids import NULLIFY
+from ecodev_front.ids import SWITCH
+from ecodev_front.ids import TEXT_INPUT
+from ecodev_front.ids import DRAWER
+from ecodev_front.ids import GRAPH
+from ecodev_front.ids import DIV
+from ecodev_front.ids import SEGMENTED_CONTROL
 from ecodev_front.ids import CHECKBOX
 from ecodev_front.ids import CHIP_GROUP
 from ecodev_front.ids import CLOSE_BTN
@@ -489,13 +500,10 @@ __all__ = [
     'DELETE_BTN',
     'UPDATE_BTN',
     'ADD_BTN',
-<<<<<<< HEAD
 
-=======
     'DOWNLOAD_BTN',
     'DOWNLOAD_OUT',
     
->>>>>>> 2b3ae9f (updated components)
     'TABLE',
     'LOADING_OVERLAY',
     'MODAL',
@@ -508,6 +516,7 @@ __all__ = [
     'SWITCH',
     'TEXT_INPUT',
     'DRAWER',
+    'GRAPH',
     'DIV',
     'SEGMENTED_CONTROL',
     'CHECKBOX',

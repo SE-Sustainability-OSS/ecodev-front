@@ -62,6 +62,7 @@ SWITCH = 'switch'
 TEXT_INPUT = 'text-input'
 DRAWER = 'drawer'
 OVERLAY='overlay'
+GRAPH = 'graph'
 DIV = 'div'
 SEGMENTED_CONTROL = 'segmented-control'
 CHECKBOX = 'checkbox'
@@ -139,6 +140,7 @@ __all__ = [
     'SWITCH',
     'TEXT_INPUT',
     'DRAWER',
+    'GRAPH',
     'DIV',
     'SEGMENTED_CONTROL',
     'CHECKBOX',
