@@ -63,6 +63,7 @@ TEXT_INPUT = 'text-input'
 DRAWER = 'drawer'
 OVERLAY='overlay'
 GRAPH = 'graph'
+MAP = 'map'
 DIV = 'div'
 SEGMENTED_CONTROL = 'segmented-control'
 CHECKBOX = 'checkbox'
@@ -142,6 +143,7 @@ __all__ = [
     'DRAWER',
     'GRAPH',
     'DIV',
+    'MAP',
     'SEGMENTED_CONTROL',
     'CHECKBOX',
     'ACTION_ITEM',
