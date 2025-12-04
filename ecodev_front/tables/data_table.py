@@ -42,6 +42,7 @@ def data_table(id: str | dict,
 
                style: dict | None = None,
                row_style: dict | None = None,
+               column_size: str | None = 'responsiveSizeToFit',
                dash_grid_options: dict | None = None,
 
                pagination: bool = False,
@@ -129,8 +130,11 @@ def data_table(id: str | dict,
 
     column_defs = column_defs or _create_default_column_definitions(
         row_data) if autogenerate_column_defs else []
+<<<<<<< HEAD
 
     style = style
+=======
+>>>>>>> aa272f2 (make column_size customizable in data_table)
     default_col_def = default_col_def or {
         # enable floating filters by default
         'floatingFilter': floating_filter,
@@ -139,7 +143,6 @@ def data_table(id: str | dict,
         # make row overflow
         'wrapText': wrap_text,
     }
-    row_style = row_style
 
     dash_grid_options = dash_grid_options or {
         'colResizeDefault': 'shift',
@@ -217,7 +220,7 @@ def data_table(id: str | dict,
         defaultColDef=default_col_def,
         style=style,
         getRowStyle=row_style,
-        columnSize='responsiveSizeToFit',
+        columnSize=column_size,
         dashGridOptions=dash_grid_options,
         className=theme,
 
