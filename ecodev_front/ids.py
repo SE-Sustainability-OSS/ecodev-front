@@ -70,7 +70,7 @@ ACCORDION = 'accordion'
 STACK = 'stack'
 MULTI_SELECT = 'multi-select'
 TEXT = 'text'
-
+STEPPER = 'stepper'
 
 __all__ = [
     'URL',

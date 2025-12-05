@@ -163,6 +163,7 @@ from ecodev_front.ids import SAVE_BTN
 from ecodev_front.ids import SEGMENTED_CONTROL
 from ecodev_front.ids import SELECT
 from ecodev_front.ids import STACK
+from ecodev_front.ids import STEPPER
 from ecodev_front.ids import SUBMIT_BTN
 from ecodev_front.ids import SWITCH
 from ecodev_front.ids import TABLE
@@ -225,7 +226,6 @@ from ecodev_front.text import subtext
 from ecodev_front.text import subtitle
 from ecodev_front.text import text_title
 from ecodev_front.upload_box import upload_box
-
 __all__ = [
     'accordion',
     'accordion_item',
@@ -460,5 +460,6 @@ __all__ = [
     'ACCORDION',
     'STACK',
     'MULTI_SELECT',
-    'TEXT'
+    'TEXT',
+    'STEPPER',
 ]
