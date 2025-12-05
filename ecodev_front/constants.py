@@ -3,6 +3,7 @@ Callbacks constants
 """
 CHILDREN = 'children'
 DATA = 'data'
+ITEMS = 'items'
 PATHNAME = 'pathname'
 N_CLICKS = 'n_clicks'
 VALUE = 'value'
