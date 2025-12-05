@@ -51,6 +51,7 @@ CELL_CLICKED = 'cellClicked'
 CELL_VALUE_CHANGED = 'cellValueChanged'
 ROW_ID = 'rowId'
 COL_ID = 'colId'
+SELECTED_ROWS = 'selectedRows'
 
 """
 Stores
