@@ -4,6 +4,7 @@ Callbacks constants
 CHILDREN = 'children'
 DATA = 'data'
 ITEMS = 'items'
+GROUP = 'group'
 PATHNAME = 'pathname'
 N_CLICKS = 'n_clicks'
 VALUE = 'value'
