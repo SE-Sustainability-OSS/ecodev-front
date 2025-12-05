@@ -23,7 +23,19 @@ from ecodev_front.card import card_section
 from ecodev_front.card import card_title
 from ecodev_front.card import kpi
 from ecodev_front.card import macro_info
+<<<<<<< HEAD
 from ecodev_front.constants import ACTION
+=======
+from ecodev_front.constants import CHILDREN
+from ecodev_front.constants import DATA
+from ecodev_front.constants import ITEMS
+from ecodev_front.constants import GROUP
+from ecodev_front.constants import PATHNAME
+from ecodev_front.constants import N_CLICKS
+from ecodev_front.constants import VALUE
+from ecodev_front.constants import DISABLED
+from ecodev_front.constants import STYLE
+>>>>>>> 5a77e06 (update init to include ITEMS and GROUP constants)
 from ecodev_front.constants import ACTIVE
 from ecodev_front.constants import ALLOW_STEP_CLICK
 from ecodev_front.constants import ANIMATED_ROWS
@@ -410,6 +422,8 @@ __all__ = [
     # Constants
     'CHILDREN',
     'DATA',
+    'ITEMS',
+    'GROUP',
     'PATHNAME',
     'N_CLICKS',
     'VALUE',
