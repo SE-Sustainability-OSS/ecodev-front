@@ -217,6 +217,8 @@ from ecodev_front.tables import custom_column_def
 from ecodev_front.tables import DagColTypes
 from ecodev_front.tables import data_table
 from ecodev_front.tables import locale_fr_FR
+from ecodev_front.tables.column_def import CELL_STYLE_CENTER
+from ecodev_front.tables.column_def import CHECKBOX_COLUMN_DEF
 from ecodev_front.tables.data_table_button import dash_ag_grid_button
 from ecodev_front.text import app_title
 from ecodev_front.text import label_text
@@ -308,6 +310,8 @@ __all__ = [
     'vertical_stepper',
     'custom_column_def',
     'DagColTypes',
+    'CELL_STYLE_CENTER',
+    'CHECKBOX_COLUMN_DEF',
     'data_table',
     'locale_fr_FR',
     'app_title',
