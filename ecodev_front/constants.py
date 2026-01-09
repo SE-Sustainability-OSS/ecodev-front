@@ -41,6 +41,8 @@ CREATED_AT = 'created_at'
 WITH_CLOSE_BUTTON = 'withCloseButton'
 N_INTERVALS = 'n_intervals'
 
+VARIANT = 'variant'
+
 """
 Table constants
 """
@@ -52,6 +54,7 @@ CELL_VALUE_CHANGED = 'cellValueChanged'
 ROW_ID = 'rowId'
 COL_ID = 'colId'
 SELECTED_ROWS = 'selectedRows'
+ROW_TRANSACTION = 'rowTransaction'
 
 """
 Stores
@@ -160,4 +163,7 @@ __all__ = [
     'MAIN_ID',
     'STAGING_ID',
     'UPDATED_AT',
+
+    'VARIANT',
+    'ROW_TRANSACTION'
 ]
