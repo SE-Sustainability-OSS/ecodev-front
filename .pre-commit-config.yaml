@@ -14,11 +14,7 @@ repos:
     rev: v2.4.0
     hooks:
     -   id: trailing-whitespace
-        stages:
-        - pre-commit
     -   id: end-of-file-fixer
-        stages:
-        - pre-commit
     -   id: check-merge-conflict
     -   id: double-quote-string-fixer
     -   id: check-byte-order-marker
@@ -35,8 +31,8 @@ repos:
         args:
         - --application-directories=.:software
         - --py3-plus
--   repo: https://github.com/humitos/mirrors-autoflake.git
-    rev: v1.1
+-   repo: https://github.com/PyCQA/autoflake
+    rev: v2.3.1
     hooks:
     -   id: autoflake
         args:
