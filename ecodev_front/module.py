@@ -9,6 +9,7 @@ from dash import html
 from ecodev_core import Frozen
 from ecodev_core import logger_get
 from ecodev_core import AppUser
+from sqlmodel.main import SQLModelMetaclass
 
 from ecodev_front.nav_items import action_item
 from ecodev_front.page import Page
@@ -82,7 +83,7 @@ class Module(Frozen):
     pages: list[Page]
     navbar_layout: Callable
     
-    access_checks: list[Callable[[AppUser, int], bool]] = []
+    access_checks: list[Callable[[AppUser, SQLModelMetaclass], bool]] = []
 
     main_page_button_kwargs: dict = {}
 
