@@ -40,7 +40,12 @@ class Module(Frozen):
 
     navbar_layout: Callable
         A function which renders the navbar content for this module.
-
+        
+    access_checks: list[Callable] = []
+        A list of functions which check if the user has access to the module. Each method should have
+        ttoken as first argument, and project_d as second argument. 
+        Each function should return a boolean.
+        If any of the functions return False, the module will not be accessible.
 
     main_page_button_kwargs: dict = {}
         Dictionary containing the kwargs of the module_main_button function.
@@ -75,6 +80,8 @@ class Module(Frozen):
 
     pages: list[Page]
     navbar_layout: Callable
+    
+    access_checks: list[Callable[[dict, int], bool]] = []
 
     main_page_button_kwargs: dict = {}
 
