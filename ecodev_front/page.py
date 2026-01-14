@@ -8,6 +8,7 @@ import dash_mantine_components as dmc
 from dash import register_page
 from ecodev_core import AppUser
 from ecodev_core import Frozen
+from sqlmodel import Session
 from sqlmodel.main import SQLModelMetaclass
 
 from ecodev_front.navbar_page_icon import navbar_page_icon
@@ -46,7 +47,7 @@ class Page(Frozen):
         
     access_checks: list[Callable] = []
         A list of functions which check if the user has access to the page. Each method should have
-        app user as first argument, and project as second argument. 
+        app user as first argument, the project as second argument, and the session as third argument. 
         Each function should return a boolean.
         If any of the functions return False, the page will not be accessible. Those tests are
         performed when calling the check_page_access method.
@@ -79,7 +80,7 @@ class Page(Frozen):
     layout: Callable
     aside: Callable | None = None
     
-    access_checks: list[Callable[[AppUser, SQLModelMetaclass], bool]] = []
+    access_checks: list[Callable[[AppUser, SQLModelMetaclass, Session], bool]] = []
 
     protected: bool = True
     admin: bool = False

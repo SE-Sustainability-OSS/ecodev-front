@@ -9,6 +9,7 @@ from dash import html
 from ecodev_core import Frozen
 from ecodev_core import logger_get
 from ecodev_core import AppUser
+from sqlmodel import Session
 from sqlmodel.main import SQLModelMetaclass
 
 from ecodev_front.nav_items import action_item
@@ -45,7 +46,7 @@ class Module(Frozen):
         
     access_checks: list[Callable] = []
         A list of functions which check if the user has access to the module. Each method should have
-        the user as first argument, and project_id as second argument. 
+        the user as first argument, the project as second argument, and the session as third argument. 
         Each function should return a boolean.
         If any of the functions return False, the module will not be accessible.
 
@@ -83,7 +84,7 @@ class Module(Frozen):
     pages: list[Page]
     navbar_layout: Callable
     
-    access_checks: list[Callable[[AppUser, SQLModelMetaclass], bool]] = []
+    access_checks: list[Callable[[AppUser, SQLModelMetaclass, Session], bool]] = []
 
     main_page_button_kwargs: dict = {}
 
