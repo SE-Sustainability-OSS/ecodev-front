@@ -80,7 +80,7 @@ class Page(Frozen):
     layout: Callable
     aside: Callable | None = None
     
-    access_checks: list[Callable[[AppUser, SQLModelMetaclass, Session], bool]] = []
+    access_checks: list[Callable[[AppUser | None, SQLModelMetaclass | None, Session], bool]] = []
 
     protected: bool = True
     admin: bool = False

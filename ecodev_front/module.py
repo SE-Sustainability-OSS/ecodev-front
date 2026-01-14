@@ -84,7 +84,7 @@ class Module(Frozen):
     pages: list[Page]
     navbar_layout: Callable
     
-    access_checks: list[Callable[[AppUser, SQLModelMetaclass, Session], bool]] = []
+    access_checks: list[Callable[[AppUser | None, SQLModelMetaclass | None, Session], bool]] = []
 
     main_page_button_kwargs: dict = {}
 
