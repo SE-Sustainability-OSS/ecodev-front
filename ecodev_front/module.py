@@ -2,7 +2,7 @@
 Module implementing a generic module object to be used throughout the app
 """
 from pathlib import Path
-from typing import Callable
+from typing import Any, Callable
 
 import dash_mantine_components as dmc
 from dash import html
@@ -54,9 +54,6 @@ class Module(Frozen):
         Dictionary containing the kwargs of the module_main_button function.
         Optional. Use to override default proposed values
 
-    protected: bool
-        If the module is protected, the user must be authenticated to access it. Default is True.
-
     admin: bool
         If the module is admin, only users with admin privileges can access it. Default is False.
 
@@ -84,11 +81,10 @@ class Module(Frozen):
     pages: list[Page]
     navbar_layout: Callable
     
-    access_checks: list[Callable[[AppUser | None, SQLModelMetaclass | None, Session], bool]] = []
+    access_checks: list[Callable[Any, bool]] = []
 
     main_page_button_kwargs: dict = {}
 
-    protected: bool = True
     admin: bool = False
 
     @property
