@@ -4,6 +4,7 @@ Module implementing a generic Dash AG Grid table
 from typing import Any
 from typing import Dict
 from typing import List
+from typing import Optional
 from typing import Union
 
 import dash_ag_grid as dag
@@ -71,7 +72,7 @@ def data_table(id: str | dict,
                default_expanded_depth: int = 0,
                auto_group_column_field: str | None = None,
 
-
+               bottom_pinned_rows: Optional[list[dict]] = None,
                **kwargs,
                ) -> dag.AgGrid:
     """
@@ -120,6 +121,10 @@ def data_table(id: str | dict,
         to expand/collapse.
 
         theme (str): theme of the table. Defaults to 'ag-theme-quartz'.
+
+        bottom_pinned_rows (Optional[list[dict]]): Rows to pin at the bottom of the table. \
+            Ignored if None. Defaults to None. For styling the bottom pinned rows, check the
+            example at : https://dash.plotly.com/dash-ag-grid/row-pinning
     """
 
     column_defs = column_defs or _create_default_column_definitions(
@@ -199,6 +204,9 @@ def data_table(id: str | dict,
             'suppressMaintainUnsortedOrder': True,
             'rowSelection': 'single',
         }
+
+    if bottom_pinned_rows:
+        dash_grid_options |= {'pinnedBottomRowData': bottom_pinned_rows}
 
     return dag.AgGrid(
         id=id,
