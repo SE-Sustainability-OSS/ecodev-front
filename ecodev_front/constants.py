@@ -59,6 +59,8 @@ ROW_ID = 'rowId'
 COL_ID = 'colId'
 SELECTED_ROWS = 'selectedRows'
 ROW_TRANSACTION = 'rowTransaction'
+PINNED_BOTTOM_ROW_DATA = 'pinnedBottomRowData'
+
 
 """
 Stores
@@ -117,6 +119,7 @@ __all__ = [
     'HIDDEN',
     'HREF',
     'FIGURE',
+    'PINNED_BOTTOM_ROW_DATA',
 
     'CLICK_DATA',
     'ERROR',
