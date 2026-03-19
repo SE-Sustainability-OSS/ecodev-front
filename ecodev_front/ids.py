@@ -69,6 +69,7 @@ INTERVAL = 'interval'
 ACCORDION = 'accordion'
 STACK = 'stack'
 MULTI_SELECT = 'multi-select'
+RADIO_GROUP = 'radio-group'
 TEXT = 'text'
 STEPPER = 'stepper'
 
@@ -134,5 +135,6 @@ __all__ = [
     'ACCORDION',
     'STACK',
     'MULTI_SELECT',
+    'RADIO_GROUP',
     'TEXT'
 ]

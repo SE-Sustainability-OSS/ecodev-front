@@ -150,6 +150,7 @@ from ecodev_front.ids import MODAL
 from ecodev_front.ids import MODULE_BUTTON
 from ecodev_front.ids import MULTI_SELECT
 from ecodev_front.ids import NAVBAR
+from ecodev_front.ids import RADIO_GROUP
 from ecodev_front.ids import NOTIFICATION
 from ecodev_front.ids import NULLIFY
 from ecodev_front.ids import OUTPUT
@@ -204,6 +205,7 @@ from ecodev_front.page_layout import header_layout
 from ecodev_front.report_value import report_value
 from ecodev_front.search_bar import search_bar
 from ecodev_front.segment_control import segmented_control
+from ecodev_front.multi_select import multi_select
 from ecodev_front.select import select
 from ecodev_front.shadow_box import shadow_box
 from ecodev_front.shadow_button import module_main_button
@@ -212,6 +214,7 @@ from ecodev_front.stack import stack
 from ecodev_front.stepper import STEPPER_ID
 from ecodev_front.stepper import stepper_step
 from ecodev_front.stepper import vertical_stepper
+from ecodev_front.radio_group import radio_group
 from ecodev_front.switch import switch
 from ecodev_front.tables import custom_column_def
 from ecodev_front.tables import DagColTypes
@@ -300,6 +303,7 @@ __all__ = [
     'report_value',
     'search_bar',
     'segmented_control',
+    'multi_select',
     'select',
     'shadow_box',
     'shadow_button',
@@ -464,6 +468,8 @@ __all__ = [
     'ACCORDION',
     'STACK',
     'MULTI_SELECT',
+    'RADIO_GROUP',
     'TEXT',
     'STEPPER',
+    'radio_group',
 ]
