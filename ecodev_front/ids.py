@@ -72,6 +72,16 @@ MULTI_SELECT = 'multi-select'
 RADIO_GROUP = 'radio-group'
 TEXT = 'text'
 STEPPER = 'stepper'
+COLLAPSE = 'collapse'
+STORE = 'store'
+ALERT = 'alert'
+ICON = 'icon'
+ASSET_ID = 'asset_id'
+CHIP_GROUP = 'chip-group'
+NUMBER_INPUT = 'number-input'
+ACTION_ICON = 'action-icon'
+GRAPH = 'graph'
+SLIDER = 'slider'
 
 __all__ = [
     'URL',
@@ -136,5 +146,15 @@ __all__ = [
     'STACK',
     'MULTI_SELECT',
     'RADIO_GROUP',
-    'TEXT'
+    'TEXT',
+    'COLLAPSE',
+    'STORE',
+    'ALERT',
+    'ICON',
+    'ASSET_ID',
+    'CHIP_GROUP',
+    'NUMBER_INPUT',
+    'ACTION_ICON',
+    'GRAPH',
+    'SLIDER',
 ]

@@ -40,6 +40,10 @@ COLOR = 'color'
 CREATED_AT = 'created_at'
 WITH_CLOSE_BUTTON = 'withCloseButton'
 N_INTERVALS = 'n_intervals'
+PATH = 'path'
+ASSET = 'asset'
+SELECTED_ROWS = 'selectedRows'
+ANIMATED_ROWS = 'animatedRows'
 
 VARIANT = 'variant'
 
@@ -132,6 +136,10 @@ __all__ = [
     'CREATED_AT',
     'WITH_CLOSE_BUTTON',
     'N_INTERVALS',
+    'PATH',
+    'ASSET',
+    'SELECTED_ROWS',
+    'ANIMATED_ROWS',
 
     'CELL_RENDERER_DATA',
     'ROW_DATA',
