@@ -12,6 +12,7 @@ def radio_group(id: str,
                 data: list[dict],
                 value: str | None = None,
                 label: str = '',
+                label_color: str = '#A0AEC0',
                 size: str = 'sm',
                 label_kwargs: dict = {},
                 **kwargs
@@ -22,7 +23,7 @@ def radio_group(id: str,
     data items must follow the {VALUE: ..., LABEL: ...} format.
     """
     radios = dmc.Group(
-        [dmc.Radio(item[LABEL], value=item[VALUE], size=size) for item in data],
+        [dmc.Radio(item[LABEL], value=item[VALUE], size=size, label_color=label_color) for item in data],
         gap='sm',
     )
     group = dmc.RadioGroup(
