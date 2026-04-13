@@ -160,6 +160,7 @@ from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
 from ecodev_front.ids import ASSET_ID
 from ecodev_front.ids import NAVBAR
+from ecodev_front.ids import STORE
 from ecodev_front.ids import HOME_BUTTON
 from ecodev_front.ids import MODULE_BUTTON
 from ecodev_front.ids import DOCUMENTATION
@@ -192,6 +193,7 @@ from ecodev_front.ids import OUTPUT
 from ecodev_front.ids import PLACEHOLDER
 from ecodev_front.ids import ACCORDION_ITEM
 from ecodev_front.ids import SELECT
+from ecodev_front.ids import ALERT
 from ecodev_front.ids import NULLIFY
 from ecodev_front.ids import SWITCH
 from ecodev_front.ids import TEXT_INPUT
@@ -512,6 +514,7 @@ __all__ = [
     'APPSHELL',
     'ASIDE',
     'NAVBAR',
+    'STORE',
     'HOME_BUTTON',
     'MODULE_BUTTON',
     'DOCUMENTATION',
@@ -547,6 +550,7 @@ __all__ = [
     'PLACEHOLDER',
     'ACCORDION_ITEM',
     'SELECT',
+    'ALERT',
     'NULLIFY',
     'SWITCH',
     'TEXT_INPUT',
