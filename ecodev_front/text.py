@@ -25,11 +25,11 @@ def section_title(text: str, c: str = '#424242', ta: str = 'left', **kwargs) -> 
     return dmc.Title(text, order=3, c=c, ta=ta, tt='capitalize', ff='Averta Bold', **kwargs)
 
 
-def subtitle(text: str, c: str = 'dimmed', ta: str = 'left', **kwargs) -> dmc.Title:
+def subtitle(text: str, c: str = 'dimmed', ta: str = 'left', fz=16, fs='italic', **kwargs) -> dmc.Title:
     """
     Renders a formatted header subtitle
     """
-    return dmc.Text(text, fz=16, ta=ta, c=c, fs='italic', **kwargs)
+    return dmc.Text(text, fz=fz, ta=ta, c=c, fs=fs, **kwargs)
 
 
 def text_title(text: str, c: str = '#0066a1', ta: str = 'left', **kwargs) -> dmc.Text:
@@ -39,11 +39,11 @@ def text_title(text: str, c: str = '#0066a1', ta: str = 'left', **kwargs) -> dmc
     return dmc.Title(children=text, order=4, ff='Averta Bold', c=c, ta=ta, **kwargs)
 
 
-def subtext(text: str, c: str = '#989898', ta: str = 'left', **kwargs) -> dmc.Text:
+def subtext(text: str, c: str = '#989898', ta: str = 'left', fz=14, fs='italic', **kwargs) -> dmc.Text:
     """
     Renders a stylized dmc.Text component to display body sub-texts
     """
-    return dmc.Text(children=text, c=c, fz=14, fs='italic', ta=ta, **kwargs)
+    return dmc.Text(children=text, c=c, fz=fz, fs=fs, ta=ta, **kwargs)
 
 
 def label_text(text: str, 

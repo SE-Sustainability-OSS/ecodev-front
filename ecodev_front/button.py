@@ -2,6 +2,7 @@ from enum import Enum
 from enum import unique
 
 import dash_mantine_components as dmc
+from dash import dcc
 
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
@@ -12,6 +13,8 @@ from ecodev_front.ids import CLOSE_BTN
 from ecodev_front.ids import CONFIRM_BTN
 from ecodev_front.ids import CONTINUE_BTN
 from ecodev_front.ids import DELETE_BTN
+from ecodev_front.ids import DOWNLOAD_BTN
+from ecodev_front.ids import DOWNLOAD_OUT
 from ecodev_front.ids import SAVE_BTN
 from ecodev_front.ids import UPDATE_BTN
 
@@ -21,8 +24,8 @@ def button(id: str | dict,
            icon: str,
            variant: str = 'filled',
            color: str = 'default-color',
-           full_width: bool = True,
-           w: int | None = None):
+           w: int | str = '100%',
+           **kwargs):
     """
     Function to render a button
     - id: unique identifier for the button
@@ -30,7 +33,6 @@ def button(id: str | dict,
     - icon: icon displayed on the left side of the button
     - variant: ('subtle', 'gradient', 'filled', 'light', 'outline') format of the button
     - color: color of the button
-    - full_width: whether the button should take up full width of its parent container
     - w: width of the button in pixels (optional)
     """
     return dmc.Button(
@@ -39,9 +41,26 @@ def button(id: str | dict,
         color=color,
         variant=variant,
         leftSection=dash_icon(icon),
-        fullWidth=full_width,
-        w=w
+        w=w,
+        **kwargs
     )
+
+
+def download_button(id: str,
+                    text: str,
+                    icon: str,
+                    color: str = 'blue',
+                    display: str = 'inline-block',
+                    variant: str = 'outline',
+                    w: int | str = '100%',
+                    ) -> dmc.Stack:
+    """
+    Returns a Div comprised of a button fully customisable and a dcc.Download component
+    """
+    return dmc.Stack([
+        button({TYPE: DOWNLOAD_BTN, INDEX: id}, text, icon, variant, color, display, w),
+        dcc.Download({TYPE: DOWNLOAD_OUT, INDEX: id})
+    ])
 
 
 @unique
@@ -57,6 +76,7 @@ class ButtonAction(str, Enum):
     UPDATE = 'Update'
     ADD = 'Add'
     CONTINUE = 'Continue'
+    DOWNLOAD = 'Download'
 
 
 ACTION_TO_ICON: dict[ButtonAction, str] = {
@@ -67,7 +87,8 @@ ACTION_TO_ICON: dict[ButtonAction, str] = {
     ButtonAction.CANCEL: 'nonicons:not-found-16',
     ButtonAction.UPDATE: 'hugeicons:location-update-01',
     ButtonAction.ADD: 'material-symbols-light:group-add-rounded',
-    ButtonAction.CONTINUE: 'codicon:debug-continue'
+    ButtonAction.CONTINUE: 'codicon:debug-continue',
+    ButtonAction.DOWNLOAD: 'material-symbols:download'
 }
 
 ACTION_TO_COLOR: dict[ButtonAction, str] = {
@@ -78,7 +99,8 @@ ACTION_TO_COLOR: dict[ButtonAction, str] = {
     ButtonAction.CANCEL: 'red.5',
     ButtonAction.UPDATE: 'blue.5',
     ButtonAction.ADD: 'green.5',
-    ButtonAction.CONTINUE: 'blue.7'
+    ButtonAction.CONTINUE: 'blue.7',
+    ButtonAction.DOWNLOAD: 'blue.7',
 }
 
 ACTION_TO_ID = {
@@ -89,7 +111,8 @@ ACTION_TO_ID = {
     ButtonAction.CANCEL: CANCEL_BTN,
     ButtonAction.UPDATE: UPDATE_BTN,
     ButtonAction.ADD: ADD_BTN,
-    ButtonAction.CONTINUE: CONTINUE_BTN
+    ButtonAction.CONTINUE: CONTINUE_BTN,
+    ButtonAction.CONTINUE: DOWNLOAD_BTN
 }
 
 
@@ -98,15 +121,27 @@ def render_action_button(index: str,
                          label: str | None = None,
                          color: str | None = None,
                          display: str = 'inline-block',
-                         variant: str = 'outline'):
+                         variant: str = 'outline',
+                         w: int | str = '100%',
+                         **kwargs):
     """
     Renders a button to go on to the next step
     """
-    return dmc.Button(
-        children=label or action,
+    if action == ButtonAction.DOWNLOAD:
+        return download_button(index, label,
+                               icon=ACTION_TO_ICON[action],
+                               color=color,
+                               display=display,
+                               variant=variant,
+                               w=w,
+                               **kwargs)
+    return button(
         id={TYPE: ACTION_TO_ID[action], INDEX: index},
+        text=label or action,
         color=color or ACTION_TO_COLOR.get(action) or 'blue.7',
-        leftSection=dash_icon(ACTION_TO_ICON[action]),
+        icon=ACTION_TO_ICON[action],
         display=display,
         variant=variant,
+        w=w,
+        **kwargs
     )

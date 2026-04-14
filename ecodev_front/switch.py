@@ -28,8 +28,6 @@ def switch(id: str,
         data=data,
         color=color,
         size=size,
-        persistence=True,
-        persistence_type='session',
         style=style or {'backgroundColor': bg, 'border': '1px solid #dcdcdc'},
         **kwargs
     )

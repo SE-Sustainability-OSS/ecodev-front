@@ -42,6 +42,7 @@ def data_table(id: str | dict,
 
                style: dict | None = None,
                row_style: dict | None = None,
+               column_size: str | None = 'responsiveSizeToFit',
                dash_grid_options: dict | None = None,
 
                pagination: bool = False,
@@ -139,7 +140,6 @@ def data_table(id: str | dict,
         # make row overflow
         'wrapText': wrap_text,
     }
-    row_style = row_style
 
     dash_grid_options = dash_grid_options or {
         'colResizeDefault': 'shift',
@@ -217,7 +217,7 @@ def data_table(id: str | dict,
         defaultColDef=default_col_def,
         style=style,
         getRowStyle=row_style,
-        columnSize='responsiveSizeToFit',
+        columnSize=column_size,
         dashGridOptions=dash_grid_options,
         className=theme,
 

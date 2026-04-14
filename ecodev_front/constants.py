@@ -3,6 +3,8 @@ Callbacks constants
 """
 CHILDREN = 'children'
 DATA = 'data'
+ITEMS = 'items'
+GROUP = 'group'
 PATHNAME = 'pathname'
 N_CLICKS = 'n_clicks'
 VALUE = 'value'
@@ -21,7 +23,8 @@ CHECKED = 'checked'
 HIDDEN = 'hidden'
 HREF = 'href'
 FIGURE = 'figure'
-
+VARIANT = 'variant'
+TOOLTIP = 'tooltip'
 CLICK_DATA = 'clickData'
 ERROR = 'error'
 LOADING = 'loading'
@@ -44,7 +47,7 @@ PATH = 'path'
 ASSET = 'asset'
 SELECTED_ROWS = 'selectedRows'
 ANIMATED_ROWS = 'animatedRows'
-
+SEARCH = 'search'
 VARIANT = 'variant'
 
 """
@@ -175,6 +178,7 @@ __all__ = [
     'STAGING_ID',
     'UPDATED_AT',
 
+    'SEARCH',
     'VARIANT',
     'ROW_TRANSACTION'
 ]

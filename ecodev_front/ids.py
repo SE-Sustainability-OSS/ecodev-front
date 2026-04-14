@@ -18,6 +18,7 @@ PAGE = 'page'
 APPSHELL = 'appshell'
 ASIDE = 'aside'
 NAVBAR = 'navbar'
+STORE = 'store'
 HOME_BUTTON = 'home-button-id'
 MODULE_BUTTON = 'module-button'
 DOCUMENTATION = 'documentation'
@@ -44,6 +45,7 @@ CANCEL_BTN = 'cancel-btn'
 DELETE_BTN = 'delete-btn'
 UPDATE_BTN = 'update-btn'
 ADD_BTN = 'add-btn'
+DOWNLOAD_BTN = 'download-btn'
 
 """
 Component types
@@ -57,9 +59,13 @@ PLACEHOLDER = 'placeholder'
 ACCORDION_ITEM = 'accordion-item'
 SELECT = 'select'
 NULLIFY = 'nullify'
+ALERT = 'alert'
 SWITCH = 'switch'
 TEXT_INPUT = 'text-input'
 DRAWER = 'drawer'
+OVERLAY='overlay'
+GRAPH = 'graph'
+MAP = 'map'
 DIV = 'div'
 SEGMENTED_CONTROL = 'segmented-control'
 CHECKBOX = 'checkbox'
@@ -82,6 +88,7 @@ NUMBER_INPUT = 'number-input'
 ACTION_ICON = 'action-icon'
 GRAPH = 'graph'
 SLIDER = 'slider'
+DOWNLOAD_OUT = 'download-out'
 
 __all__ = [
     'URL',
@@ -136,7 +143,9 @@ __all__ = [
     'SWITCH',
     'TEXT_INPUT',
     'DRAWER',
+    'GRAPH',
     'DIV',
+    'MAP',
     'SEGMENTED_CONTROL',
     'CHECKBOX',
     'ACTION_ITEM',
