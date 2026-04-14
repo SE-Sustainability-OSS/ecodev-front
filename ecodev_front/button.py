@@ -1,22 +1,22 @@
 from enum import Enum
 from enum import unique
 
-from dash import dcc
 import dash_mantine_components as dmc
+from dash import dcc
 
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
 from ecodev_front.icon import dash_icon
-from ecodev_front.ids import ADD_BTN, DOWNLOAD_BTN
+from ecodev_front.ids import ADD_BTN
 from ecodev_front.ids import CANCEL_BTN
 from ecodev_front.ids import CLOSE_BTN
 from ecodev_front.ids import CONFIRM_BTN
 from ecodev_front.ids import CONTINUE_BTN
 from ecodev_front.ids import DELETE_BTN
-from ecodev_front.ids import SAVE_BTN
-from ecodev_front.ids import UPDATE_BTN
 from ecodev_front.ids import DOWNLOAD_BTN
 from ecodev_front.ids import DOWNLOAD_OUT
+from ecodev_front.ids import SAVE_BTN
+from ecodev_front.ids import UPDATE_BTN
 
 
 def button(id: str | dict,
@@ -33,7 +33,6 @@ def button(id: str | dict,
     - icon: icon displayed on the left side of the button
     - variant: ('subtle', 'gradient', 'filled', 'light', 'outline') format of the button
     - color: color of the button
-    - full_width: whether the button should take up full width of its parent container
     - w: width of the button in pixels (optional)
     """
     return dmc.Button(
@@ -46,21 +45,22 @@ def button(id: str | dict,
         **kwargs
     )
 
+
 def download_button(id: str,
                     text: str,
                     icon: str,
                     color: str = 'blue',
                     display: str = 'inline-block',
-                    variant: str = 'outline'
+                    variant: str = 'outline',
+                    w: int | str = '100%',
                     ) -> dmc.Stack:
     """
     Returns a Div comprised of a button fully customisable and a dcc.Download component
     """
     return dmc.Stack([
-        button({TYPE: DOWNLOAD_BTN, INDEX: id}, text, icon, variant, color, display),
+        button({TYPE: DOWNLOAD_BTN, INDEX: id}, text, icon, variant, color, display, w),
         dcc.Download({TYPE: DOWNLOAD_OUT, INDEX: id})
     ])
-
 
 
 @unique
@@ -128,7 +128,7 @@ def render_action_button(index: str,
     Renders a button to go on to the next step
     """
     if action == ButtonAction.DOWNLOAD:
-        return download_button(index, label, 
+        return download_button(index, label,
                                icon=ACTION_TO_ICON[action],
                                color=color,
                                display=display,

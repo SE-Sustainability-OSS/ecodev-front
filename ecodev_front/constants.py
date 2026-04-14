@@ -47,7 +47,7 @@ PATH = 'path'
 ASSET = 'asset'
 SELECTED_ROWS = 'selectedRows'
 ANIMATED_ROWS = 'animatedRows'
-
+SEARCH = 'search'
 VARIANT = 'variant'
 
 """
@@ -178,6 +178,7 @@ __all__ = [
     'STAGING_ID',
     'UPDATED_AT',
 
+    'SEARCH',
     'VARIANT',
     'ROW_TRANSACTION'
 ]
