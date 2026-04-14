@@ -130,11 +130,8 @@ def data_table(id: str | dict,
 
     column_defs = column_defs or _create_default_column_definitions(
         row_data) if autogenerate_column_defs else []
-<<<<<<< HEAD
 
     style = style
-=======
->>>>>>> aa272f2 (make column_size customizable in data_table)
     default_col_def = default_col_def or {
         # enable floating filters by default
         'floatingFilter': floating_filter,

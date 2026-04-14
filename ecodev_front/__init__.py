@@ -23,19 +23,7 @@ from ecodev_front.card import card_section
 from ecodev_front.card import card_title
 from ecodev_front.card import kpi
 from ecodev_front.card import macro_info
-<<<<<<< HEAD
 from ecodev_front.constants import ACTION
-=======
-from ecodev_front.constants import CHILDREN
-from ecodev_front.constants import DATA
-from ecodev_front.constants import ITEMS
-from ecodev_front.constants import GROUP
-from ecodev_front.constants import PATHNAME
-from ecodev_front.constants import N_CLICKS
-from ecodev_front.constants import VALUE
-from ecodev_front.constants import DISABLED
-from ecodev_front.constants import STYLE
->>>>>>> 5a77e06 (update init to include ITEMS and GROUP constants)
 from ecodev_front.constants import ACTIVE
 from ecodev_front.constants import ALLOW_STEP_CLICK
 from ecodev_front.constants import ANIMATED_ROWS
@@ -58,30 +46,14 @@ from ecodev_front.constants import DISPLAY
 from ecodev_front.constants import ERROR
 from ecodev_front.constants import FIGURE
 from ecodev_front.constants import FILENAME
+from ecodev_front.constants import GROUP
 from ecodev_front.constants import HIDDEN
 from ecodev_front.constants import HREF
-from ecodev_front.constants import VARIANT
-from ecodev_front.constants import HIDDEN
-from ecodev_front.constants import HREF
-from ecodev_front.constants import FIGURE
-from ecodev_front.constants import CLICK_DATA
-from ecodev_front.constants import TOOLTIP
-from ecodev_front.constants import ERROR
-from ecodev_front.constants import LOADING
-from ecodev_front.constants import ALLOW_STEP_CLICK
-from ecodev_front.constants import STEPS
-from ecodev_front.constants import LABEL
-from ecodev_front.constants import OPTIONS
-from ecodev_front.constants import REQUIRED
-from ecodev_front.constants import DISPLAY
-from ecodev_front.constants import SEND_NOTIFICATIONS
-from ecodev_front.constants import TITLE
-from ecodev_front.constants import ACTION
-from ecodev_front.constants import MESSAGE
 from ecodev_front.constants import ICON
 from ecodev_front.constants import ID
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import INSERTED
+from ecodev_front.constants import ITEMS
 from ecodev_front.constants import LABEL
 from ecodev_front.constants import LOADING
 from ecodev_front.constants import LOCAL
@@ -113,6 +85,7 @@ from ecodev_front.constants import STEPS
 from ecodev_front.constants import STYLE
 from ecodev_front.constants import THOUSAND
 from ecodev_front.constants import TITLE
+from ecodev_front.constants import TOOLTIP
 from ecodev_front.constants import TRILLION
 from ecodev_front.constants import TYPE
 from ecodev_front.constants import UNCHANGED
@@ -120,6 +93,7 @@ from ecodev_front.constants import UPDATE_TYPE
 from ecodev_front.constants import UPDATED
 from ecodev_front.constants import UPDATED_AT
 from ecodev_front.constants import VALUE
+from ecodev_front.constants import VARIANT
 from ecodev_front.constants import VISIBLE
 from ecodev_front.constants import WITH_CLOSE_BUTTON
 from ecodev_front.container import container
@@ -159,48 +133,8 @@ from ecodev_front.ids import ALERT
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
 from ecodev_front.ids import ASSET_ID
-from ecodev_front.ids import NAVBAR
-from ecodev_front.ids import STORE
-from ecodev_front.ids import HOME_BUTTON
-from ecodev_front.ids import MODULE_BUTTON
-from ecodev_front.ids import DOCUMENTATION
-from ecodev_front.ids import NOTIFICATION
-from ecodev_front.ids import USE
-from ecodev_front.ids import CONTINUE
-from ecodev_front.ids import SAVE
-from ecodev_front.ids import COLUMN
-from ecodev_front.ids import ACCEPT
-from ecodev_front.ids import REJECT
-from ecodev_front.ids import SUBMIT_BTN
-from ecodev_front.ids import CLOSE_BTN
-from ecodev_front.ids import SAVE_BTN
-from ecodev_front.ids import CONTINUE_BTN
-from ecodev_front.ids import ACCEPT_BTN
-from ecodev_front.ids import CONFIRM_BTN
-from ecodev_front.ids import CANCEL_BTN
-from ecodev_front.ids import DELETE_BTN
-from ecodev_front.ids import UPDATE_BTN
-from ecodev_front.ids import ADD_BTN
-from ecodev_front.ids import DOWNLOAD_BTN
-from ecodev_front.ids import DOWNLOAD_OUT
-from ecodev_front.ids import TABLE
-from ecodev_front.ids import MAP
-from ecodev_front.ids import LOADING_OVERLAY
-from ecodev_front.ids import MODAL
 from ecodev_front.ids import BUTTON
 from ecodev_front.ids import CANCEL_BTN
-from ecodev_front.ids import OUTPUT
-from ecodev_front.ids import PLACEHOLDER
-from ecodev_front.ids import ACCORDION_ITEM
-from ecodev_front.ids import SELECT
-from ecodev_front.ids import ALERT
-from ecodev_front.ids import NULLIFY
-from ecodev_front.ids import SWITCH
-from ecodev_front.ids import TEXT_INPUT
-from ecodev_front.ids import DRAWER
-from ecodev_front.ids import GRAPH
-from ecodev_front.ids import DIV
-from ecodev_front.ids import SEGMENTED_CONTROL
 from ecodev_front.ids import CHECKBOX
 from ecodev_front.ids import CHIP_GROUP
 from ecodev_front.ids import CLOSE_BTN
@@ -212,6 +146,8 @@ from ecodev_front.ids import CONTINUE_BTN
 from ecodev_front.ids import DELETE_BTN
 from ecodev_front.ids import DIV
 from ecodev_front.ids import DOCUMENTATION
+from ecodev_front.ids import DOWNLOAD_BTN
+from ecodev_front.ids import DOWNLOAD_OUT
 from ecodev_front.ids import DRAWER
 from ecodev_front.ids import ERROR_MODAL
 from ecodev_front.ids import FOOTER_ID
@@ -226,6 +162,7 @@ from ecodev_front.ids import LOGIN_PASSWORD_INPUT_ID
 from ecodev_front.ids import LOGIN_USERNAME_INPUT_ID
 from ecodev_front.ids import LOGOUT_BTN_ID
 from ecodev_front.ids import MAIN_CONTENT_ID
+from ecodev_front.ids import MAP
 from ecodev_front.ids import MODAL
 from ecodev_front.ids import MODULE_BUTTON
 from ecodev_front.ids import MULTI_SELECT
@@ -514,7 +451,6 @@ __all__ = [
     'APPSHELL',
     'ASIDE',
     'NAVBAR',
-    'STORE',
     'HOME_BUTTON',
     'MODULE_BUTTON',
     'DOCUMENTATION',
@@ -541,7 +477,7 @@ __all__ = [
 
     'DOWNLOAD_BTN',
     'DOWNLOAD_OUT',
-    
+
     'TABLE',
     'LOADING_OVERLAY',
     'MODAL',
@@ -550,7 +486,6 @@ __all__ = [
     'PLACEHOLDER',
     'ACCORDION_ITEM',
     'SELECT',
-    'ALERT',
     'NULLIFY',
     'SWITCH',
     'TEXT_INPUT',
