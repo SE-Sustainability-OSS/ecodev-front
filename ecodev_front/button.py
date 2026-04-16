@@ -50,16 +50,16 @@ def download_button(id: dict | str,
                     text: str,
                     icon: str,
                     color: str = 'blue',
-                    display: str = 'inline-block',
                     variant: str = 'outline',
                     w: int | str = '100%',
+                    **kwargs
                     ) -> dmc.Stack:
     """
     Returns a Div comprised of a button fully customisable and a dcc.Download component
     """
     return dmc.Stack([
         button(id if isinstance(id, dict) else {TYPE: DOWNLOAD_BTN, INDEX: id}, 
-               text, icon, variant, color, w, display=display),
+               text, icon, variant, color, w, **kwargs),
         dcc.Download({TYPE: DOWNLOAD_OUT, INDEX: id})
     ])
 
@@ -121,7 +121,6 @@ def render_action_button(index: str,
                          action: ButtonAction,
                          label: str | None = None,
                          color: str | None = None,
-                         display: str = 'inline-block',
                          variant: str = 'outline',
                          w: int | str = '100%',
                          **kwargs):
@@ -132,7 +131,6 @@ def render_action_button(index: str,
         return download_button(index, label,
                                icon=ACTION_TO_ICON[action],
                                color=color,
-                               display=display,
                                variant=variant,
                                w=w,
                                **kwargs)
@@ -141,7 +139,6 @@ def render_action_button(index: str,
         text=label or action,
         color=color or ACTION_TO_COLOR.get(action) or 'blue.7',
         icon=ACTION_TO_ICON[action],
-        display=display,
         variant=variant,
         w=w,
         **kwargs
