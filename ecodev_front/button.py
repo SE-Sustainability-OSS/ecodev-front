@@ -46,9 +46,9 @@ def button(id: str | dict,
     )
 
 
-def download_button(id: str,
+def download_button(id: dict | str,
                     text: str,
-                    icon: dict | str,
+                    icon: str,
                     color: str = 'blue',
                     display: str = 'inline-block',
                     variant: str = 'outline',
