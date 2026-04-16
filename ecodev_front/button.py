@@ -59,7 +59,7 @@ def download_button(id: dict | str,
     """
     return dmc.Stack([
         button(id if isinstance(id, dict) else {TYPE: DOWNLOAD_BTN, INDEX: id}, 
-               text, icon, variant, color, display, w),
+               text, icon, variant, color, w, display=display),
         dcc.Download({TYPE: DOWNLOAD_OUT, INDEX: id})
     ])
 
