@@ -63,7 +63,7 @@ ALERT = 'alert'
 SWITCH = 'switch'
 TEXT_INPUT = 'text-input'
 DRAWER = 'drawer'
-OVERLAY='overlay'
+OVERLAY = 'overlay'
 GRAPH = 'graph'
 MAP = 'map'
 DIV = 'div'
@@ -84,6 +84,7 @@ ALERT = 'alert'
 ICON = 'icon'
 ASSET_ID = 'asset_id'
 CHIP_GROUP = 'chip-group'
+CHECKBOX_GROUP = 'checkbox-group'
 NUMBER_INPUT = 'number-input'
 ACTION_ICON = 'action-icon'
 GRAPH = 'graph'
@@ -162,6 +163,7 @@ __all__ = [
     'ICON',
     'ASSET_ID',
     'CHIP_GROUP',
+    'CHECKBOX_GROUP',
     'NUMBER_INPUT',
     'ACTION_ICON',
     'GRAPH',
