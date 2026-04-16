@@ -20,7 +20,7 @@ def loading_overlay(id: str | dict,
     """
     return dmc.LoadingOverlay(
         visible=False,
-        id={TYPE: LOADING_OVERLAY, INDEX: id},
+        id=id if isinstance(id, dict) else {TYPE: LOADING_OVERLAY, INDEX: id},
         loaderProps=loader_props or {'color': color, 'size': 'sm'},
         transitionProps=transition_props or {'transition': 'fade', 'duration': 1_000},
         overlayProps=overlay_props or {'radius': 'sm', 'blur': 2, 'color': bg_color},
