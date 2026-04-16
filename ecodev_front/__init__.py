@@ -23,6 +23,7 @@ from ecodev_front.card import card_section
 from ecodev_front.card import card_title
 from ecodev_front.card import kpi
 from ecodev_front.card import macro_info
+from ecodev_front.checkbox_group import checkbox_group
 from ecodev_front.constants import ACTION
 from ecodev_front.constants import ACTIVE
 from ecodev_front.constants import ALLOW_STEP_CLICK
@@ -136,6 +137,7 @@ from ecodev_front.ids import ASSET_ID
 from ecodev_front.ids import BUTTON
 from ecodev_front.ids import CANCEL_BTN
 from ecodev_front.ids import CHECKBOX
+from ecodev_front.ids import CHECKBOX_GROUP
 from ecodev_front.ids import CHIP_GROUP
 from ecodev_front.ids import CLOSE_BTN
 from ecodev_front.ids import COLLAPSE
@@ -503,11 +505,13 @@ __all__ = [
     'RADIO_GROUP',
     'TEXT',
     'STEPPER',
+    'checkbox_group',
     'radio_group',
     'COLLAPSE',
     'STORE',
     'ALERT',
     'ASSET_ID',
+    'CHECKBOX_GROUP',
     'CHIP_GROUP',
     'NUMBER_INPUT',
     'ACTION_ICON',
