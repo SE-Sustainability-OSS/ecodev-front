@@ -113,7 +113,7 @@ ACTION_TO_ID = {
     ButtonAction.UPDATE: UPDATE_BTN,
     ButtonAction.ADD: ADD_BTN,
     ButtonAction.CONTINUE: CONTINUE_BTN,
-    ButtonAction.CONTINUE: DOWNLOAD_BTN
+    ButtonAction.DOWNLOAD: DOWNLOAD_BTN
 }
 
 
@@ -127,6 +127,7 @@ def render_action_button(index: str,
     """
     Renders a button to go on to the next step
     """
+    
     if action == ButtonAction.DOWNLOAD:
         return download_button(index, label,
                                icon=ACTION_TO_ICON[action],
