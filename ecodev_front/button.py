@@ -48,7 +48,7 @@ def button(id: str | dict,
 
 def download_button(id: str,
                     text: str,
-                    icon: str,
+                    icon: dict | str,
                     color: str = 'blue',
                     display: str = 'inline-block',
                     variant: str = 'outline',
@@ -58,7 +58,8 @@ def download_button(id: str,
     Returns a Div comprised of a button fully customisable and a dcc.Download component
     """
     return dmc.Stack([
-        button({TYPE: DOWNLOAD_BTN, INDEX: id}, text, icon, variant, color, display, w),
+        button(id if isinstance(id, dict) else {TYPE: DOWNLOAD_BTN, INDEX: id}, 
+               text, icon, variant, color, display, w),
         dcc.Download({TYPE: DOWNLOAD_OUT, INDEX: id})
     ])
 
