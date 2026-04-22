@@ -17,6 +17,7 @@ from ecodev_front.aside_buttons import SHOW
 from ecodev_front.aside_section import aside_section
 from ecodev_front.button import button
 from ecodev_front.button import ButtonAction
+from ecodev_front.button import download_button
 from ecodev_front.button import render_action_button
 from ecodev_front.card import background_card
 from ecodev_front.card import card_section
@@ -268,6 +269,7 @@ __all__ = [
     'HIDE',
     'SHOW',
     'button',
+    'download_button',
     'background_card',
     'card_section',
     'card_title',
