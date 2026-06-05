@@ -5,6 +5,7 @@ import dash_mantine_components as dmc
 from dash import dcc
 
 from ecodev_front.constants import INDEX
+from ecodev_front.constants import MAIN_DM_COLOR
 from ecodev_front.constants import TYPE
 from ecodev_front.icon import dash_icon
 from ecodev_front.ids import ADD_BTN
@@ -49,7 +50,7 @@ def button(id: str | dict,
 def download_button(id: dict | str,
                     text: str,
                     icon: str,
-                    color: str = 'blue',
+                    color: str = MAIN_DM_COLOR,
                     variant: str = 'outline',
                     w: int | str = '100%',
                     **kwargs
@@ -58,7 +59,7 @@ def download_button(id: dict | str,
     Returns a Div comprised of a button fully customisable and a dcc.Download component
     """
     return dmc.Stack([
-        button(id if isinstance(id, dict) else {TYPE: DOWNLOAD_BTN, INDEX: id}, 
+        button(id if isinstance(id, dict) else {TYPE: DOWNLOAD_BTN, INDEX: id},
                text, icon, variant, color, w, **kwargs),
         dcc.Download({TYPE: DOWNLOAD_OUT, INDEX: id})
     ])
@@ -127,7 +128,7 @@ def render_action_button(index: str,
     """
     Renders a button to go on to the next step
     """
-    
+
     if action == ButtonAction.DOWNLOAD:
         return download_button(index, label,
                                icon=ACTION_TO_ICON[action],
@@ -138,7 +139,7 @@ def render_action_button(index: str,
     return button(
         id={TYPE: ACTION_TO_ID[action], INDEX: index},
         text=label or action,
-        color=color or ACTION_TO_COLOR.get(action) or 'blue.7',
+        color=color or ACTION_TO_COLOR.get(action) or MAIN_DM_COLOR,
         icon=ACTION_TO_ICON[action],
         variant=variant,
         w=w,

@@ -5,6 +5,8 @@ import dash_mantine_components as dmc
 from dash import html
 from dash_iconify import DashIconify
 
+from ecodev_front.constants import MAIN_COLOR
+
 
 def action_item(id: str | dict,
                 label: str,
@@ -82,7 +84,7 @@ def menu(label: str,
 def menu_item(label: str,
               href: str,
               icon: str,
-              icon_color: str = '#0066A1'
+              icon_color: str = MAIN_COLOR
               ) -> dmc.MenuItem:
     """
     Component to create a navbar menu item.

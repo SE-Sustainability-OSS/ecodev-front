@@ -1,14 +1,17 @@
 import dash_mantine_components as dmc
 
-
-from ecodev_front.constants import INDEX, TYPE
+from ecodev_front.constants import INDEX
+from ecodev_front.constants import MAIN_DM_COLOR
+from ecodev_front.constants import TYPE
+from ecodev_front.constants import VERY_LIGHT_GRAY
 from ecodev_front.ids import LOADING_OVERLAY
 
+
 def loading_overlay(id: str | dict,
-                    color: str = 'blue',
-                    bg_color: str = '#f2f2f2', 
-                    zIndex=10, 
-                    loader_props: dict | None = None, 
+                    color: str = MAIN_DM_COLOR,
+                    bg_color: str = VERY_LIGHT_GRAY,
+                    zIndex=10,
+                    loader_props: dict | None = None,
                     overlay_props: dict | None = None,
                     transition_props: dict | None = None):
     """

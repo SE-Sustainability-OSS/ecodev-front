@@ -6,6 +6,7 @@ from dash import html
 from dash_iconify import DashIconify
 
 from ecodev_front.constants import INDEX
+from ecodev_front.constants import LIGHT_GRAY
 from ecodev_front.constants import TYPE
 from ecodev_front.ids import MODULE_BUTTON
 
@@ -54,7 +55,7 @@ def module_main_button(id: str,
     """
     Renders a shadow_button with text above and below an icon
     """
-    color = color if not disabled else '#dcdcdc'
+    color = color if not disabled else LIGHT_GRAY
     return shadow_button(
         id={TYPE: MODULE_BUTTON, INDEX: id},
         disabled=disabled,

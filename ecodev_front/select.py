@@ -5,13 +5,14 @@ from typing import Any
 
 import dash_mantine_components as dmc
 
+from ecodev_front.constants import CENTRAL_GRAY
 from ecodev_front.icon import dash_icon
 
 
 def select(id: str | dict,
            label_text: str | None = None,
            label_id: str | None = '',
-           label_color: str = '#A0AEC0',
+           label_color: str = CENTRAL_GRAY,
            value: Any | None = None,
            data: list[str] | None = None,
            persistence: bool = True,

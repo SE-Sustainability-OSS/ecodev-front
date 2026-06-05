@@ -4,7 +4,9 @@ Module implementing standardised page layouts
 import dash_mantine_components as dmc
 
 from ecodev_front.aside_buttons import aside_buttons
+from ecodev_front.constants import ICON_COLOR
 from ecodev_front.constants import INDEX
+from ecodev_front.constants import MAIN_COLOR
 from ecodev_front.constants import TYPE
 from ecodev_front.ids import PROJECT_HEADER_ID
 from ecodev_front.page import Page
@@ -28,9 +30,9 @@ def basic_layout(page: Page,
 
 
 def header_layout(page: Page,
-                  color: str = '#0066a1',
+                  color: str = MAIN_COLOR,
                   with_icon: bool = True,
-                  icon_color: str = '#97BDD3',
+                  icon_color: str = ICON_COLOR,
                   enable_scroll: bool = True,
                   aside_width: int | str | None = None
                   ) -> dmc.Stack:

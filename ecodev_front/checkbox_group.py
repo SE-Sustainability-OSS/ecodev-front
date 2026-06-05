@@ -7,6 +7,7 @@ import dash_mantine_components as dmc
 
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import LABEL
+from ecodev_front.constants import MAIN_COLOR
 from ecodev_front.constants import TYPE
 from ecodev_front.constants import VALUE
 from ecodev_front.ids import CHECKBOX_GROUP
@@ -17,7 +18,7 @@ def checkbox_group(id: str | dict,
                    data: list[dict],
                    value: list[str] | None = None,
                    label: str = '',
-                   color: str = '#0066a1',
+                   color: str = MAIN_COLOR,
                    size: str = 'sm',
                    gap: str = 'xs',
                    label_kwargs: dict = {},

@@ -1,6 +1,20 @@
 """
 Callbacks constants
 """
+from ecodev_core import SETTINGS
+
+MAIN_COLOR = SETTINGS.colors.main_color  # the actual hex
+ICON_COLOR = SETTINGS.colors.icon_color  # the actual hex
+MAIN_DM_COLOR = SETTINGS.colors.main_dm_color  # from dash mantine
+CENTRAL_GRAY = SETTINGS.colors.central_gray  # Exact match to gray 4
+LIGHT_GRAY = SETTINGS.colors.very_light_gray  # close to gray 3
+WHITE_GRAY = SETTINGS.colors.white_gray  # Extra close to gray 0
+VERY_LIGHT_GRAY = SETTINGS.colors.very_light_gray  # Super close to gray 1
+LIGHTER_DARK = SETTINGS.colors.lighter_dark  # Close match to dark 2
+LIGHT_DARK = SETTINGS.colors.light_dark  # Close match to dark 3
+CENTRAL_DARK = SETTINGS.colors.central_dark  # Exact match to dark 4
+DGB_COLOR = SETTINGS.colors.dgb_coor  # for dash ag grid button color
+
 CHILDREN = 'children'
 DATA = 'data'
 ITEMS = 'items'

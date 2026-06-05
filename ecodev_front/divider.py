@@ -3,13 +3,16 @@ File containing a page divider
 """
 import dash_mantine_components as dmc
 
+from ecodev_front.constants import MAIN_COLOR
+from ecodev_front.constants import VERY_LIGHT_GRAY
+
 
 def divider(orientation: str = 'horizontal',
             label: str | dmc.Anchor | None = None,
             position: str = 'center',
             margin: int = 10,
             w: str | int = '',
-            color: str = '#0066a1'
+            color: str = MAIN_COLOR
             ) -> dmc.Divider:
     """
     Renders a divider
@@ -24,6 +27,6 @@ def header_divider() -> dmc.Divider:
     Generates the vertical navbar dividers between app header sections
     """
     return dmc.Divider(orientation='vertical',
-                       style={'color': '#f2f2f2',
+                       style={'color': VERY_LIGHT_GRAY,
                               'marginTop': '10px',
                               'marginBottom': '10px'})

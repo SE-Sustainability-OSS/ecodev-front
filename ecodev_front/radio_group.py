@@ -3,6 +3,7 @@ Module implementing a radio group select component
 """
 import dash_mantine_components as dmc
 
+from ecodev_front.constants import CENTRAL_GRAY
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import LABEL
 from ecodev_front.constants import TYPE
@@ -15,7 +16,7 @@ def radio_group(id: str,
                 data: list[dict],
                 value: str | None = None,
                 label: str = '',
-                color: str = '#A0AEC0',
+                color: str = CENTRAL_GRAY,
                 size: str = 'sm',
                 label_kwargs: dict = {},
                 **kwargs

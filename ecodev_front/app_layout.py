@@ -12,8 +12,10 @@ from ecodev_front.button import ButtonAction
 from ecodev_front.button import render_action_button
 from ecodev_front.constants import ERROR
 from ecodev_front.constants import INDEX
+from ecodev_front.constants import MAIN_COLOR
 from ecodev_front.constants import NOTIFICATION_ID
 from ecodev_front.constants import TYPE
+from ecodev_front.constants import VERY_LIGHT_GRAY
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
 from ecodev_front.ids import ERROR_MODAL
@@ -44,7 +46,7 @@ def get_error_monitor_component():
 
 
 def dash_base_layout(stores: list[dcc.Store] = [],
-                     main_color: str = '#0066A1',
+                     main_color: str = MAIN_COLOR,
                      theme: dict[str, dict[str, Any] | list[str]] | None = None,
                      header_height: int = 55,
                      footer_height: int = 40,
@@ -123,7 +125,7 @@ def dash_base_layout(stores: list[dcc.Store] = [],
 
             id=APPSHELL,
             style={'padding': '0',
-                   'background-color': '#f2f2f2',
+                   'background-color': VERY_LIGHT_GRAY,
                    'overflow': 'hidden',
                    'height': '96vh'},
             header={'height': header_height},

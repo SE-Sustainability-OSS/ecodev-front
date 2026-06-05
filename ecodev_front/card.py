@@ -6,6 +6,9 @@ from typing import Optional
 
 import dash_mantine_components as dmc
 
+from ecodev_front.constants import CENTRAL_GRAY
+from ecodev_front.constants import MAIN_COLOR
+from ecodev_front.constants import WHITE_GRAY
 from ecodev_front.icon import dash_icon
 
 DEFAULT_STYLE = {
@@ -32,7 +35,7 @@ def card_title(title: str,
                color: str = 'white',
                font: str = 'Averta',
                align: str = 'left',
-               background_color: str = '#0066a1',
+               background_color: str = MAIN_COLOR,
                component: Optional[Any] = None,
                justify: str = 'space-between'
                ) -> dmc.CardSection:
@@ -62,7 +65,7 @@ def card_section(children: Any, graph: bool = False) -> dmc.CardSection:
 
 
 def macro_info(text: str | float,
-               color: str = '#A0AEC0',
+               color: str = CENTRAL_GRAY,
                size: int = 32,
                text_id: str = ''
                ) -> dmc.Text:
@@ -77,7 +80,7 @@ def kpi(icon: str,
         unit: Optional[str] = None,
         title: str | None = None,
         tooltip: str | None = None,
-        c: str = '#0066a1',
+        c: str = MAIN_COLOR,
         fz: int = 24,
         fw: int = 700) -> dmc.Tooltip:
     """
@@ -93,6 +96,6 @@ def kpi(icon: str,
                     dmc.Text(unit, c='gray', fz=(fz - 8), fw=1000),
                 ], gap='xs'
             ),
-        ], bg='#f7f8f9', w=250)])
+        ], bg=WHITE_GRAY, w=250)])
     ], label=tooltip, position='top', offset=3,
         withArrow=True, closeDelay=300, color=c)

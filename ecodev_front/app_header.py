@@ -8,6 +8,7 @@ from ecodev_core import SETTINGS
 from ecodev_front.app_logo import app_logo
 from ecodev_front.app_title import app_header_name
 from ecodev_front.constants import LOGIN_PAGE_URL
+from ecodev_front.constants import MAIN_COLOR
 from ecodev_front.constants import MAIN_PAGE_URL
 from ecodev_front.documentation import documentation_icon_link
 from ecodev_front.icon import dash_icon
@@ -65,7 +66,7 @@ def app_header(header_logo: dmc.Anchor,
         justify='space-between',
         align='center',
         style={
-            'backgroundColor': '#0066A1',
+            'backgroundColor': MAIN_COLOR,
             'color': 'white',
         }, mt=5)
 
@@ -79,7 +80,7 @@ def header_login(app_header: dmc.Anchor) -> dmc.Group:
         justify='space-between',
         align='stretch',
         style={
-            'backgroundColor': '#0066A1',
+            'backgroundColor': MAIN_COLOR,
             'color': 'white',
         }, mt=5
     )

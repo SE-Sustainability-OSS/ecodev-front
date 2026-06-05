@@ -7,6 +7,7 @@ import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
 from ecodev_front.constants import INDEX
+from ecodev_front.constants import MAIN_COLOR
 from ecodev_front.constants import TYPE
 
 STEPPER_ID = 'stepper-id'
@@ -15,7 +16,7 @@ STEPPER_ID = 'stepper-id'
 def vertical_stepper(id: str,
                      steps: list[dmc.StepperStep],
                      active_step: int = 0,
-                     color: str = '#0066a1',
+                     color: str = MAIN_COLOR,
                      style: Dict | None = None,
                      allow_next_steps_select: bool = True
                      ) -> dmc.Stepper:
@@ -44,7 +45,7 @@ def stepper_step(label: str,
     Returns a stepper step with redirecting icons, if provided with an href.
     """
     icon = DashIconify(icon=icon, width=22)
-    active_step = dmc.Anchor(icon, href=href, c='#0066a1', inline=True) if href else icon
+    active_step = dmc.Anchor(icon, href=href, c=MAIN_COLOR, inline=True) if href else icon
     completed_step = dmc.Anchor(icon, href=href, c='white', inline=True) if href else icon
 
     return dmc.StepperStep(
