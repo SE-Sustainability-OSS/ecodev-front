@@ -253,8 +253,18 @@ from ecodev_front.text import section_title
 from ecodev_front.text import subtext
 from ecodev_front.text import subtitle
 from ecodev_front.text import text_title
+from ecodev_front.theme_config import BACKGROUND_COLOR
+from ecodev_front.theme_config import configure_front_theme
+from ecodev_front.theme_config import DMC_THEME
+from ecodev_front.theme_config import ICON_COLOR
+from ecodev_front.theme_config import PRIMARY_COLOR
 from ecodev_front.upload_box import upload_box
 __all__ = [
+    'configure_front_theme',
+    'PRIMARY_COLOR',
+    'ICON_COLOR',
+    'BACKGROUND_COLOR',
+    'DMC_THEME',
     'accordion',
     'accordion_item',
     'alert',

@@ -4,6 +4,7 @@ Module implementing a page header components
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
+from . import theme_config
 from ecodev_front.text import page_title
 from ecodev_front.text import subtitle
 
@@ -12,8 +13,8 @@ def page_title_header(title: str,
                       with_icon: bool,
                       icon: str,
                       description: str,
-                      color: str = '#0066a1',
-                      icon_color: str = '#5da6d1',
+                      color: str | None = None,
+                      icon_color: str | None = None,
                       ) -> dmc.Stack:
     """
     Returns the header of the page.
@@ -22,7 +23,7 @@ def page_title_header(title: str,
         dmc.Box(DashIconify(icon=icon,
                             width=36, height=36,
                             style={'color': '#f2f2f2', 'display': 'flex'}),
-                style={'backgroundColor': '#0066a1',
+                style={'backgroundColor': color or theme_config.PRIMARY_COLOR,
                        'borderRadius': '8px', 'padding': '7px'}) if with_icon else None,
         dmc.Stack([
             page_title(title),

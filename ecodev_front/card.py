@@ -6,6 +6,7 @@ from typing import Optional
 
 import dash_mantine_components as dmc
 
+from . import theme_config
 from ecodev_front.icon import dash_icon
 
 DEFAULT_STYLE = {
@@ -32,7 +33,7 @@ def card_title(title: str,
                color: str = 'white',
                font: str = 'Averta',
                align: str = 'left',
-               background_color: str = '#0066a1',
+               background_color: str | None = None,
                component: Optional[Any] = None,
                justify: str = 'space-between'
                ) -> dmc.CardSection:
@@ -40,13 +41,14 @@ def card_title(title: str,
     Returns dmc.CardSection with a standardised dmc.Text and possible selection options and an
     optional additional component (e.g. select, slider, etc.) on its right hand side.
     """
+    resolved_bg = background_color or theme_config.PRIMARY_COLOR
     content = [dmc.Text(title, fz=size, fw=900, c=color, ff=font, ta=align, id=title_id,
-                        bg=background_color, p=10, style={'flex': 1})]
+                        bg=resolved_bg, p=10, style={'flex': 1})]
 
     content += component if isinstance(component, list) else [component]
     return card_section(
         dmc.Group(children=content,
-                  style={'backgroundColor': background_color},
+                  style={'backgroundColor': resolved_bg},
                   justify=justify
                   )
     )
@@ -77,22 +79,23 @@ def kpi(icon: str,
         unit: Optional[str] = None,
         title: str | None = None,
         tooltip: str | None = None,
-        c: str = '#0066a1',
+        c: str | None = None,
         fz: int = 24,
         fw: int = 700) -> dmc.Tooltip:
     """
     Render a KPI card
     """
+    resolved_c = c or theme_config.PRIMARY_COLOR
     return dmc.Tooltip([
         dmc.Card([dmc.Stack([
             dmc.Text(title, c='gray', fz=(fz - 6), fw=fw),
             dmc.Group(
                 [
-                    dash_icon(icon, width=30, color=c),
-                    dmc.Text(value, c=c, fz=fz, fw=1000),
+                    dash_icon(icon, width=30, color=resolved_c),
+                    dmc.Text(value, c=resolved_c, fz=fz, fw=1000),
                     dmc.Text(unit, c='gray', fz=(fz - 8), fw=1000),
                 ], gap='xs'
             ),
         ], bg='#f7f8f9', w=250)])
     ], label=tooltip, position='top', offset=3,
-        withArrow=True, closeDelay=300, color=c)
+        withArrow=True, closeDelay=300, color=resolved_c)

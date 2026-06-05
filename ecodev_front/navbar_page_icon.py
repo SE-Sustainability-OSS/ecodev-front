@@ -1,6 +1,8 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
+from . import theme_config
+
 
 def navbar_page_icon(icon: str, title: str, href: str, active: bool = False) -> dmc.Anchor:
     """
@@ -10,14 +12,14 @@ def navbar_page_icon(icon: str, title: str, href: str, active: bool = False) -> 
         dmc.Tooltip(
             dmc.ActionIcon(
                 DashIconify(icon=icon,
-                            color='#0066a1' if active else 'gray',
+                            color=theme_config.PRIMARY_COLOR if active else 'gray',
                             width=32),
                 variant='transparent',
                 size='xl',
             ),
             label=dmc.Text(title, c='white' if active else '#656565'),
             position='right',
-            color='#0066a1' if active else 'lightgray',
+            color=theme_config.PRIMARY_COLOR if active else 'lightgray',
             transitionProps={
                 'transition': 'scale-x',
                 'duration': 200,

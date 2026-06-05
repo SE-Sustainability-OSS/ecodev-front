@@ -3,7 +3,9 @@ Module implementing segmented control
 """
 import dash_mantine_components as dmc
 
-from ecodev_front.constants import INDEX, TYPE, VALUE
+from ecodev_front.constants import INDEX
+from ecodev_front.constants import TYPE
+from ecodev_front.constants import VALUE
 from ecodev_front.ids import SWITCH
 from ecodev_front.text import label_text
 
@@ -12,7 +14,7 @@ def switch(id: str,
            data: dict[str, str],
            value: str | None = None,
            label: str = '',
-           color: str = 'blue.7',
+           color: str = 'green.7',
            bg: str = 'white',
            size: str = 'sm',
            style: dict = {},
@@ -33,5 +35,5 @@ def switch(id: str,
     )
     if not label:
         return switch
-    
+
     return dmc.Stack([label_text(label, **label_kwargs), switch], gap='0px')

@@ -3,11 +3,12 @@ Module containing the app footer component style
 """
 from dash import html
 
+from . import theme_config
 from ecodev_front.ids import FOOTER_ID
 
 
 def app_footer(children: html.Div,
-               color: str = '#0066A1',
+               color: str | None = None,
                height: str = '4vh',
                display: str = 'flex',
                ) -> html.Div:
@@ -17,7 +18,7 @@ def app_footer(children: html.Div,
     return html.Div(children, id=FOOTER_ID, style=footer_style(color, height, display))
 
 
-def footer_style(color: str = '#0066A1',
+def footer_style(color: str | None = None,
                  height: str = '5vh',
                  display: str = 'flex'
                  ) -> dict[str, str | int]:
@@ -30,7 +31,7 @@ def footer_style(color: str = '#0066A1',
         'height': height,
         'width': '100vw',
         'paddingBottom': '10px',
-        'backgroundColor': color,
+        'backgroundColor': color or theme_config.PRIMARY_COLOR,
         'color': 'white',
         'display': display,
         'textAlign': 'center',
