@@ -5,7 +5,6 @@ import dash_mantine_components as dmc
 from dash import html
 from ecodev_core import SETTINGS
 
-from . import theme_config
 from ecodev_front.app_logo import app_logo
 from ecodev_front.app_title import app_header_name
 from ecodev_front.constants import LOGIN_PAGE_URL
@@ -16,6 +15,7 @@ from ecodev_front.ids import HOME_BUTTON
 from ecodev_front.ids import LOGOUT_BTN_ID
 from ecodev_front.login import login
 from ecodev_front.nav_items import action_item
+from ecodev_front.theme_config import PRIMARY_COLOR
 
 HEADER_DIVIDER = dmc.Divider(orientation='vertical', color='gray.2', mt=10, mb=10, ml=30, mr=30)
 
@@ -66,7 +66,7 @@ def app_header(header_logo: dmc.Anchor,
         justify='space-between',
         align='center',
         style={
-            'backgroundColor': theme_config.PRIMARY_COLOR,
+            'backgroundColor': PRIMARY_COLOR,
             'color': 'white',
         }, mt=5)
 
@@ -80,7 +80,7 @@ def header_login(app_header: dmc.Anchor) -> dmc.Group:
         justify='space-between',
         align='stretch',
         style={
-            'backgroundColor': theme_config.PRIMARY_COLOR,
+            'backgroundColor': PRIMARY_COLOR,
             'color': 'white',
         }, mt=5
     )

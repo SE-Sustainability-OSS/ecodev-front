@@ -3,7 +3,7 @@ File containing formatted text components
 """
 import dash_mantine_components as dmc
 
-from . import theme_config
+from ecodev_front.theme_config import PRIMARY_COLOR
 
 
 def app_title(text: str, c: str = 'black', ta: str = 'left', mb: int = 10, **kwargs) -> dmc.Title:
@@ -13,11 +13,11 @@ def app_title(text: str, c: str = 'black', ta: str = 'left', mb: int = 10, **kwa
     return dmc.Title(text, order=1, ta=ta, c=c, tt='capitalize', mb=mb, **kwargs)
 
 
-def page_title(text: str, c: str | None = None, ta: str = 'left', **kwargs) -> dmc.Title:
+def page_title(text: str, c: str = PRIMARY_COLOR, ta: str = 'left', **kwargs) -> dmc.Title:
     """
     Renders a formatted title text for page headers
     """
-    return dmc.Title(text, order=2, ta=ta, c=c or theme_config.PRIMARY_COLOR, tt='capitalize', ff='Averta Bold', **kwargs)
+    return dmc.Title(text, order=2, ta=ta, c=c, tt='capitalize', ff='Averta Bold', **kwargs)
 
 
 def section_title(text: str, c: str = '#424242', ta: str = 'left', **kwargs) -> dmc.Title:
@@ -34,11 +34,11 @@ def subtitle(text: str, c: str = 'dimmed', ta: str = 'left', fz=16, fs='italic',
     return dmc.Text(text, fz=fz, ta=ta, c=c, fs=fs, **kwargs)
 
 
-def text_title(text: str, c: str | None = None, ta: str = 'left', **kwargs) -> dmc.Text:
+def text_title(text: str, c: str = PRIMARY_COLOR, ta: str = 'left', **kwargs) -> dmc.Text:
     """
     Renders a stylized dmc.Text component to display body text headers
     """
-    return dmc.Title(children=text, order=4, ff='Averta Bold', c=c or theme_config.PRIMARY_COLOR, ta=ta, **kwargs)
+    return dmc.Title(children=text, order=4, ff='Averta Bold', c=c, ta=ta, **kwargs)
 
 
 def subtext(text: str, c: str = '#989898', ta: str = 'left', fz=14, fs='italic', **kwargs) -> dmc.Text:

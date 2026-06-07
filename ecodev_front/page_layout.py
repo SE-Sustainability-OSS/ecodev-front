@@ -3,13 +3,14 @@ Module implementing standardised page layouts
 """
 import dash_mantine_components as dmc
 
-from . import theme_config
 from ecodev_front.aside_buttons import aside_buttons
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
 from ecodev_front.ids import PROJECT_HEADER_ID
 from ecodev_front.page import Page
 from ecodev_front.page_header import page_title_header
+from ecodev_front.theme_config import BACKGROUND_COLOR
+from ecodev_front.theme_config import PRIMARY_COLOR
 
 
 def basic_layout(page: Page,
@@ -29,9 +30,9 @@ def basic_layout(page: Page,
 
 
 def header_layout(page: Page,
-                  color: str | None = None,
+                  color: str = PRIMARY_COLOR,
                   with_icon: bool = True,
-                  icon_color: str | None = None,
+                  icon_color: str = BACKGROUND_COLOR,
                   enable_scroll: bool = True,
                   aside_width: int | str | None = None
                   ) -> dmc.Stack:
@@ -42,7 +43,7 @@ def header_layout(page: Page,
     return dmc.Stack([
         dmc.Group([
             page_title_header(page.title, with_icon, page.icon,
-                              page.description, color or theme_config.PRIMARY_COLOR, icon_color),
+                              page.description, color, icon_color),
             dmc.Group([
                 dmc.Divider(orientation='vertical', size=2, mr=10),
                 dmc.Stack(id={TYPE: PROJECT_HEADER_ID, INDEX: page.id},

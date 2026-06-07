@@ -8,7 +8,6 @@ import dash_mantine_components as dmc
 from dash import dcc
 from dash import html
 
-from . import theme_config
 from ecodev_front.button import ButtonAction
 from ecodev_front.button import render_action_button
 from ecodev_front.constants import ERROR
@@ -29,6 +28,9 @@ from ecodev_front.ids import TEXT
 from ecodev_front.ids import TOKEN
 from ecodev_front.ids import URL
 from ecodev_front.modal import modal
+from ecodev_front.theme_config import BACKGROUND_COLOR
+from ecodev_front.theme_config import DMC_THEME
+from ecodev_front.theme_config import PRIMARY_COLOR
 
 
 def get_error_monitor_component():
@@ -55,8 +57,8 @@ def dash_base_layout(stores: list[dcc.Store] = [],
     Returns a base layout for any Dash application.
     main_color and theme default to configured values from configure_front_theme() when not provided.
     """
-    resolved_color = main_color or theme_config.PRIMARY_COLOR
-    resolved_theme = theme or theme_config.DMC_THEME
+    resolved_color = main_color or PRIMARY_COLOR
+    resolved_theme = theme or DMC_THEME
     return dmc.MantineProvider(
         forceColorScheme='light',
         theme=resolved_theme,
@@ -127,7 +129,7 @@ def dash_base_layout(stores: list[dcc.Store] = [],
 
             id=APPSHELL,
             style={'padding': '0',
-                   'background-color': theme_config.BACKGROUND_COLOR,
+                   'background-color': BACKGROUND_COLOR,
                    'overflow': 'hidden',
                    'height': '96vh'},
             header={'height': header_height},

@@ -5,20 +5,20 @@ from typing import Any
 
 import dash_mantine_components as dmc
 
-from . import theme_config
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import LABEL
 from ecodev_front.constants import TYPE
 from ecodev_front.constants import VALUE
 from ecodev_front.ids import CHECKBOX_GROUP
 from ecodev_front.text import label_text
+from ecodev_front.theme_config import PRIMARY_COLOR
 
 
 def checkbox_group(id: str | dict,
                    data: list[dict],
                    value: list[str] | None = None,
                    label: str = '',
-                   color: str | None = None,
+                   color: str = PRIMARY_COLOR,
                    size: str = 'sm',
                    gap: str = 'xs',
                    label_kwargs: dict = {},
@@ -29,9 +29,8 @@ def checkbox_group(id: str | dict,
 
     data items must follow the {VALUE: ..., LABEL: ...} format.
     """
-    resolved_color = color or theme_config.PRIMARY_COLOR
     checkboxes = dmc.Stack(
-        [dmc.Checkbox(label=item[LABEL], value=item[VALUE], size=size, color=resolved_color)
+        [dmc.Checkbox(label=item[LABEL], value=item[VALUE], size=size, color=color)
          for item in data],
         gap=gap,
     )

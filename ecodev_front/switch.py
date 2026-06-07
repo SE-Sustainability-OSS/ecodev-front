@@ -8,13 +8,14 @@ from ecodev_front.constants import TYPE
 from ecodev_front.constants import VALUE
 from ecodev_front.ids import SWITCH
 from ecodev_front.text import label_text
+from ecodev_front.theme_config import PRIMARY_COLOR
 
 
 def switch(id: str,
            data: dict[str, str],
            value: str | None = None,
            label: str = '',
-           color: str = 'green.7',
+           color: str | None = None,
            bg: str = 'white',
            size: str = 'sm',
            style: dict = {},
@@ -28,7 +29,7 @@ def switch(id: str,
         id={TYPE: SWITCH, INDEX: id},
         value=value if value else data[0][VALUE],
         data=data,
-        color=color,
+        color=color or PRIMARY_COLOR,
         size=size,
         style=style or {'backgroundColor': bg, 'border': '1px solid #dcdcdc'},
         **kwargs

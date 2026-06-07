@@ -6,7 +6,7 @@ from dash import html
 from dash_iconify import DashIconify
 from ecodev_core import logger_get
 
-from . import theme_config
+from ecodev_front.theme_config import PRIMARY_COLOR
 
 log = logger_get(__name__)
 
@@ -28,7 +28,7 @@ def open_aside_button() -> dmc.Affix:
             size=40,
             variant='default',
             c='white',
-            bg=theme_config.PRIMARY_COLOR,
+            bg=PRIMARY_COLOR,
             style=HIDE,
         ),
         position={'top': 63, 'right': -5},
@@ -47,7 +47,7 @@ def close_aside_button(aside_width: str = '272px') -> dmc.Affix:
             size=40,
             variant='default',
             c='white',
-            bg=theme_config.PRIMARY_COLOR,
+            bg=PRIMARY_COLOR,
             style=HIDE,
         ),
         position={'top': 63, 'right': aside_width},

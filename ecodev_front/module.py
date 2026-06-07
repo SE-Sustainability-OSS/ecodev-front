@@ -10,10 +10,10 @@ from dash import html
 from ecodev_core import Frozen
 from ecodev_core import logger_get
 
-from . import theme_config
 from ecodev_front.nav_items import action_item
 from ecodev_front.page import Page
 from ecodev_front.shadow_button import module_main_button
+from ecodev_front.theme_config import PRIMARY_COLOR
 
 log = logger_get(__name__)
 
@@ -123,7 +123,7 @@ class Module(Frozen):
             'label_top': 'View',
             'label_bottom': self.name.capitalize(),
             'icon': self.icon,
-            'color': theme_config.PRIMARY_COLOR
+            'color': PRIMARY_COLOR
         } | self.main_page_button_kwargs
 
         return module_main_button(**default_kwargs)
