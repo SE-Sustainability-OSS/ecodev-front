@@ -3,8 +3,7 @@ Module implementing a page divider
 """
 import dash_mantine_components as dmc
 
-from ecodev_front.theme_config import BACKGROUND_COLOR
-from ecodev_front.theme_config import PRIMARY_COLOR
+from . import theme_config
 
 
 def divider(orientation: str = 'horizontal',
@@ -12,14 +11,14 @@ def divider(orientation: str = 'horizontal',
             position: str = 'center',
             margin: int = 10,
             w: str | int = '',
-            color: str = PRIMARY_COLOR
+            color: str | None = None
             ) -> dmc.Divider:
     """
     Renders a divider
     """
     return dmc.Divider(orientation=orientation,
                        label=label, labelPosition=position,
-                       m=margin, w=w, color=color)
+                       m=margin, w=w, color=color or theme_config.PRIMARY_COLOR)
 
 
 def header_divider() -> dmc.Divider:
@@ -27,6 +26,6 @@ def header_divider() -> dmc.Divider:
     Generates the vertical navbar dividers between app header sections
     """
     return dmc.Divider(orientation='vertical',
-                       style={'color': BACKGROUND_COLOR,
+                       style={'color': theme_config.BACKGROUND_COLOR,
                               'marginTop': '10px',
                               'marginBottom': '10px'})

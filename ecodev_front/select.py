@@ -5,13 +5,14 @@ from typing import Any
 
 import dash_mantine_components as dmc
 
+from . import theme_config
 from ecodev_front.icon import dash_icon
 
 
 def select(id: str | dict,
            label_text: str | None = None,
            label_id: str | None = '',
-           label_color: str = '#A0AEC0',
+           label_color: str | None = None,
            value: Any | None = None,
            data: list[str] | None = None,
            persistence: bool = True,
@@ -47,6 +48,6 @@ def select(id: str | dict,
         return content
 
     return dmc.Stack([
-        dmc.Text(label_text, c=label_color, id=label_id),
+        dmc.Text(label_text, c=label_color or theme_config.GRAY_COLOR, id=label_id),
         content
     ], gap='xs', w='100%', id=stack_id)

@@ -3,12 +3,12 @@ Module implementing segmented control
 """
 import dash_mantine_components as dmc
 
+from . import theme_config
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
 from ecodev_front.constants import VALUE
 from ecodev_front.ids import SWITCH
 from ecodev_front.text import label_text
-from ecodev_front.theme_config import PRIMARY_COLOR
 
 
 def switch(id: str,
@@ -29,7 +29,7 @@ def switch(id: str,
         id={TYPE: SWITCH, INDEX: id},
         value=value if value else data[0][VALUE],
         data=data,
-        color=color or PRIMARY_COLOR,
+        color=color or theme_config.PRIMARY_COLOR,
         size=size,
         style=style or {'backgroundColor': bg, 'border': '1px solid #dcdcdc'},
         **kwargs
