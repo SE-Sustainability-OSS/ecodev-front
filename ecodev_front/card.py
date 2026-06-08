@@ -6,7 +6,7 @@ from typing import Optional
 
 import dash_mantine_components as dmc
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.icon import dash_icon
 
 DEFAULT_STYLE = {
@@ -96,6 +96,6 @@ def kpi(icon: str,
                     dmc.Text(unit, c='gray', fz=(fz - 8), fw=1000),
                 ], gap='xs'
             ),
-        ], bg='#f7f8f9', w=250)])
+        ], bg=theme_config.BACKGROUND_COLOR, w=250)])
     ], label=tooltip, position='top', offset=3,
         withArrow=True, closeDelay=300, color=resolved_c)
