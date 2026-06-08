@@ -4,6 +4,8 @@ Component which allows document upload.
 from dash import dcc
 from dash import html
 
+from ecodev_front import theme_config
+
 DEFAULT_STYLE = {'height': '30vh',
                  'lineHeight': '60px',
                  'borderWidth': '1px',
@@ -11,7 +13,7 @@ DEFAULT_STYLE = {'height': '30vh',
                  'borderRadius': '10px',
                  'textAlign': 'center',
                  'margin': 'auto',
-                 'color': '#A0AEC0',
+                 'color': theme_config.GRAY_COLOR,
                  'verticalAlign': 'middle'}
 
 

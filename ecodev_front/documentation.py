@@ -1,6 +1,7 @@
 import dash_mantine_components as dmc
 from dash import html
 
+from ecodev_front import theme_config
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
 from ecodev_front.ids import ACTION_ITEM
@@ -10,7 +11,7 @@ from ecodev_front.text import subtitle
 
 
 def documentation_icon_link(icon_width: int = 30,
-                            icon_color: str = '#8BC1E3') -> html.Div:
+                            icon_color: str | None = None) -> html.Div:
     """
     Renders the documentation action item to go to the documentation section
     """
@@ -18,7 +19,7 @@ def documentation_icon_link(icon_width: int = 30,
                        label=DOCUMENTATION,
                        icon='bxs:book',
                        href=f'/{DOCUMENTATION}',
-                       icon_color=icon_color,
+                       icon_color=icon_color or theme_config.SECONDARY_COLOR,
                        icon_width=icon_width)
 
 
@@ -28,7 +29,6 @@ def documentation_text(text: str = """If this is your first time using this tool
     """
     Renders the text accompanying the documentation button
     """
-
     return dmc.Group([
         subtitle(text, ta='left'),
         documentation_icon_link(icon_width)

@@ -1,14 +1,16 @@
 import dash_mantine_components as dmc
 
-
-from ecodev_front.constants import INDEX, TYPE
+from ecodev_front import theme_config
+from ecodev_front.constants import INDEX
+from ecodev_front.constants import TYPE
 from ecodev_front.ids import LOADING_OVERLAY
+
 
 def loading_overlay(id: str | dict,
                     color: str = 'blue',
-                    bg_color: str = '#f2f2f2', 
-                    zIndex=10, 
-                    loader_props: dict | None = None, 
+                    bg_color: str | None = None,
+                    zIndex=10,
+                    loader_props: dict | None = None,
                     overlay_props: dict | None = None,
                     transition_props: dict | None = None):
     """
@@ -18,11 +20,12 @@ def loading_overlay(id: str | dict,
     - transition_props: {'transition': 'fade', 'duration': 1_000}
     - overlay_props: {'radius': 'sm', 'blur': 2, 'color': bg_color}
     """
+    resolved_bg = bg_color or theme_config.BACKGROUND_COLOR
     return dmc.LoadingOverlay(
         visible=False,
         id=id if isinstance(id, dict) else {TYPE: LOADING_OVERLAY, INDEX: id},
         loaderProps=loader_props or {'color': color, 'size': 'sm'},
         transitionProps=transition_props or {'transition': 'fade', 'duration': 1_000},
-        overlayProps=overlay_props or {'radius': 'sm', 'blur': 2, 'color': bg_color},
+        overlayProps=overlay_props or {'radius': 'sm', 'blur': 2, 'color': resolved_bg},
         zIndex=zIndex
     )

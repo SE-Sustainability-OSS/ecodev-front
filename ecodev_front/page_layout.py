@@ -3,6 +3,7 @@ Module implementing standardised page layouts
 """
 import dash_mantine_components as dmc
 
+from ecodev_front import theme_config
 from ecodev_front.aside_buttons import aside_buttons
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
@@ -12,25 +13,27 @@ from ecodev_front.page_header import page_title_header
 
 
 def basic_layout(page: Page,
+                 color: str | None = None,
                  enable_scroll: bool = True,
                  aside_width: int | str | None = None) -> dmc.Stack:
     """
     Renders a basic layout (no header, simply a div/scroll-area with page.id) and aside buttons.
     NOTE: If disabling the scroll area, ensure that your page content fits !
     """
+    color = color or theme_config.PRIMARY_COLOR
     return dmc.Stack([
         (dmc.ScrollArea(dmc.Stack(id=page.id, mb=100, w='100%'),
                         w='100%', h='85vh', pr=25, mb=0, offsetScrollbars='50px')
          if enable_scroll else
          dmc.Stack(id=page.id, w='98%', h='90vh', m='auto', mt=0, pt=0)),
-        aside_buttons(aside_width) if aside_width else aside_buttons(),
+        aside_buttons(aside_width, color) if aside_width else aside_buttons(color=color),
     ], w='97%', m='auto', mt=5, style={'height': '95vh'}, mb=0)
 
 
 def header_layout(page: Page,
-                  color: str = '#0066a1',
+                  color: str | None = None,
                   with_icon: bool = True,
-                  icon_color: str = '#97BDD3',
+                  icon_color: str | None = None,
                   enable_scroll: bool = True,
                   aside_width: int | str | None = None
                   ) -> dmc.Stack:
@@ -38,6 +41,8 @@ def header_layout(page: Page,
     Returns a page with title header, project header placeholder, aside buttons,
     and page content placeholder.
     """
+    color = color or theme_config.PRIMARY_COLOR
+    icon_color = icon_color or theme_config.SECONDARY_COLOR
     return dmc.Stack([
         dmc.Group([
             page_title_header(page.title, with_icon, page.icon,
@@ -53,5 +58,5 @@ def header_layout(page: Page,
                         w='100%', h='81vh', pr=25, mb=0, offsetScrollbars='50px')
          if enable_scroll else
          dmc.Stack(id=page.id, w='98%', h='81vh', m='auto', mt=0, pt=0)),
-        aside_buttons(aside_width) if aside_width else aside_buttons(),
+        aside_buttons(aside_width, color) if aside_width else aside_buttons(color=color),
     ], w='97%', m='auto', mt=5, style={'height': '96vh'}, mb=0)

@@ -58,7 +58,7 @@ def download_button(id: dict | str,
     Returns a Div comprised of a button fully customisable and a dcc.Download component
     """
     return dmc.Stack([
-        button(id if isinstance(id, dict) else {TYPE: DOWNLOAD_BTN, INDEX: id}, 
+        button(id if isinstance(id, dict) else {TYPE: DOWNLOAD_BTN, INDEX: id},
                text, icon, variant, color, w, **kwargs),
         dcc.Download({TYPE: DOWNLOAD_OUT, INDEX: id})
     ])
@@ -96,12 +96,12 @@ ACTION_TO_COLOR: dict[ButtonAction, str] = {
     ButtonAction.CONFIRM: 'green.9',
     ButtonAction.CLOSE: 'gray',
     ButtonAction.DELETE: 'red.9',
-    ButtonAction.SAVE: 'blue.9',
+    ButtonAction.SAVE: 'green.9',
     ButtonAction.CANCEL: 'red.5',
-    ButtonAction.UPDATE: 'blue.5',
+    ButtonAction.UPDATE: 'green.5',
     ButtonAction.ADD: 'green.5',
-    ButtonAction.CONTINUE: 'blue.7',
-    ButtonAction.DOWNLOAD: 'blue.7',
+    ButtonAction.CONTINUE: 'green.7',
+    ButtonAction.DOWNLOAD: 'green.7',
 }
 
 ACTION_TO_ID = {
@@ -127,7 +127,7 @@ def render_action_button(index: str,
     """
     Renders a button to go on to the next step
     """
-    
+
     if action == ButtonAction.DOWNLOAD:
         return download_button(index, label,
                                icon=ACTION_TO_ICON[action],
@@ -138,7 +138,7 @@ def render_action_button(index: str,
     return button(
         id={TYPE: ACTION_TO_ID[action], INDEX: index},
         text=label or action,
-        color=color or ACTION_TO_COLOR.get(action) or 'blue.7',
+        color=color or ACTION_TO_COLOR.get(action) or 'green.7',
         icon=ACTION_TO_ICON[action],
         variant=variant,
         w=w,

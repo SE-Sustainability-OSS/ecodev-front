@@ -6,6 +6,7 @@ from dash import html
 from dash_iconify import DashIconify
 from ecodev_core import logger_get
 
+from ecodev_front import theme_config
 
 log = logger_get(__name__)
 
@@ -16,7 +17,7 @@ OPEN_ASIDE_BTN_ID = 'open-aside-btn-id'
 CLOSE_ASIDE_BTN_ID = 'close-aside-btn-id'
 
 
-def open_aside_button() -> dmc.Affix:
+def open_aside_button(color: str | None = None) -> dmc.Affix:
     """
     Returns an aside open button, at the edge of the right hand side of the screen.
     """
@@ -27,7 +28,7 @@ def open_aside_button() -> dmc.Affix:
             size=40,
             variant='default',
             c='white',
-            bg='#0066A1',
+            bg=color or theme_config.PRIMARY_COLOR,
             style=HIDE,
         ),
         position={'top': 63, 'right': -5},
@@ -35,7 +36,7 @@ def open_aside_button() -> dmc.Affix:
     )
 
 
-def close_aside_button(aside_width: str = '272px') -> dmc.Affix:
+def close_aside_button(aside_width: str = '272px', color: str | None = None) -> dmc.Affix:
     """
     Returns an aside close button, at edge of where the aside extends.
     """
@@ -46,7 +47,7 @@ def close_aside_button(aside_width: str = '272px') -> dmc.Affix:
             size=40,
             variant='default',
             c='white',
-            bg='#0066A1',
+            bg=color or theme_config.PRIMARY_COLOR,
             style=HIDE,
         ),
         position={'top': 63, 'right': aside_width},
@@ -54,9 +55,9 @@ def close_aside_button(aside_width: str = '272px') -> dmc.Affix:
     )
 
 
-def aside_buttons(aside_width: str = '272px') -> html.Div:
+def aside_buttons(aside_width: str = '272px', color: str | None = None) -> html.Div:
     """
     Renders the aside buttons on a page. Must be present on the layout of every page
     containing a collapsible aside.
     """
-    return html.Div([open_aside_button(), close_aside_button(aside_width)])
+    return html.Div([open_aside_button(color), close_aside_button(aside_width, color)])

@@ -26,6 +26,7 @@ data/
 #ignoring environment file
 .env
 .dist
+dist/
 
 .cursor/
 .DS_Store

@@ -2,16 +2,15 @@
 Module implementing a generic module object to be used throughout the app
 """
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
+from typing import Callable
 
 import dash_mantine_components as dmc
 from dash import html
 from ecodev_core import Frozen
 from ecodev_core import logger_get
-from ecodev_core import AppUser
-from sqlmodel import Session
-from sqlmodel.main import SQLModelMetaclass
 
+from ecodev_front import theme_config
 from ecodev_front.nav_items import action_item
 from ecodev_front.page import Page
 from ecodev_front.shadow_button import module_main_button
@@ -43,10 +42,10 @@ class Module(Frozen):
 
     navbar_layout: Callable
         A function which renders the navbar content for this module.
-        
+
     access_checks: list[Callable] = []
         A list of functions which check if the user has access to the module. Each method should have
-        the user as first argument, the project as second argument, and the session as third argument. 
+        the user as first argument, the project as second argument, and the session as third argument.
         Each function should return a boolean.
         If any of the functions return False, the module will not be accessible.
 
@@ -80,7 +79,7 @@ class Module(Frozen):
 
     pages: list[Page]
     navbar_layout: Callable
-    
+
     access_checks: list[Callable[Any, bool]] = []
 
     main_page_button_kwargs: dict = {}
@@ -124,7 +123,7 @@ class Module(Frozen):
             'label_top': 'View',
             'label_bottom': self.name.capitalize(),
             'icon': self.icon,
-            'color': '#0066a1'
+            'color': theme_config.PRIMARY_COLOR
         } | self.main_page_button_kwargs
 
         return module_main_button(**default_kwargs)

@@ -8,6 +8,7 @@ import dash_mantine_components as dmc
 from dash import dcc
 from dash import html
 
+from ecodev_front import theme_config
 from ecodev_front.button import ButtonAction
 from ecodev_front.button import render_action_button
 from ecodev_front.constants import ERROR
@@ -44,18 +45,21 @@ def get_error_monitor_component():
 
 
 def dash_base_layout(stores: list[dcc.Store] = [],
-                     main_color: str = '#0066A1',
+                     main_color: str | None = None,
                      theme: dict[str, dict[str, Any] | list[str]] | None = None,
                      header_height: int = 55,
                      footer_height: int = 40,
                      main_content_style: dict[str, str] | None = None
                      ) -> dmc.MantineProvider:
     """
-    Returns a base layout for any Dash application
+    Returns a base layout for any Dash application.
+    main_color and theme default to configured values from configure_front_theme() when not provided.
     """
+    resolved_color = main_color or theme_config.PRIMARY_COLOR
+    resolved_theme = theme or theme_config.DMC_THEME
     return dmc.MantineProvider(
         forceColorScheme='light',
-        theme=theme,
+        theme=resolved_theme,
         children=dmc.AppShell([
             dcc.Location(id=URL, refresh='callback-nav'),
             dcc.Store(id=TOKEN, data={TOKEN: None}, storage_type='local'),
@@ -79,7 +83,7 @@ def dash_base_layout(stores: list[dcc.Store] = [],
                 size='lg',
             ),
             dmc.AppShellHeader(id=HEADER_ID,
-                               style={'background-color': main_color},
+                               style={'background-color': resolved_color},
                                zIndex=100,
                                children=[],
                                ),
@@ -97,7 +101,7 @@ def dash_base_layout(stores: list[dcc.Store] = [],
 
             dmc.AppShellFooter(id=FOOTER_ID, zIndex=100, children=[],
                                style={'paddingBottom': '50px',
-                                      'backgroundColor': main_color,
+                                      'backgroundColor': resolved_color,
                                       'color': 'white',
                                       'textAlign': 'center',
                                       'alignContent': 'center',
@@ -123,7 +127,7 @@ def dash_base_layout(stores: list[dcc.Store] = [],
 
             id=APPSHELL,
             style={'padding': '0',
-                   'background-color': '#f2f2f2',
+                   'background-color': theme_config.BACKGROUND_COLOR,
                    'overflow': 'hidden',
                    'height': '96vh'},
             header={'height': header_height},
