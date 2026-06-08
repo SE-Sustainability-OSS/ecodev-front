@@ -3,7 +3,7 @@ Module implementing standardised page layouts
 """
 import dash_mantine_components as dmc
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.aside_buttons import aside_buttons
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE

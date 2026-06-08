@@ -1,6 +1,6 @@
 import dash_mantine_components as dmc
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
 from ecodev_front.ids import LOADING_OVERLAY

@@ -10,7 +10,7 @@ from dash import html
 from ecodev_core import Frozen
 from ecodev_core import logger_get
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.nav_items import action_item
 from ecodev_front.page import Page
 from ecodev_front.shadow_button import module_main_button

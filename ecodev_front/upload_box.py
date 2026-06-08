@@ -4,7 +4,7 @@ Component which allows document upload.
 from dash import dcc
 from dash import html
 
-from . import theme_config
+from ecodev_front import theme_config
 
 DEFAULT_STYLE = {'height': '30vh',
                  'lineHeight': '60px',

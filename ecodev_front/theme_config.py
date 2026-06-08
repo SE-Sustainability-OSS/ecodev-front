@@ -9,6 +9,7 @@ SECONDARY_COLOR: str = '#5da6d1'
 WHITE_COLOR: str = '#ffffff'
 BLACK_COLOR: str = '#000000'
 GRAY_COLOR: str = '#808080'
+DARK_GRAY_COLOR: str = '#424242'
 BACKGROUND_COLOR: str = '#f2f2f2'
 DMC_THEME: dict[str, Any] | None = None
 

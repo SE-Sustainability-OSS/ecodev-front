@@ -3,7 +3,7 @@ Module containing the app footer component style
 """
 from dash import html
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.ids import FOOTER_ID
 
 

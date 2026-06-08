@@ -6,7 +6,7 @@ from typing import Dict
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
 

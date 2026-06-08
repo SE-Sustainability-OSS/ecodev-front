@@ -5,7 +5,7 @@ from typing import Any
 
 import dash_mantine_components as dmc
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.icon import dash_icon
 
 

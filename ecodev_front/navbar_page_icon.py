@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-from . import theme_config
+from ecodev_front import theme_config
 
 
 def navbar_page_icon(icon: str,
@@ -23,7 +23,7 @@ def navbar_page_icon(icon: str,
                 variant='transparent',
                 size='xl',
             ),
-            label=dmc.Text(title, c='white' if active else '#656565'),
+            label=dmc.Text(title, c='white' if active else theme_config.GRAY_COLOR),
             position='right',
             color=resolved_color if active else 'lightgray',
             transitionProps={

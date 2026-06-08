@@ -8,7 +8,7 @@ import dash_mantine_components as dmc
 from dash import dcc
 from dash import html
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.button import ButtonAction
 from ecodev_front.button import render_action_button
 from ecodev_front.constants import ERROR

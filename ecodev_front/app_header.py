@@ -5,7 +5,7 @@ import dash_mantine_components as dmc
 from dash import html
 from ecodev_core import SETTINGS
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.app_logo import app_logo
 from ecodev_front.app_title import app_header_name
 from ecodev_front.constants import LOGIN_PAGE_URL

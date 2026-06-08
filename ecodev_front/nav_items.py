@@ -5,7 +5,7 @@ import dash_mantine_components as dmc
 from dash import html
 from dash_iconify import DashIconify
 
-from . import theme_config
+from ecodev_front import theme_config
 
 
 def action_item(id: str | dict,

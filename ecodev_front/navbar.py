@@ -4,6 +4,7 @@ File containing a module navbar component for an app.
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
+from ecodev_front import theme_config
 from ecodev_front.divider import divider
 from ecodev_front.module import Module
 from ecodev_front.page import Page
@@ -21,10 +22,10 @@ def icon_navbar(module: Module,
     return dmc.Stack([
         dmc.Stack([
             dmc.Tooltip(
-                DashIconify(icon=module.icon, color='#cdcdcd', width=44),
+                DashIconify(icon=module.icon, color=theme_config.GRAY_COLOR, width=44),
                 label=f'{module.name.capitalize()} Module',
                 position='bottom',
-                color='gray',
+                color=theme_config.GRAY_COLOR,
                 transitionProps={
                     'transition': 'slide-down',
                     'duration': 200,

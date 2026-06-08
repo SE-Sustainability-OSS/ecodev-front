@@ -3,7 +3,7 @@ File containing formatted text components
 """
 import dash_mantine_components as dmc
 
-from . import theme_config
+from ecodev_front import theme_config
 
 
 def app_title(text: str, c: str = 'black', ta: str = 'left', mb: int = 10, **kwargs) -> dmc.Title:
@@ -24,7 +24,7 @@ def section_title(text: str, c: str | None = None, ta: str = 'left', **kwargs) -
     """
     Renders a formatted text for page sections
     """
-    return dmc.Title(text, order=3, c=c or '#424242', ta=ta, tt='capitalize', ff='Averta Bold', **kwargs)
+    return dmc.Title(text, order=3, c=c or theme_config.DARK_GRAY_COLOR, ta=ta, tt='capitalize', ff='Averta Bold', **kwargs)
 
 
 def subtitle(text: str, c: str = 'dimmed', ta: str = 'left', fz=16, fs='italic', **kwargs) -> dmc.Title:
@@ -45,7 +45,7 @@ def subtext(text: str, c: str | None = None, ta: str = 'left', fz=14, fs='italic
     """
     Renders a stylized dmc.Text component to display body sub-texts
     """
-    return dmc.Text(children=text, c=c or '#989898', fz=fz, fs=fs, ta=ta, **kwargs)
+    return dmc.Text(children=text, c=c or theme_config.GRAY_COLOR, fz=fz, fs=fs, ta=ta, **kwargs)
 
 
 def label_text(text: str,

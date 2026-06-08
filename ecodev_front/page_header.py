@@ -4,7 +4,7 @@ Module implementing a page header components
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-from . import theme_config
+from ecodev_front import theme_config
 from ecodev_front.text import page_title
 from ecodev_front.text import subtitle
 

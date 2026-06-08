@@ -3,7 +3,7 @@ Module implementing segmented control
 """
 import dash_mantine_components as dmc
 
-from . import theme_config
+from ecodev_front import theme_config
 
 
 def segmented_control(id: str,

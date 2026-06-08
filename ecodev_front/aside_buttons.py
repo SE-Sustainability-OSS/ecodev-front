@@ -6,7 +6,7 @@ from dash import html
 from dash_iconify import DashIconify
 from ecodev_core import logger_get
 
-from . import theme_config
+from ecodev_front import theme_config
 
 log = logger_get(__name__)
 

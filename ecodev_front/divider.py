@@ -3,7 +3,7 @@ Module implementing a page divider
 """
 import dash_mantine_components as dmc
 
-from . import theme_config
+from ecodev_front import theme_config
 
 
 def divider(orientation: str = 'horizontal',
