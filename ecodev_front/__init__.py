@@ -109,6 +109,10 @@ from ecodev_front.documentation import documentation_text
 from ecodev_front.drawer import drawer
 from ecodev_front.footer import app_footer
 from ecodev_front.footer import footer_style
+from ecodev_front.forgot_password import attempt_reset
+from ecodev_front.forgot_password import forgot_password_modal
+from ecodev_front.forgot_password import FORGOT_PWD_BTN_ID
+from ecodev_front.forgot_password import FORGOT_PWD_MODAL_ID
 from ecodev_front.further_info import further_info
 from ecodev_front.graphs import apply_fig_layout
 from ecodev_front.graphs import bar_chart
@@ -154,6 +158,7 @@ from ecodev_front.ids import DOWNLOAD_OUT
 from ecodev_front.ids import DRAWER
 from ecodev_front.ids import ERROR_MODAL
 from ecodev_front.ids import FOOTER_ID
+from ecodev_front.ids import FORGOT_PWD
 from ecodev_front.ids import GRAPH
 from ecodev_front.ids import HEADER_ID
 from ecodev_front.ids import HOME_BUTTON
@@ -204,6 +209,7 @@ from ecodev_front.login import login
 from ecodev_front.login import login_card
 from ecodev_front.modal import modal
 from ecodev_front.module import Module
+from ecodev_front.monitoring import monitored_callback
 from ecodev_front.multi_select import multi_select
 from ecodev_front.nav_items import action_item
 from ecodev_front.nav_items import menu
@@ -294,6 +300,12 @@ __all__ = [
     'drawer',
     'app_footer',
     'footer_style',
+    'attempt_reset',
+    'forgot_password_modal',
+    'FORGOT_PWD_BTN_ID',
+    'FORGOT_PWD',
+    'FORGOT_PWD_MODAL_ID',
+    'monitored_callback',
     'further_info',
     'apply_fig_layout',
     'bar_chart',

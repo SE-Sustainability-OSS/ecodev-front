@@ -7,6 +7,7 @@ from dash import callback
 from ecodev_core import dash_monitor
 
 from ecodev_front.app_name import APP_NAME
+from ecodev_front.ids import TOKEN
 
 
 def monitored_callback(*args, **kwargs):
@@ -72,7 +73,8 @@ def monitored_callback(*args, **kwargs):
             """
             if (token := func_args[0] if func_args else func_kwargs.get('token')) is None:
                 raise ValueError('Token not found in callback arguments')
-            dash_monitor(func.__name__, token, APP_NAME)
+            if (token or {}).get(TOKEN):
+                dash_monitor(func.__name__, token, APP_NAME)
             return func(*func_args, **func_kwargs)
 
         return callback(*args, **kwargs)(execute_monitored_callback)
