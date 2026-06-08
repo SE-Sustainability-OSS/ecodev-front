@@ -35,6 +35,8 @@ COLUMN = 'column'
 ACCEPT = 'accept'
 REJECT = 'reject'
 
+FORGOT_PWD = 'forgot-pwd'
+
 SUBMIT_BTN = 'submit-btn'
 CLOSE_BTN = 'close-btn'
 SAVE_BTN = 'save-btn'
@@ -113,6 +115,7 @@ __all__ = [
     'MODULE_BUTTON',
     'DOCUMENTATION',
     'NOTIFICATION',
+    'FORGOT_PWD',
 
     'USE',
     'CONTINUE',
