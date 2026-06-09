@@ -22,6 +22,7 @@ STORE = 'store'
 HOME_BUTTON = 'home-button-id'
 MODULE_BUTTON = 'module-button'
 DOCUMENTATION = 'documentation'
+DOCS_LINK_ID = 'docs-link-id'
 NOTIFICATION = 'notification'
 ERROR_MODAL = 'error-modal'
 
@@ -114,6 +115,7 @@ __all__ = [
     'HOME_BUTTON',
     'MODULE_BUTTON',
     'DOCUMENTATION',
+    'DOCS_LINK_ID',
     'NOTIFICATION',
     'FORGOT_PWD',
 

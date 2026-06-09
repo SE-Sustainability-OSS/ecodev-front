@@ -11,6 +11,7 @@ from ecodev_front.app_title import app_header_name
 from ecodev_front.constants import LOGIN_PAGE_URL
 from ecodev_front.constants import MAIN_PAGE_URL
 from ecodev_front.documentation import documentation_icon_link
+from ecodev_front.documentation import flask_docs_link
 from ecodev_front.icon import dash_icon
 from ecodev_front.ids import HOME_BUTTON
 from ecodev_front.ids import LOGOUT_BTN_ID
@@ -31,13 +32,16 @@ LOGOUT_BUTTON = action_item(
 
 def display_app_header(pathname: str,
                        module_action_items: dmc.Group,
-                       app_name: str | None = None) -> dmc.Group:
+                       app_name: str | None = None,
+                       with_flask_docs: bool = False) -> dmc.Group:
     """
     Function which determines the display of the app header. By default, we always show the home
     and logout buttons as well as the app name. The list of modules that can be displayed need to
     be parametrized in each app.
     """
     is_main_page = pathname == MAIN_PAGE_URL
+    docs_link = flask_docs_link(
+        icon_color='white') if with_flask_docs else documentation_icon_link(icon_color='white')
     return dmc.Group(justify='space-between',
                      children=[
                          dmc.Group([
@@ -46,7 +50,7 @@ def display_app_header(pathname: str,
                          ], mt='5px', ml='1%' if is_main_page else 5, align='center'),
                          module_action_items,
                          dmc.Group([
-                             documentation_icon_link(icon_color='white'),
+                             docs_link,
                              LOGOUT_BUTTON
                          ])
                      ])
