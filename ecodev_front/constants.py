@@ -77,6 +77,12 @@ URLS
 """
 MAIN_PAGE_URL = '/'
 LOGIN_PAGE_URL = '/login'
+DOCS_URL = '/docs/'
+
+"""
+Docs session
+"""
+DOCS_SESSION_KEY = 'docs_access_token'
 
 """
 Unit Converters
@@ -161,6 +167,8 @@ __all__ = [
 
     'MAIN_PAGE_URL',
     'LOGIN_PAGE_URL',
+    'DOCS_URL',
+    'DOCS_SESSION_KEY',
 
     'THOUSAND',
     'MILLION',

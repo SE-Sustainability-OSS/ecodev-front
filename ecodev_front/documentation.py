@@ -5,6 +5,7 @@ from dash_iconify import DashIconify
 from ecodev_front import theme_config
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
+from ecodev_front.flask_docs import with_docs
 from ecodev_front.ids import ACTION_ITEM
 from ecodev_front.ids import DOCS_LINK_ID
 from ecodev_front.ids import DOCUMENTATION
@@ -52,6 +53,16 @@ def flask_docs_link(icon_color: str | None = None, icon_width: int = 30) -> dmc.
             )
         ],
     )
+
+
+def docs_link(icon_color: str | None = None,
+              icon_width: int = 30) -> dmc.Tooltip | html.Div:
+    """
+    Delegates to flask_docs_link or documentation_icon_link per with_docs().
+    """
+    if with_docs():
+        return flask_docs_link(icon_color=icon_color, icon_width=icon_width)
+    return documentation_icon_link(icon_color=icon_color, icon_width=icon_width)
 
 
 def documentation_text(text: str = """If this is your first time using this tool, we

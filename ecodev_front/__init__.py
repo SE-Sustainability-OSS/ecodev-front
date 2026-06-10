@@ -45,6 +45,8 @@ from ecodev_front.constants import DATA
 from ecodev_front.constants import DELETED
 from ecodev_front.constants import DISABLED
 from ecodev_front.constants import DISPLAY
+from ecodev_front.constants import DOCS_SESSION_KEY
+from ecodev_front.constants import DOCS_URL
 from ecodev_front.constants import ERROR
 from ecodev_front.constants import FIGURE
 from ecodev_front.constants import FILENAME
@@ -104,10 +106,13 @@ from ecodev_front.display_utils import number_formatting
 from ecodev_front.div import centered_div
 from ecodev_front.divider import divider
 from ecodev_front.divider import header_divider
+from ecodev_front.documentation import docs_link
 from ecodev_front.documentation import documentation_icon_link
 from ecodev_front.documentation import documentation_text
 from ecodev_front.documentation import flask_docs_link
 from ecodev_front.drawer import drawer
+from ecodev_front.flask_docs import enable_flask_docs
+from ecodev_front.flask_docs import with_docs
 from ecodev_front.footer import app_footer
 from ecodev_front.footer import footer_style
 from ecodev_front.forgot_password import attempt_reset
@@ -154,6 +159,7 @@ from ecodev_front.ids import CONTINUE_BTN
 from ecodev_front.ids import DELETE_BTN
 from ecodev_front.ids import DIV
 from ecodev_front.ids import DOCS_LINK_ID
+from ecodev_front.ids import DOCS_SYNC
 from ecodev_front.ids import DOCUMENTATION
 from ecodev_front.ids import DOWNLOAD_BTN
 from ecodev_front.ids import DOWNLOAD_OUT
@@ -380,9 +386,12 @@ __all__ = [
     'render_action_button',
     'HOME_ACTION_ICON',
     'LOGOUT_BUTTON',
+    'docs_link',
     'documentation_icon_link',
     'documentation_text',
     'flask_docs_link',
+    'enable_flask_docs',
+    'with_docs',
     'send_notification',
     'ButtonAction',
     'dash_ag_grid_button',
@@ -441,6 +450,8 @@ __all__ = [
     'NOTIFICATION_ID',
     'MAIN_PAGE_URL',
     'LOGIN_PAGE_URL',
+    'DOCS_URL',
+    'DOCS_SESSION_KEY',
     'THOUSAND',
     'MILLION',
     'BILLION',
@@ -483,6 +494,7 @@ __all__ = [
     'HOME_BUTTON',
     'MODULE_BUTTON',
     'DOCS_LINK_ID',
+    'DOCS_SYNC',
     'DOCUMENTATION',
     'NOTIFICATION',
     'ERROR_MODAL',
