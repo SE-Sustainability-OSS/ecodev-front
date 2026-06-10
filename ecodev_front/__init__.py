@@ -106,6 +106,7 @@ from ecodev_front.divider import divider
 from ecodev_front.divider import header_divider
 from ecodev_front.documentation import documentation_icon_link
 from ecodev_front.documentation import documentation_text
+from ecodev_front.documentation import flask_docs_link
 from ecodev_front.drawer import drawer
 from ecodev_front.footer import app_footer
 from ecodev_front.footer import footer_style
@@ -152,6 +153,7 @@ from ecodev_front.ids import CONTINUE
 from ecodev_front.ids import CONTINUE_BTN
 from ecodev_front.ids import DELETE_BTN
 from ecodev_front.ids import DIV
+from ecodev_front.ids import DOCS_LINK_ID
 from ecodev_front.ids import DOCUMENTATION
 from ecodev_front.ids import DOWNLOAD_BTN
 from ecodev_front.ids import DOWNLOAD_OUT
@@ -380,6 +382,7 @@ __all__ = [
     'LOGOUT_BUTTON',
     'documentation_icon_link',
     'documentation_text',
+    'flask_docs_link',
     'send_notification',
     'ButtonAction',
     'dash_ag_grid_button',
@@ -479,6 +482,7 @@ __all__ = [
     'NAVBAR',
     'HOME_BUTTON',
     'MODULE_BUTTON',
+    'DOCS_LINK_ID',
     'DOCUMENTATION',
     'NOTIFICATION',
     'ERROR_MODAL',
