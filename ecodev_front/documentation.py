@@ -25,7 +25,7 @@ def documentation_icon_link(icon_width: int = 30,
                        icon_width=icon_width)
 
 
-def flask_docs_link(icon_color: str | None = None, icon_width: int = 30) -> dmc.Tooltip:
+def html_docs_link(icon_color: str | None = None, icon_width: int = 30) -> dmc.Tooltip:
     """
     Docs link anchored at /docs/ — id is on the Anchor so a clientside_callback can update href.
     Used for Flask-served MkDocs sites protected by JWT session auth.
