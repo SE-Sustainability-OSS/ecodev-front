@@ -15,8 +15,11 @@ from ecodev_front.constants import ERROR
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import NOTIFICATION_ID
 from ecodev_front.constants import TYPE
+from ecodev_front.flask_docs import enable_flask_docs
+from ecodev_front.flask_docs import with_docs
 from ecodev_front.ids import APPSHELL
 from ecodev_front.ids import ASIDE
+from ecodev_front.ids import DOCS_SYNC
 from ecodev_front.ids import ERROR_MODAL
 from ecodev_front.ids import FOOTER_ID
 from ecodev_front.ids import HEADER_ID
@@ -53,10 +56,14 @@ def dash_base_layout(stores: list[dcc.Store] = [],
                      ) -> dmc.MantineProvider:
     """
     Returns a base layout for any Dash application.
-    main_color and theme default to configured values from configure_front_theme() when not provided.
+    main_color and theme default to configured values from configure_front_theme()
+    when not provided.
     """
     resolved_color = main_color or theme_config.PRIMARY_COLOR
     resolved_theme = theme or theme_config.DMC_THEME
+    docs_stores = [dcc.Store(id=DOCS_SYNC)] if with_docs() else []
+    if with_docs():
+        enable_flask_docs(dash.get_app())
     return dmc.MantineProvider(
         forceColorScheme='light',
         theme=resolved_theme,
@@ -64,6 +71,7 @@ def dash_base_layout(stores: list[dcc.Store] = [],
             dcc.Location(id=URL, refresh='callback-nav'),
             dcc.Store(id=TOKEN, data={TOKEN: None}, storage_type='local'),
             *stores,
+            *docs_stores,
 
             html.Div(id=NOTIFICATION_ID),
             dmc.NotificationContainer(id=NOTIFICATION),

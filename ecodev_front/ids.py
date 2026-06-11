@@ -23,6 +23,7 @@ HOME_BUTTON = 'home-button-id'
 MODULE_BUTTON = 'module-button'
 DOCUMENTATION = 'documentation'
 DOCS_LINK_ID = 'docs-link-id'
+DOCS_SYNC = 'docs-auth-sync'
 NOTIFICATION = 'notification'
 ERROR_MODAL = 'error-modal'
 
@@ -116,6 +117,7 @@ __all__ = [
     'MODULE_BUTTON',
     'DOCUMENTATION',
     'DOCS_LINK_ID',
+    'DOCS_SYNC',
     'NOTIFICATION',
     'FORGOT_PWD',
 

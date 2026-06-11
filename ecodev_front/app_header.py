@@ -12,6 +12,7 @@ from ecodev_front.constants import LOGIN_PAGE_URL
 from ecodev_front.constants import MAIN_PAGE_URL
 from ecodev_front.documentation import documentation_icon_link
 from ecodev_front.documentation import flask_docs_link
+from ecodev_front.flask_docs import with_docs
 from ecodev_front.icon import dash_icon
 from ecodev_front.ids import HOME_BUTTON
 from ecodev_front.ids import LOGOUT_BTN_ID
@@ -33,15 +34,20 @@ LOGOUT_BUTTON = action_item(
 def display_app_header(pathname: str,
                        module_action_items: dmc.Group,
                        app_name: str | None = None,
-                       with_flask_docs: bool = False) -> dmc.Group:
+                       with_flask_docs: bool | None = None,
+                       extra_action_items: list | None = None) -> dmc.Group:
     """
-    Function which determines the display of the app header. By default, we always show the home
-    and logout buttons as well as the app name. The list of modules that can be displayed need to
-    be parametrized in each app.
+    Renders the full app header. with_flask_docs resolves from config if None.
+    extra_action_items appear before the logout button.
     """
     is_main_page = pathname == MAIN_PAGE_URL
-    docs_link = flask_docs_link(
-        icon_color='white') if with_flask_docs else documentation_icon_link(icon_color='white')
+    use_explicit = with_flask_docs is not None
+    resolved_flask_docs = with_flask_docs if use_explicit else with_docs()
+    docs_link_component = (
+        flask_docs_link(icon_color='white')
+        if resolved_flask_docs
+        else documentation_icon_link(icon_color='white')
+    )
     return dmc.Group(justify='space-between',
                      children=[
                          dmc.Group([
@@ -50,7 +56,8 @@ def display_app_header(pathname: str,
                          ], mt='5px', ml='1%' if is_main_page else 5, align='center'),
                          module_action_items,
                          dmc.Group([
-                             docs_link,
+                             *(extra_action_items or []),
+                             docs_link_component,
                              LOGOUT_BUTTON
                          ])
                      ])
