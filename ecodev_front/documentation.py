@@ -3,6 +3,7 @@ from dash import html
 from dash_iconify import DashIconify
 
 from ecodev_front import theme_config
+from ecodev_front.constants import DOCS_URL
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
 from ecodev_front.flask_docs import with_docs
@@ -11,6 +12,28 @@ from ecodev_front.ids import DOCS_LINK_ID
 from ecodev_front.ids import DOCUMENTATION
 from ecodev_front.nav_items import action_item
 from ecodev_front.text import subtitle
+
+
+def docs_link(icon_color: str | None = None,
+              icon_width: int = 30) -> dmc.Tooltip | html.Div:
+    """
+    Delegates to flask_docs_link or documentation_icon_link per with_docs().
+    """
+    if with_docs():
+        return flask_docs_link(icon_color=icon_color, icon_width=icon_width)
+    return documentation_icon_link(icon_color=icon_color, icon_width=icon_width)
+
+
+def documentation_text(text: str = """If this is your first time using this tool, we
+                    recommend you read through the documentation.""",
+                       icon_width: int = 50) -> dmc.Group:
+    """
+    Renders the text accompanying the documentation button
+    """
+    return dmc.Group([
+        subtitle(text, ta='left'),
+        docs_link(icon_width=icon_width)
+    ], justify='space-around')
 
 
 def documentation_icon_link(icon_width: int = 30,
@@ -32,14 +55,14 @@ def flask_docs_link(icon_color: str | None = None, icon_width: int = 30) -> dmc.
     Used for Flask-served MkDocs sites protected by JWT session auth.
     """
     return dmc.Tooltip(
-        label='DOCUMENTATION',
+        label=DOCUMENTATION,
         style={'background-color': 'white', 'color': 'grey', 'font-size': '12px'},
         position='bottom',
         offset=10,
         children=[
             dmc.Anchor(
                 id={TYPE: ACTION_ITEM, INDEX: DOCS_LINK_ID},
-                href='/docs/',
+                href=DOCS_URL,
                 target='_blank',
                 children=[
                     dmc.ActionIcon(
@@ -53,25 +76,3 @@ def flask_docs_link(icon_color: str | None = None, icon_width: int = 30) -> dmc.
             )
         ],
     )
-
-
-def docs_link(icon_color: str | None = None,
-              icon_width: int = 30) -> dmc.Tooltip | html.Div:
-    """
-    Delegates to flask_docs_link or documentation_icon_link per with_docs().
-    """
-    if with_docs():
-        return flask_docs_link(icon_color=icon_color, icon_width=icon_width)
-    return documentation_icon_link(icon_color=icon_color, icon_width=icon_width)
-
-
-def documentation_text(text: str = """If this is your first time using this tool, we
-                    recommend you read through the documentation.""",
-                       icon_width: int = 50) -> dmc.Group:
-    """
-    Renders the text accompanying the documentation button
-    """
-    return dmc.Group([
-        subtitle(text, ta='left'),
-        documentation_icon_link(icon_width)
-    ], justify='space-around')
