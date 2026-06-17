@@ -77,7 +77,7 @@ URLS
 """
 MAIN_PAGE_URL = '/'
 LOGIN_PAGE_URL = '/login'
-DOCS_URL = '/docs/'
+DOCS_URL = '/documentation/'
 
 """
 Docs session

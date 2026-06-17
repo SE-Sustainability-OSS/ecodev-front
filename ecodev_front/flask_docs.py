@@ -68,8 +68,8 @@ def _configure_server(app, docs_dir: Path) -> None:
         """Redirect /docs → /docs/ so relative asset URLs resolve correctly."""
         return redirect(DOCS_URL)
 
-    @app.server.route('/docs/')
-    @app.server.route('/docs/<path:path>')
+    @app.server.route(DOCS_URL)
+    @app.server.route(f'{DOCS_URL}<path:path>')
     def serve_docs(path: str = '') -> object:
         """
         Serves built MkDocs files behind a signed HttpOnly session cookie.
