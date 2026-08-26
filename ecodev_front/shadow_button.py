@@ -3,11 +3,11 @@ Module implementing a button component with a colored shadow.
 """
 import dash_mantine_components as dmc
 from dash import html
-from dash_iconify import DashIconify
 
 from ecodev_front import theme_config
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
+from ecodev_front.icon import dash_icon
 from ecodev_front.ids import MODULE_BUTTON
 
 
@@ -61,7 +61,7 @@ def module_main_button(id: str,
         disabled=disabled,
         children=dmc.Stack([
             dmc.Text(label_top, fz='18', c=color),
-            DashIconify(icon=icon, width=45, color=color),
+            dash_icon(icon, width=45, color=color),
             dmc.Text(label_bottom, fz='22', fw=700, c=color)
         ], align='center', gap='5px', style={'min-width': '100px'}),
         shadow_color=color,

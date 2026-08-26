@@ -134,6 +134,8 @@ from ecodev_front.graphs import subplots
 from ecodev_front.graphs import subplots_y_axis_labels
 from ecodev_front.group import group
 from ecodev_front.icon import dash_icon
+from ecodev_front.icon import IMG_ICON_PREFIX
+from ecodev_front.icon import is_img_icon
 from ecodev_front.ids import ACCEPT
 from ecodev_front.ids import ACCEPT_BTN
 from ecodev_front.ids import ACCORDION
@@ -329,6 +331,8 @@ __all__ = [
     'subplots_y_axis_labels',
     'group',
     'dash_icon',
+    'IMG_ICON_PREFIX',
+    'is_img_icon',
     'loading_overlay',
     'login',
     'modal',

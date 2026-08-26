@@ -2,10 +2,10 @@
 File containing a module navbar component for an app.
 """
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 from ecodev_front import theme_config
 from ecodev_front.divider import divider
+from ecodev_front.icon import dash_icon
 from ecodev_front.module import Module
 from ecodev_front.page import Page
 from ecodev_front.stepper import vertical_stepper
@@ -22,7 +22,7 @@ def icon_navbar(module: Module,
     return dmc.Stack([
         dmc.Stack([
             dmc.Tooltip(
-                DashIconify(icon=module.icon, color=theme_config.GRAY_COLOR, width=44),
+                dash_icon(module.icon, width=44, color=theme_config.GRAY_COLOR),
                 label=f'{module.name.capitalize()} Module',
                 position='bottom',
                 color=theme_config.GRAY_COLOR,
@@ -52,7 +52,7 @@ def stepper_navbar(module: Module,
     """
     return dmc.Stack([
         dmc.Group([
-            DashIconify(icon=module.icon, color='gray', width=28),
+            dash_icon(module.icon, width=28, color=theme_config.GRAY_COLOR),
             section_title(module.name.capitalize(), c='dimmed'),
         ], align='center', mt=5, mb=10, gap=10),
         divider(margin=0, color='lightgray'),

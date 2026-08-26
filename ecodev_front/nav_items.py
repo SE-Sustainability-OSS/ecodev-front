@@ -6,6 +6,7 @@ from dash import html
 from dash_iconify import DashIconify
 
 from ecodev_front import theme_config
+from ecodev_front.icon import dash_icon
 
 
 def action_item(id: str | dict,
@@ -35,9 +36,7 @@ def action_item(id: str | dict,
                            target=target,
                            children=[
                                dmc.ActionIcon(
-                                   DashIconify(icon=icon,
-                                               color=icon_color,
-                                               width=icon_width),
+                                   dash_icon(icon, width=icon_width, color=icon_color),
                                    id=id,
                                    size='xl',
                                    variant='transparent',
