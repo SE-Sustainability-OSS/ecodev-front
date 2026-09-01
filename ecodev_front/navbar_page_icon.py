@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 from ecodev_front import theme_config
+from ecodev_front.icon import dash_icon
 
 
 def navbar_page_icon(icon: str,
@@ -17,9 +17,8 @@ def navbar_page_icon(icon: str,
     return dmc.Anchor([
         dmc.Tooltip(
             dmc.ActionIcon(
-                DashIconify(icon=icon,
-                            color=resolved_color if active else 'gray',
-                            width=32),
+                dash_icon(icon, width=32,
+                          color=resolved_color if active else theme_config.GRAY_COLOR),
                 variant='transparent',
                 size='xl',
             ),

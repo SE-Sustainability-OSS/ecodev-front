@@ -2,9 +2,9 @@
 Module implementing a page header components
 """
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 from ecodev_front import theme_config
+from ecodev_front.icon import dash_icon
 from ecodev_front.text import page_title
 from ecodev_front.text import subtitle
 
@@ -22,11 +22,9 @@ def page_title_header(title: str,
     resolved_color = color or theme_config.PRIMARY_COLOR
     resolved_icon_color = icon_color or theme_config.SECONDARY_COLOR
     return dmc.Group([
-        dmc.Box(DashIconify(icon=icon,
-                            width=36, height=36,
-                            style={'color': resolved_icon_color, 'display': 'flex'}),
-                style={'backgroundColor': resolved_color,
-                       'borderRadius': '8px', 'padding': '7px'}) if with_icon else None,
+        dmc.Box(dash_icon(icon, width=36, height=36, color=resolved_icon_color),
+                style={'backgroundColor': resolved_color, 'borderRadius': '8px',
+                       'padding': '7px', 'display': 'flex'}) if with_icon else None,
         dmc.Stack([
             page_title(title),
             subtitle(description),

@@ -4,11 +4,11 @@ Module implementing a stepper and stepper-step components
 from typing import Dict
 
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 from ecodev_front import theme_config
 from ecodev_front.constants import INDEX
 from ecodev_front.constants import TYPE
+from ecodev_front.icon import dash_icon
 
 STEPPER_ID = 'stepper-id'
 
@@ -44,7 +44,7 @@ def stepper_step(label: str,
     """
     Returns a stepper step with redirecting icons, if provided with an href.
     """
-    icon = DashIconify(icon=icon, width=22)
+    icon = dash_icon(icon, width=22)
     active_step = dmc.Anchor(icon, href=href, c=theme_config.PRIMARY_COLOR,
                              inline=True) if href else icon
     completed_step = dmc.Anchor(icon, href=href, c='white', inline=True) if href else icon
